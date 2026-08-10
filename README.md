@@ -1,3 +1,53 @@
+# ScrapeBadger C++ SDK
+
+[![version](https://img.shields.io/github/v/release/scrape-badger/scrapebadger-cpp?label=version)](https://github.com/scrape-badger/scrapebadger-cpp/releases) [![CI](https://img.shields.io/github/actions/workflow/status/scrape-badger/scrapebadger-cpp/ci.yml?label=CI)](https://github.com/scrape-badger/scrapebadger-cpp/actions) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+Official **C++** SDK for [ScrapeBadger](https://scrapebadger.com) — one API key for
+30+ scraping APIs: Twitter/X, Reddit, Facebook, Instagram, TikTok, YouTube, Amazon, eBay,
+Walmart, Vinted, Google (18 products), Bing, Yahoo, ChatGPT, Perplexity, real estate, and
+any URL via the general Web Scraping API. Generated from the ScrapeBadger OpenAPI spec —
+always in sync with the API. ⚠️ This repository is regenerated automatically; don't send
+PRs here, request changes via the [roadmap](https://github.com/scrape-badger/roadmap).
+
+📚 [API docs](https://docs.scrapebadger.com) · 🧰 [All SDKs](https://scrapebadger.com/sdks) · 🔑 [Get an API key](https://scrapebadger.com/auth/signup) — 1,000 free credits
+
+## 🚀 Install
+
+```
+# requires cpprestsdk + CMake
+cmake -B build && cmake --build build -j
+```
+
+## ⚡ Quick start
+
+```cpp
+#include "ApiClient.h"
+#include "ApiConfiguration.h"
+#include "api/TwitterApi.h"
+
+using namespace scrapebadger::api;
+
+auto config = std::make_shared<ApiConfiguration>();
+config->setBaseUrl(U("https://scrapebadger.com"));
+config->setApiKey(U("X-API-Key"), U("YOUR_API_KEY"));
+
+auto client = std::make_shared<ApiClient>(config);
+TwitterApi twitter(client);
+auto user = twitter.twitterGetUserByUsername(U("elonmusk")).get();
+```
+
+Every scraper is available as its own API class (`TwitterApi`, `AmazonApi`, `GoogleApi`, …)
+with one method per endpoint — the full list is in the reference below.
+
+## 🛠 Development
+
+```sh
+sudo apt-get install -y libcpprest-dev libboost-all-dev cmake   # deps (debian)
+cmake -B build && cmake --build build -j                        # compile
+```
+
+---
+
 # C++ API client
 
 Unified credit-based scraping API. https://docs.scrapebadger.com
