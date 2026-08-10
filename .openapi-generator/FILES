@@ -24,6 +24,7 @@ include/scrapebadger/api/DepopApi.h
 include/scrapebadger/api/DuckDuckGoApi.h
 include/scrapebadger/api/EBayApi.h
 include/scrapebadger/api/FacebookApi.h
+include/scrapebadger/api/GeminiApi.h
 include/scrapebadger/api/GoogleApi.h
 include/scrapebadger/api/IdealistaApi.h
 include/scrapebadger/api/ImmobiliareApi.h
@@ -31,6 +32,7 @@ include/scrapebadger/api/InstagramApi.h
 include/scrapebadger/api/LeboncoinApi.h
 include/scrapebadger/api/LinkedInApi.h
 include/scrapebadger/api/LoopNetApi.h
+include/scrapebadger/api/PerplexityApi.h
 include/scrapebadger/api/RealtorApi.h
 include/scrapebadger/api/RedditApi.h
 include/scrapebadger/api/RedfinApi.h
@@ -90,6 +92,7 @@ src/api/DepopApi.cpp
 src/api/DuckDuckGoApi.cpp
 src/api/EBayApi.cpp
 src/api/FacebookApi.cpp
+src/api/GeminiApi.cpp
 src/api/GoogleApi.cpp
 src/api/IdealistaApi.cpp
 src/api/ImmobiliareApi.cpp
@@ -97,6 +100,7 @@ src/api/InstagramApi.cpp
 src/api/LeboncoinApi.cpp
 src/api/LinkedInApi.cpp
 src/api/LoopNetApi.cpp
+src/api/PerplexityApi.cpp
 src/api/RealtorApi.cpp
 src/api/RedditApi.cpp
 src/api/RedfinApi.cpp
