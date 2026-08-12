@@ -17,6 +17,7 @@ include/scrapebadger/Object.h
 include/scrapebadger/api/AccountApi.h
 include/scrapebadger/api/AmazonApi.h
 include/scrapebadger/api/ApartmentsApi.h
+include/scrapebadger/api/AppStoreApi.h
 include/scrapebadger/api/BaiduApi.h
 include/scrapebadger/api/BingApi.h
 include/scrapebadger/api/ChatGPTApi.h
@@ -26,6 +27,7 @@ include/scrapebadger/api/EBayApi.h
 include/scrapebadger/api/FacebookApi.h
 include/scrapebadger/api/GeminiApi.h
 include/scrapebadger/api/GoogleApi.h
+include/scrapebadger/api/GooglePlayApi.h
 include/scrapebadger/api/IdealistaApi.h
 include/scrapebadger/api/ImmobiliareApi.h
 include/scrapebadger/api/InstagramApi.h
@@ -85,6 +87,7 @@ src/Object.cpp
 src/api/AccountApi.cpp
 src/api/AmazonApi.cpp
 src/api/ApartmentsApi.cpp
+src/api/AppStoreApi.cpp
 src/api/BaiduApi.cpp
 src/api/BingApi.cpp
 src/api/ChatGPTApi.cpp
@@ -94,6 +97,7 @@ src/api/EBayApi.cpp
 src/api/FacebookApi.cpp
 src/api/GeminiApi.cpp
 src/api/GoogleApi.cpp
+src/api/GooglePlayApi.cpp
 src/api/IdealistaApi.cpp
 src/api/ImmobiliareApi.cpp
 src/api/InstagramApi.cpp
