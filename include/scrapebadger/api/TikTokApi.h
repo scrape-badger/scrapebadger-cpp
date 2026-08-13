@@ -233,6 +233,18 @@ public:
         boost::optional<int32_t> count
     ) const;
     /// <summary>
+    /// Get TikTok ad detail
+    /// </summary>
+    /// <remarks>
+    /// Get a single ad&#39;s advertiser, creatives, and targeting/impression breakdown.
+    /// </remarks>
+    /// <param name="adId"></param>
+    /// <param name="region">EU region code (the Ad Library is EU-only) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokGetTiktokAdDetail(
+        utility::string_t adId,
+        boost::optional<utility::string_t> region
+    ) const;
+    /// <summary>
     /// Get transcript
     /// </summary>
     /// <remarks>
@@ -348,6 +360,20 @@ public:
         boost::optional<utility::string_t> sort,
         boost::optional<int32_t> offset,
         boost::optional<utility::string_t> searchId,
+        boost::optional<int32_t> count
+    ) const;
+    /// <summary>
+    /// Search TikTok advertisers
+    /// </summary>
+    /// <remarks>
+    /// Look up TikTok advertiser business ids by name (feeds ads/search?advertiser_id&#x3D;).
+    /// </remarks>
+    /// <param name="query">Advertiser name (or partial) to look up</param>
+    /// <param name="region">EU region code (the Ad Library is EU-only) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="count"> (optional, default to 0)</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokSearchTiktokAdvertisers(
+        utility::string_t query,
+        boost::optional<utility::string_t> region,
         boost::optional<int32_t> count
     ) const;
     /// <summary>
