@@ -15,6 +15,7 @@ include/scrapebadger/ModelBase.h
 include/scrapebadger/MultipartFormData.h
 include/scrapebadger/Object.h
 include/scrapebadger/api/AccountApi.h
+include/scrapebadger/api/AirbnbApi.h
 include/scrapebadger/api/AmazonApi.h
 include/scrapebadger/api/ApartmentsApi.h
 include/scrapebadger/api/AppStoreApi.h
@@ -85,6 +86,7 @@ src/ModelBase.cpp
 src/MultipartFormData.cpp
 src/Object.cpp
 src/api/AccountApi.cpp
+src/api/AirbnbApi.cpp
 src/api/AmazonApi.cpp
 src/api/ApartmentsApi.cpp
 src/api/AppStoreApi.cpp
