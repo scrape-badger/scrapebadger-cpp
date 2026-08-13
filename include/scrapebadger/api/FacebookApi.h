@@ -75,14 +75,28 @@ public:
         utility::string_t itemId
     ) const;
     /// <summary>
+    /// Get advertiser page info
+    /// </summary>
+    /// <remarks>
+    /// Get advertiser page info: category, followers, page transparency (creation date, name history, managing organization, admin-account locations), related pages, and ad spend (for political/issue advertisers).
+    /// </remarks>
+    /// <param name="pageId"></param>
+    /// <param name="country"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> facebookGetAdvertiserPageInfo(
+        utility::string_t pageId,
+        boost::optional<utility::string_t> country
+    ) const;
+    /// <summary>
     /// Get an ad
     /// </summary>
     /// <remarks>
-    /// Get a single Ad Library ad by its archive id.
+    /// Get a single Ad Library ad by its archive id. For EU/UK-targeted ads the response also includes transparency insights (payer/beneficiary, total EU reach, and age/gender/country reach breakdowns).
     /// </remarks>
     /// <param name="adArchiveId"></param>
+    /// <param name="country">ISO country code (an EU code returns EU transparency) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> facebookGetAnAd(
-        utility::string_t adArchiveId
+        utility::string_t adArchiveId,
+        boost::optional<utility::string_t> country
     ) const;
     /// <summary>
     /// Get group detail
@@ -189,6 +203,18 @@ public:
     /// List common Marketplace location slugs (free).
     /// </remarks>
     pplx::task<std::shared_ptr<AnyType>> facebookListLocations(
+    ) const;
+    /// <summary>
+    /// Search advertiser pages
+    /// </summary>
+    /// <remarks>
+    /// Search advertiser Pages in the Ad Library — returns page ids, categories, likes/followers, verification and Instagram handles.
+    /// </remarks>
+    /// <param name="query">Advertiser name or keyword</param>
+    /// <param name="country"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> facebookSearchAdvertiserPages(
+        utility::string_t query,
+        boost::optional<utility::string_t> country
     ) const;
     /// <summary>
     /// Search events
