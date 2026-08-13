@@ -53,10 +53,12 @@ public:
     /// <param name="categoryId">Play category id, e.g. &#39;GAME_PUZZLE&#39; or &#39;SOCIAL&#39;</param>
     /// <param name="country">Play storefront country (gl), ISO 3166-1 alpha-2, e.g. &#39;US&#39; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="lang">Play content language (hl), e.g. &#39;en&#39; or &#39;pt-BR&#39; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="num">Max apps; follows each rail&#39;s &#39;see more&#39; continuation above the ~40-120 the page renders directly (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> googlePlayBrowseACategory(
         utility::string_t categoryId,
         boost::optional<utility::string_t> country,
-        boost::optional<utility::string_t> lang
+        boost::optional<utility::string_t> lang,
+        boost::optional<int32_t> num
     ) const;
     /// <summary>
     /// Get app detail
@@ -113,10 +115,12 @@ public:
     /// <param name="developer">Developer name or numeric id</param>
     /// <param name="country">Play storefront country (gl), ISO 3166-1 alpha-2, e.g. &#39;US&#39; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="lang">Play content language (hl), e.g. &#39;en&#39; or &#39;pt-BR&#39; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="num">Max apps; follows rail continuations above the page&#39;s directly-rendered slice (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> googlePlayGetDeveloperApps(
         utility::string_t developer,
         boost::optional<utility::string_t> country,
-        boost::optional<utility::string_t> lang
+        boost::optional<utility::string_t> lang,
+        boost::optional<int32_t> num
     ) const;
     /// <summary>
     /// Get similar apps

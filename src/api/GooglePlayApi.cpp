@@ -35,7 +35,7 @@ GooglePlayApi::~GooglePlayApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayBrowseACategory(utility::string_t categoryId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayBrowseACategory(utility::string_t categoryId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<int32_t> num) const
 {
 
 
@@ -84,6 +84,10 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayBrowseACategory(ut
     if (lang)
     {
         localVarQueryParams[utility::conversions::to_string_t("lang")] = ApiClient::parameterToString(*lang);
+    }
+    if (num)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("num")] = ApiClient::parameterToString(*num);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -599,7 +603,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppReviews(util
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetDeveloperApps(utility::string_t developer, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetDeveloperApps(utility::string_t developer, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<int32_t> num) const
 {
 
 
@@ -648,6 +652,10 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetDeveloperApps(u
     if (lang)
     {
         localVarQueryParams[utility::conversions::to_string_t("lang")] = ApiClient::parameterToString(*lang);
+    }
+    if (num)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("num")] = ApiClient::parameterToString(*num);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
