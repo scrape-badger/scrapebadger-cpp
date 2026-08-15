@@ -117,9 +117,9 @@ public:
     /// 
     /// </remarks>
     /// <param name="dataId">Maps data ID</param>
-    /// <param name="sortBy"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="sortBy">qualityScore | newestFirst | ratingHigh | ratingLow (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="hl"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="nextPageToken"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="nextPageToken">Cursor from the previous response&#39;s pagination.next; omit for page 1. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="results"> (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> googleGetPlaceReviews(
         utility::string_t dataId,
