@@ -21,6 +21,7 @@ include/scrapebadger/api/ApartmentsApi.h
 include/scrapebadger/api/AppStoreApi.h
 include/scrapebadger/api/BaiduApi.h
 include/scrapebadger/api/BingApi.h
+include/scrapebadger/api/BookingApi.h
 include/scrapebadger/api/ChatGPTApi.h
 include/scrapebadger/api/DepopApi.h
 include/scrapebadger/api/DuckDuckGoApi.h
@@ -92,6 +93,7 @@ src/api/ApartmentsApi.cpp
 src/api/AppStoreApi.cpp
 src/api/BaiduApi.cpp
 src/api/BingApi.cpp
+src/api/BookingApi.cpp
 src/api/ChatGPTApi.cpp
 src/api/DepopApi.cpp
 src/api/DuckDuckGoApi.cpp
