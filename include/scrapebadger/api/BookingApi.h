@@ -103,6 +103,32 @@ public:
         boost::optional<utility::string_t> language
     ) const;
     /// <summary>
+    /// Get room types and live rates
+    /// </summary>
+    /// <remarks>
+    /// Every room type at one property with every rate bookable on it for the given dates — price, price before discount, price per night, discounts and badges — plus per-room facilities, bed layouts, occupancy and photos. /search returns only the cheapest rate per property; this returns the whole table.
+    /// </remarks>
+    /// <param name="countryCode">Two-letter country code, e.g. &#39;it&#39;</param>
+    /// <param name="slug">Booking page name, e.g. &#39;hotel-artemide&#39;</param>
+    /// <param name="checkin">Check-in date YYYY-MM-DD</param>
+    /// <param name="checkout">Check-out date YYYY-MM-DD</param>
+    /// <param name="adults"> (optional, default to 0)</param>
+    /// <param name="children">Comma-separated children ages, e.g. &#39;4,9&#39; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="rooms"> (optional, default to 0)</param>
+    /// <param name="currency">ISO currency, e.g. EUR, USD, GBP (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="language">Locale, e.g. en-us, fr, de (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> bookingGetRoomTypesAndLiveRates(
+        utility::string_t countryCode,
+        utility::string_t slug,
+        utility::string_t checkin,
+        utility::string_t checkout,
+        boost::optional<int32_t> adults,
+        boost::optional<utility::string_t> children,
+        boost::optional<int32_t> rooms,
+        boost::optional<utility::string_t> currency,
+        boost::optional<utility::string_t> language
+    ) const;
+    /// <summary>
     /// Search destinations
     /// </summary>
     /// <remarks>
