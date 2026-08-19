@@ -190,7 +190,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayBrowseACategory(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<double> minPrice, boost::optional<double> maxPrice) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListingsDeprecated(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<double> minPrice, boost::optional<double> maxPrice) const
 {
 
 
@@ -224,7 +224,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility:
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("EBayApi->ebayCompletedSoldListings does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("EBayApi->ebayCompletedSoldListingsDeprecated does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -286,7 +286,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility:
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("EBayApi->ebayCompletedSoldListings does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("EBayApi->ebayCompletedSoldListingsDeprecated does not consume any supported media type"));
     }
 
     // authentication (ApiKeyAuth) required
@@ -314,7 +314,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility:
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling ebayCompletedSoldListings: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling ebayCompletedSoldListingsDeprecated: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -325,7 +325,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility:
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling ebayCompletedSoldListings: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling ebayCompletedSoldListingsDeprecated: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -349,7 +349,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility:
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling ebayCompletedSoldListings: unsupported response type"));
+                , utility::conversions::to_string_t("error calling ebayCompletedSoldListingsDeprecated: unsupported response type"));
         }
 
         return localVarResult;

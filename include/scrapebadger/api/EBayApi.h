@@ -67,10 +67,10 @@ public:
         boost::optional<double> maxPrice
     ) const;
     /// <summary>
-    /// Completed / sold listings
+    /// Completed / sold listings (deprecated)
     /// </summary>
     /// <remarks>
-    /// Search completed/sold listings — eBay&#39;s sold-price history.
+    /// Deprecated — eBay requires a signed-in account for sold listings. Returns 410.
     /// </remarks>
     /// <param name="query">Search keywords</param>
     /// <param name="domain"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -81,7 +81,7 @@ public:
     /// <param name="condition">new|open_box|refurbished|used|for_parts (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="minPrice"> (optional, default to 0.0)</param>
     /// <param name="maxPrice"> (optional, default to 0.0)</param>
-    pplx::task<std::shared_ptr<AnyType>> ebayCompletedSoldListings(
+    pplx::task<std::shared_ptr<AnyType>> ebayCompletedSoldListingsDeprecated(
         utility::string_t query,
         boost::optional<utility::string_t> domain,
         boost::optional<utility::string_t> categoryId,
