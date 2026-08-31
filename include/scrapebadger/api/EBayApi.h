@@ -78,9 +78,10 @@ public:
     /// <param name="page"> (optional, default to 0)</param>
     /// <param name="perPage">60, 120 or 240 (optional, default to 0)</param>
     /// <param name="sortBy">best_match|ending_soonest|newly_listed|price_low_to_high|price_high_to_low (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="condition">new|open_box|refurbished|used|for_parts (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="condition">new|open_box|refurbished|used|for_parts|graded|ungraded (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="minPrice"> (optional, default to 0.0)</param>
     /// <param name="maxPrice"> (optional, default to 0.0)</param>
+    /// <param name="location">domestic|worldwide (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> ebayCompletedSoldListings(
         utility::string_t query,
         boost::optional<utility::string_t> domain,
@@ -90,7 +91,8 @@ public:
         boost::optional<utility::string_t> sortBy,
         boost::optional<utility::string_t> condition,
         boost::optional<double> minPrice,
-        boost::optional<double> maxPrice
+        boost::optional<double> maxPrice,
+        boost::optional<utility::string_t> location
     ) const;
     /// <summary>
     /// eBay scraper health check
@@ -218,11 +220,12 @@ public:
     /// <param name="page"> (optional, default to 0)</param>
     /// <param name="perPage">60, 120 or 240 (optional, default to 0)</param>
     /// <param name="sortBy">best_match|ending_soonest|newly_listed|price_low_to_high|price_high_to_low (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="condition">new|open_box|refurbished|used|for_parts (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="condition">new|open_box|refurbished|used|for_parts|graded|ungraded (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="buyingFormat">auction|buy_it_now|best_offer (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="minPrice"> (optional, default to 0.0)</param>
     /// <param name="maxPrice"> (optional, default to 0.0)</param>
     /// <param name="freeShipping"> (optional, default to false)</param>
+    /// <param name="location">domestic|worldwide (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> ebaySearchListings(
         utility::string_t query,
         boost::optional<utility::string_t> domain,
@@ -234,7 +237,8 @@ public:
         boost::optional<utility::string_t> buyingFormat,
         boost::optional<double> minPrice,
         boost::optional<double> maxPrice,
-        boost::optional<bool> freeShipping
+        boost::optional<bool> freeShipping,
+        boost::optional<utility::string_t> location
     ) const;
 
 protected:
