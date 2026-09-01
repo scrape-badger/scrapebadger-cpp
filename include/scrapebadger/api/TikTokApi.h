@@ -377,6 +377,16 @@ public:
         boost::optional<int32_t> count
     ) const;
     /// <summary>
+    /// Search TikTok Shop products
+    /// </summary>
+    /// <remarks>
+    /// Keyword search over TikTok Shop products (US): products with their bound video, matching shops, related searches and categories.
+    /// </remarks>
+    /// <param name="q">Keyword, e.g. &#39;wireless earbuds&#39;</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokSearchTiktokShopProducts(
+        utility::string_t q
+    ) const;
+    /// <summary>
     /// Search users
     /// </summary>
     /// <remarks>
@@ -407,6 +417,44 @@ public:
         boost::optional<utility::string_t> region,
         boost::optional<int32_t> count,
         boost::optional<utility::string_t> cursor
+    ) const;
+    /// <summary>
+    /// TikTok Shop best sellers
+    /// </summary>
+    /// <remarks>
+    /// TikTok Shop&#39;s own ranking of the best-selling products of the past 30 days (US).
+    /// </remarks>
+    /// <param name="count">Max products to return (optional, default to 0)</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopBestSellers(
+        boost::optional<int32_t> count
+    ) const;
+    /// <summary>
+    /// TikTok Shop category: subcategories + top products
+    /// </summary>
+    /// <remarks>
+    /// A category&#39;s subcategories and its top products as TikTok Shop ranks them (US).
+    /// </remarks>
+    /// <param name="categoryId"></param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopCategorySubcategoriesTopProducts(
+        utility::string_t categoryId
+    ) const;
+    /// <summary>
+    /// TikTok Shop product detail
+    /// </summary>
+    /// <remarks>
+    /// Full TikTok Shop product page (US): description, images, price, SKUs with stock, reviews, shop and TikTok&#39;s AI summary.
+    /// </remarks>
+    /// <param name="productId"></param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopProductDetail(
+        utility::string_t productId
+    ) const;
+    /// <summary>
+    /// TikTok Shop root categories
+    /// </summary>
+    /// <remarks>
+    /// Top-level TikTok Shop categories (US). Drill down with /shop/categories/{category_id}.
+    /// </remarks>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopRootCategories(
     ) const;
     /// <summary>
     /// Trending hashtags
