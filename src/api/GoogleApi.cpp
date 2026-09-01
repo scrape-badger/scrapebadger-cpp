@@ -3360,7 +3360,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestOverTime(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleMultiSellerOffersByBarcode(utility::string_t barcode, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleMultiSellerOffersByBarcode(boost::optional<utility::string_t> barcode, boost::optional<utility::string_t> catalogId, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> domain) const
 {
 
 
@@ -3401,8 +3401,13 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleMultiSellerOffersByBarcode
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (barcode)
     {
-        localVarQueryParams[utility::conversions::to_string_t("barcode")] = ApiClient::parameterToString(barcode);
+        localVarQueryParams[utility::conversions::to_string_t("barcode")] = ApiClient::parameterToString(*barcode);
+    }
+    if (catalogId)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("catalog_id")] = ApiClient::parameterToString(*catalogId);
     }
     if (gl)
     {
@@ -3411,6 +3416,10 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleMultiSellerOffersByBarcode
     if (hl)
     {
         localVarQueryParams[utility::conversions::to_string_t("hl")] = ApiClient::parameterToString(*hl);
+    }
+    if (domain)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

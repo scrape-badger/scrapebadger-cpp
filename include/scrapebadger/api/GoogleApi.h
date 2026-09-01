@@ -470,15 +470,19 @@ public:
     /// Multi-seller offers by barcode
     /// </summary>
     /// <remarks>
-    /// Resolve a barcode to a product via Google web search, then return its Google Shopping seller offers (source + price per merchant).
+    /// Google Shopping seller offers (source + price + link per merchant) for a product identified either by &#x60;&#x60;barcode&#x60;&#x60; (resolved via Google web search) or by its Google Shopping &#x60;&#x60;catalog_id&#x60;&#x60; (read straight off Google&#39;s product page, all seller pages fetched in parallel).
     /// </remarks>
-    /// <param name="barcode">Product barcode — GTIN-8 / UPC-A / EAN-13 / GTIN-14</param>
+    /// <param name="barcode">Product barcode — GTIN-8 / UPC-A / EAN-13 / GTIN-14 (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="catalogId">Google Shopping catalogid (the &#x60;catalog_id&#x60; on /shopping/search tiles, or &#x60;prds&#x3D;catalogid:&lt;id&gt;&#x60; in a Google Shopping URL). Alternative to &#x60;barcode&#x60;; exactly one of the two is required (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="gl">Country code (ISO 3166 alpha-2) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="hl">Language code (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="domain">Google domain (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> googleMultiSellerOffersByBarcode(
-        utility::string_t barcode,
+        boost::optional<utility::string_t> barcode,
+        boost::optional<utility::string_t> catalogId,
         boost::optional<utility::string_t> gl,
-        boost::optional<utility::string_t> hl
+        boost::optional<utility::string_t> hl,
+        boost::optional<utility::string_t> domain
     ) const;
     /// <summary>
     /// News by topic
