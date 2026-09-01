@@ -100,7 +100,7 @@ public:
     /// Take a screenshot
     /// </summary>
     /// <remarks>
-    /// Take a screenshot of a URL. (Phase 2 — patchright engine)
+    /// Take a screenshot of a URL. (browser engine)
     /// </remarks>
     pplx::task<std::shared_ptr<AnyType>> webTakeAScreenshot(
     ) const;
