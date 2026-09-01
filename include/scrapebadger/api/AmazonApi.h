@@ -99,10 +99,12 @@ public:
     /// <param name="asin"></param>
     /// <param name="domain"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="zip"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="page">Offer page, 10 rows each (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> amazonGetAllSellerOffersBuybox(
         utility::string_t asin,
         boost::optional<utility::string_t> domain,
-        boost::optional<utility::string_t> zip
+        boost::optional<utility::string_t> zip,
+        boost::optional<int32_t> page
     ) const;
     /// <summary>
     /// Get product detail

@@ -582,7 +582,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBrowseNodeCategoryListing(
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetAllSellerOffersBuybox(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> zip) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetAllSellerOffersBuybox(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> zip, boost::optional<int32_t> page) const
 {
 
 
@@ -631,6 +631,10 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetAllSellerOffersBuybox(u
     if (zip)
     {
         localVarQueryParams[utility::conversions::to_string_t("zip")] = ApiClient::parameterToString(*zip);
+    }
+    if (page)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
