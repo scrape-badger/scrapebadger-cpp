@@ -3382,7 +3382,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokAdvertisers(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokShopProducts(utility::string_t q) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokShopProducts(utility::string_t q, boost::optional<utility::string_t> region, boost::optional<int32_t> offset) const
 {
 
 
@@ -3425,6 +3425,14 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokShopProducts(u
 
     {
         localVarQueryParams[utility::conversions::to_string_t("q")] = ApiClient::parameterToString(q);
+    }
+    if (region)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (offset)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("offset")] = ApiClient::parameterToString(*offset);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3805,7 +3813,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchVideos(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopBestSellers(boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopBestSellers(boost::optional<utility::string_t> region, boost::optional<int32_t> count) const
 {
 
 
@@ -3846,6 +3854,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopBestSellers(boos
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (region)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
@@ -3939,7 +3951,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopBestSellers(boos
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategorySubcategoriesTopProducts(utility::string_t categoryId) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategorySubcategoriesTopProducts(utility::string_t categoryId, boost::optional<utility::string_t> region) const
 {
 
 
@@ -3981,6 +3993,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategorySubcateg
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (region)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -4070,7 +4086,142 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategorySubcateg
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductDetail(utility::string_t productId) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopDealsFeed(utility::string_t deal, boost::optional<utility::string_t> region) const
+{
+
+
+    std::shared_ptr<const ApiConfiguration> localVarApiConfiguration( m_ApiClient->getConfiguration() );
+    utility::string_t localVarPath = utility::conversions::to_string_t("/v1/tiktok/shop/deals/{deal}");
+    boost::replace_all(localVarPath, utility::conversions::to_string_t("{") + utility::conversions::to_string_t("deal") + utility::conversions::to_string_t("}"), web::uri::encode_uri(ApiClient::parameterToString(deal)));
+
+    std::map<utility::string_t, utility::string_t> localVarQueryParams;
+    std::map<utility::string_t, utility::string_t> localVarHeaderParams( localVarApiConfiguration->getDefaultHeaders() );
+    std::map<utility::string_t, utility::string_t> localVarFormParams;
+    std::map<utility::string_t, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    std::unordered_set<utility::string_t> localVarResponseHttpContentTypes;
+    localVarResponseHttpContentTypes.insert( utility::conversions::to_string_t("application/json") );
+
+    utility::string_t localVarResponseHttpContentType;
+
+    // use JSON if possible
+    if ( localVarResponseHttpContentTypes.size() == 0 )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // JSON
+    else if ( localVarResponseHttpContentTypes.find(utility::conversions::to_string_t("application/json")) != localVarResponseHttpContentTypes.end() )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // multipart formdata
+    else if( localVarResponseHttpContentTypes.find(utility::conversions::to_string_t("multipart/form-data")) != localVarResponseHttpContentTypes.end() )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("multipart/form-data");
+    }
+    else
+    {
+        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokTiktokShopDealsFeed does not produce any supported media type"));
+    }
+
+    localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
+
+    std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
+
+    if (region)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+
+    std::shared_ptr<IHttpBody> localVarHttpBody;
+    utility::string_t localVarRequestHttpContentType;
+
+    // use JSON if possible
+    if ( localVarConsumeHttpContentTypes.size() == 0 || localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("application/json")) != localVarConsumeHttpContentTypes.end() )
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // multipart formdata
+    else if( localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("multipart/form-data")) != localVarConsumeHttpContentTypes.end() )
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("multipart/form-data");
+    }
+    else if (localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("application/x-www-form-urlencoded")) != localVarConsumeHttpContentTypes.end())
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("application/x-www-form-urlencoded");
+    }
+    else
+    {
+        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokTiktokShopDealsFeed does not consume any supported media type"));
+    }
+
+    // authentication (ApiKeyAuth) required
+    {
+        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("X-API-Key"));
+        if ( localVarApiKey.size() > 0 )
+        {
+            localVarHeaderParams[utility::conversions::to_string_t("X-API-Key")] = localVarApiKey;
+        }
+    }
+
+    return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
+    .then([=, this](web::http::http_response localVarResponse)
+    {
+        if (m_ApiClient->getResponseHandler())
+        {
+            m_ApiClient->getResponseHandler()(localVarResponse.status_code(), localVarResponse.headers());
+        }
+
+        // 1xx - informational : OK
+        // 2xx - successful       : OK
+        // 3xx - redirection   : OK
+        // 4xx - client error  : not OK
+        // 5xx - client error  : not OK
+        if (localVarResponse.status_code() >= 400)
+        {
+            throw ApiException(localVarResponse.status_code()
+                , utility::conversions::to_string_t("error calling tiktokTiktokShopDealsFeed: ") + localVarResponse.reason_phrase()
+                , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
+        }
+
+        // check response content type
+        if(localVarResponse.headers().has(utility::conversions::to_string_t("Content-Type")))
+        {
+            utility::string_t localVarContentType = localVarResponse.headers()[utility::conversions::to_string_t("Content-Type")];
+            if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
+            {
+                throw ApiException(500
+                    , utility::conversions::to_string_t("error calling tiktokTiktokShopDealsFeed: unexpected response type: ") + localVarContentType
+                    , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
+            }
+        }
+
+        return localVarResponse.extract_string();
+    })
+    .then([=, this](utility::string_t localVarResponse)
+    {
+        std::shared_ptr<AnyType> localVarResult(nullptr);
+
+        if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
+        {
+            web::json::value localVarJson = web::json::value::parse(localVarResponse);
+
+            ModelBase::fromJson(localVarJson, localVarResult);
+        }
+        // else if(localVarResponseHttpContentType == utility::conversions::to_string_t("multipart/form-data"))
+        // {
+        // TODO multipart response parsing
+        // }
+        else
+        {
+            throw ApiException(500
+                , utility::conversions::to_string_t("error calling tiktokTiktokShopDealsFeed: unsupported response type"));
+        }
+
+        return localVarResult;
+    });
+}
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductDetail(utility::string_t productId, boost::optional<utility::string_t> region) const
 {
 
 
@@ -4112,6 +4263,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductDetail(ut
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (region)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -4201,7 +4356,166 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductDetail(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRootCategories() const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductReviews(utility::string_t productId, boost::optional<utility::string_t> region, boost::optional<int32_t> page, boost::optional<int32_t> count, boost::optional<utility::string_t> sort, boost::optional<int32_t> rating, boost::optional<bool> withMedia, boost::optional<bool> verified) const
+{
+
+
+    std::shared_ptr<const ApiConfiguration> localVarApiConfiguration( m_ApiClient->getConfiguration() );
+    utility::string_t localVarPath = utility::conversions::to_string_t("/v1/tiktok/shop/products/{product_id}/reviews");
+    boost::replace_all(localVarPath, utility::conversions::to_string_t("{") + utility::conversions::to_string_t("product_id") + utility::conversions::to_string_t("}"), web::uri::encode_uri(ApiClient::parameterToString(productId)));
+
+    std::map<utility::string_t, utility::string_t> localVarQueryParams;
+    std::map<utility::string_t, utility::string_t> localVarHeaderParams( localVarApiConfiguration->getDefaultHeaders() );
+    std::map<utility::string_t, utility::string_t> localVarFormParams;
+    std::map<utility::string_t, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    std::unordered_set<utility::string_t> localVarResponseHttpContentTypes;
+    localVarResponseHttpContentTypes.insert( utility::conversions::to_string_t("application/json") );
+
+    utility::string_t localVarResponseHttpContentType;
+
+    // use JSON if possible
+    if ( localVarResponseHttpContentTypes.size() == 0 )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // JSON
+    else if ( localVarResponseHttpContentTypes.find(utility::conversions::to_string_t("application/json")) != localVarResponseHttpContentTypes.end() )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // multipart formdata
+    else if( localVarResponseHttpContentTypes.find(utility::conversions::to_string_t("multipart/form-data")) != localVarResponseHttpContentTypes.end() )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("multipart/form-data");
+    }
+    else
+    {
+        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokTiktokShopProductReviews does not produce any supported media type"));
+    }
+
+    localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
+
+    std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
+
+    if (region)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (page)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (count)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (sort)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
+    }
+    if (rating)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("rating")] = ApiClient::parameterToString(*rating);
+    }
+    if (withMedia)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("with_media")] = ApiClient::parameterToString(*withMedia);
+    }
+    if (verified)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("verified")] = ApiClient::parameterToString(*verified);
+    }
+
+    std::shared_ptr<IHttpBody> localVarHttpBody;
+    utility::string_t localVarRequestHttpContentType;
+
+    // use JSON if possible
+    if ( localVarConsumeHttpContentTypes.size() == 0 || localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("application/json")) != localVarConsumeHttpContentTypes.end() )
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // multipart formdata
+    else if( localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("multipart/form-data")) != localVarConsumeHttpContentTypes.end() )
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("multipart/form-data");
+    }
+    else if (localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("application/x-www-form-urlencoded")) != localVarConsumeHttpContentTypes.end())
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("application/x-www-form-urlencoded");
+    }
+    else
+    {
+        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokTiktokShopProductReviews does not consume any supported media type"));
+    }
+
+    // authentication (ApiKeyAuth) required
+    {
+        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("X-API-Key"));
+        if ( localVarApiKey.size() > 0 )
+        {
+            localVarHeaderParams[utility::conversions::to_string_t("X-API-Key")] = localVarApiKey;
+        }
+    }
+
+    return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
+    .then([=, this](web::http::http_response localVarResponse)
+    {
+        if (m_ApiClient->getResponseHandler())
+        {
+            m_ApiClient->getResponseHandler()(localVarResponse.status_code(), localVarResponse.headers());
+        }
+
+        // 1xx - informational : OK
+        // 2xx - successful       : OK
+        // 3xx - redirection   : OK
+        // 4xx - client error  : not OK
+        // 5xx - client error  : not OK
+        if (localVarResponse.status_code() >= 400)
+        {
+            throw ApiException(localVarResponse.status_code()
+                , utility::conversions::to_string_t("error calling tiktokTiktokShopProductReviews: ") + localVarResponse.reason_phrase()
+                , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
+        }
+
+        // check response content type
+        if(localVarResponse.headers().has(utility::conversions::to_string_t("Content-Type")))
+        {
+            utility::string_t localVarContentType = localVarResponse.headers()[utility::conversions::to_string_t("Content-Type")];
+            if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
+            {
+                throw ApiException(500
+                    , utility::conversions::to_string_t("error calling tiktokTiktokShopProductReviews: unexpected response type: ") + localVarContentType
+                    , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
+            }
+        }
+
+        return localVarResponse.extract_string();
+    })
+    .then([=, this](utility::string_t localVarResponse)
+    {
+        std::shared_ptr<AnyType> localVarResult(nullptr);
+
+        if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
+        {
+            web::json::value localVarJson = web::json::value::parse(localVarResponse);
+
+            ModelBase::fromJson(localVarJson, localVarResult);
+        }
+        // else if(localVarResponseHttpContentType == utility::conversions::to_string_t("multipart/form-data"))
+        // {
+        // TODO multipart response parsing
+        // }
+        else
+        {
+            throw ApiException(500
+                , utility::conversions::to_string_t("error calling tiktokTiktokShopProductReviews: unsupported response type"));
+        }
+
+        return localVarResult;
+    });
+}
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRootCategories(boost::optional<utility::string_t> region) const
 {
 
 
@@ -4242,6 +4556,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRootCategories()
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (region)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -4326,6 +4644,149 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRootCategories()
         {
             throw ApiException(500
                 , utility::conversions::to_string_t("error calling tiktokTiktokShopRootCategories: unsupported response type"));
+        }
+
+        return localVarResult;
+    });
+}
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopStoreProducts(utility::string_t sellerId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> cursor, boost::optional<int32_t> count) const
+{
+
+
+    std::shared_ptr<const ApiConfiguration> localVarApiConfiguration( m_ApiClient->getConfiguration() );
+    utility::string_t localVarPath = utility::conversions::to_string_t("/v1/tiktok/shop/stores/{seller_id}");
+    boost::replace_all(localVarPath, utility::conversions::to_string_t("{") + utility::conversions::to_string_t("seller_id") + utility::conversions::to_string_t("}"), web::uri::encode_uri(ApiClient::parameterToString(sellerId)));
+
+    std::map<utility::string_t, utility::string_t> localVarQueryParams;
+    std::map<utility::string_t, utility::string_t> localVarHeaderParams( localVarApiConfiguration->getDefaultHeaders() );
+    std::map<utility::string_t, utility::string_t> localVarFormParams;
+    std::map<utility::string_t, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    std::unordered_set<utility::string_t> localVarResponseHttpContentTypes;
+    localVarResponseHttpContentTypes.insert( utility::conversions::to_string_t("application/json") );
+
+    utility::string_t localVarResponseHttpContentType;
+
+    // use JSON if possible
+    if ( localVarResponseHttpContentTypes.size() == 0 )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // JSON
+    else if ( localVarResponseHttpContentTypes.find(utility::conversions::to_string_t("application/json")) != localVarResponseHttpContentTypes.end() )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // multipart formdata
+    else if( localVarResponseHttpContentTypes.find(utility::conversions::to_string_t("multipart/form-data")) != localVarResponseHttpContentTypes.end() )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("multipart/form-data");
+    }
+    else
+    {
+        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokTiktokShopStoreProducts does not produce any supported media type"));
+    }
+
+    localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
+
+    std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
+
+    if (region)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (cursor)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (count)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+
+    std::shared_ptr<IHttpBody> localVarHttpBody;
+    utility::string_t localVarRequestHttpContentType;
+
+    // use JSON if possible
+    if ( localVarConsumeHttpContentTypes.size() == 0 || localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("application/json")) != localVarConsumeHttpContentTypes.end() )
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // multipart formdata
+    else if( localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("multipart/form-data")) != localVarConsumeHttpContentTypes.end() )
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("multipart/form-data");
+    }
+    else if (localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("application/x-www-form-urlencoded")) != localVarConsumeHttpContentTypes.end())
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("application/x-www-form-urlencoded");
+    }
+    else
+    {
+        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokTiktokShopStoreProducts does not consume any supported media type"));
+    }
+
+    // authentication (ApiKeyAuth) required
+    {
+        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("X-API-Key"));
+        if ( localVarApiKey.size() > 0 )
+        {
+            localVarHeaderParams[utility::conversions::to_string_t("X-API-Key")] = localVarApiKey;
+        }
+    }
+
+    return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
+    .then([=, this](web::http::http_response localVarResponse)
+    {
+        if (m_ApiClient->getResponseHandler())
+        {
+            m_ApiClient->getResponseHandler()(localVarResponse.status_code(), localVarResponse.headers());
+        }
+
+        // 1xx - informational : OK
+        // 2xx - successful       : OK
+        // 3xx - redirection   : OK
+        // 4xx - client error  : not OK
+        // 5xx - client error  : not OK
+        if (localVarResponse.status_code() >= 400)
+        {
+            throw ApiException(localVarResponse.status_code()
+                , utility::conversions::to_string_t("error calling tiktokTiktokShopStoreProducts: ") + localVarResponse.reason_phrase()
+                , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
+        }
+
+        // check response content type
+        if(localVarResponse.headers().has(utility::conversions::to_string_t("Content-Type")))
+        {
+            utility::string_t localVarContentType = localVarResponse.headers()[utility::conversions::to_string_t("Content-Type")];
+            if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
+            {
+                throw ApiException(500
+                    , utility::conversions::to_string_t("error calling tiktokTiktokShopStoreProducts: unexpected response type: ") + localVarContentType
+                    , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
+            }
+        }
+
+        return localVarResponse.extract_string();
+    })
+    .then([=, this](utility::string_t localVarResponse)
+    {
+        std::shared_ptr<AnyType> localVarResult(nullptr);
+
+        if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
+        {
+            web::json::value localVarJson = web::json::value::parse(localVarResponse);
+
+            ModelBase::fromJson(localVarJson, localVarResult);
+        }
+        // else if(localVarResponseHttpContentType == utility::conversions::to_string_t("multipart/form-data"))
+        // {
+        // TODO multipart response parsing
+        // }
+        else
+        {
+            throw ApiException(500
+                , utility::conversions::to_string_t("error calling tiktokTiktokShopStoreProducts: unsupported response type"));
         }
 
         return localVarResult;

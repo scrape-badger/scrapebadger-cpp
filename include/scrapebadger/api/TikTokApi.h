@@ -380,11 +380,15 @@ public:
     /// Search TikTok Shop products
     /// </summary>
     /// <remarks>
-    /// Keyword search over TikTok Shop products (US): products with their bound video, matching shops, related searches and categories.
+    /// Keyword search over TikTok Shop products: 30 per page with offset pagination (US); the first page also carries matching shops and related searches.
     /// </remarks>
     /// <param name="q">Keyword, e.g. &#39;wireless earbuds&#39;</param>
+    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="offset">Pass back next_offset for the next page (US) (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokSearchTiktokShopProducts(
-        utility::string_t q
+        utility::string_t q,
+        boost::optional<utility::string_t> region,
+        boost::optional<int32_t> offset
     ) const;
     /// <summary>
     /// Search users
@@ -422,39 +426,99 @@ public:
     /// TikTok Shop best sellers
     /// </summary>
     /// <remarks>
-    /// TikTok Shop&#39;s own ranking of the best-selling products of the past 30 days (US).
+    /// TikTok Shop&#39;s own ranking of the best-selling products of the past 30 days (US only).
     /// </remarks>
+    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count">Max products to return (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopBestSellers(
+        boost::optional<utility::string_t> region,
         boost::optional<int32_t> count
     ) const;
     /// <summary>
     /// TikTok Shop category: subcategories + top products
     /// </summary>
     /// <remarks>
-    /// A category&#39;s subcategories and its top products as TikTok Shop ranks them (US).
+    /// A category&#39;s subcategories and its top products as TikTok Shop ranks them.
     /// </remarks>
     /// <param name="categoryId"></param>
+    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopCategorySubcategoriesTopProducts(
-        utility::string_t categoryId
+        utility::string_t categoryId,
+        boost::optional<utility::string_t> region
+    ) const;
+    /// <summary>
+    /// TikTok Shop deals feed
+    /// </summary>
+    /// <remarks>
+    /// A curated storefront feed: recommended-for-you, or premium-offers (US only).
+    /// </remarks>
+    /// <param name="deal"></param>
+    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopDealsFeed(
+        utility::string_t deal,
+        boost::optional<utility::string_t> region
     ) const;
     /// <summary>
     /// TikTok Shop product detail
     /// </summary>
     /// <remarks>
-    /// Full TikTok Shop product page (US): description, images, price, SKUs with stock, reviews, shop and TikTok&#39;s AI summary.
+    /// Full TikTok Shop product page: description, images, price, SKUs with stock, first reviews, shop and TikTok&#39;s AI summary.
     /// </remarks>
     /// <param name="productId"></param>
+    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopProductDetail(
-        utility::string_t productId
+        utility::string_t productId,
+        boost::optional<utility::string_t> region
+    ) const;
+    /// <summary>
+    /// TikTok Shop product reviews
+    /// </summary>
+    /// <remarks>
+    /// Paginated product reviews with the rating breakdown (US).
+    /// </remarks>
+    /// <param name="productId"></param>
+    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="page"> (optional, default to 0)</param>
+    /// <param name="count"> (optional, default to 0)</param>
+    /// <param name="sort">recommended | recent (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="rating">Only this star rating (optional, default to 0)</param>
+    /// <param name="withMedia">Only reviews with photos/videos (optional, default to false)</param>
+    /// <param name="verified">Only verified purchases (optional, default to false)</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopProductReviews(
+        utility::string_t productId,
+        boost::optional<utility::string_t> region,
+        boost::optional<int32_t> page,
+        boost::optional<int32_t> count,
+        boost::optional<utility::string_t> sort,
+        boost::optional<int32_t> rating,
+        boost::optional<bool> withMedia,
+        boost::optional<bool> verified
     ) const;
     /// <summary>
     /// TikTok Shop root categories
     /// </summary>
     /// <remarks>
-    /// Top-level TikTok Shop categories (US). Drill down with /shop/categories/{category_id}.
+    /// Top-level TikTok Shop categories of a market. Drill down with /shop/categories/{id}.
     /// </remarks>
+    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopRootCategories(
+        boost::optional<utility::string_t> region
+    ) const;
+    /// <summary>
+    /// TikTok Shop store + products
+    /// </summary>
+    /// <remarks>
+    /// A store&#39;s stats and its cursor-paginated product catalogue (US).
+    /// </remarks>
+    /// <param name="sellerId"></param>
+    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="cursor">Pass back next_cursor for the next page (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="count"> (optional, default to 0)</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopStoreProducts(
+        utility::string_t sellerId,
+        boost::optional<utility::string_t> region,
+        boost::optional<utility::string_t> cursor,
+        boost::optional<int32_t> count
     ) const;
     /// <summary>
     /// Trending hashtags
