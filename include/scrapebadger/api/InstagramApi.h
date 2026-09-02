@@ -48,7 +48,7 @@ public:
     /// About this account
     /// </summary>
     /// <remarks>
-    /// Country, join date and former usernames.
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview. Country, join date and former usernames.
     /// </remarks>
     /// <param name="username"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramAboutThisAccount(
@@ -58,7 +58,7 @@ public:
     /// Blended top search
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="query"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramBlendedTopSearch(
@@ -68,7 +68,7 @@ public:
     /// Get active stories
     /// </summary>
     /// <remarks>
-    /// Active stories (account pool only).
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview. Active stories (account pool only).
     /// </remarks>
     /// <param name="username"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramGetActiveStories(
@@ -78,7 +78,7 @@ public:
     /// Get audio track
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="audioId"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramGetAudioTrack(
@@ -102,7 +102,7 @@ public:
     /// Get followers
     /// </summary>
     /// <remarks>
-    /// Followers list, paginated (account pool).
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview. Followers list, paginated (account pool).
     /// </remarks>
     /// <param name="username"></param>
     /// <param name="amount"> (optional, default to 0)</param>
@@ -118,7 +118,7 @@ public:
     /// Get following
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="username"></param>
     /// <param name="amount"> (optional, default to 0)</param>
@@ -132,7 +132,7 @@ public:
     /// Get hashtag info
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="tag"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramGetHashtagInfo(
@@ -142,7 +142,7 @@ public:
     /// Get highlights
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="username"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramGetHighlights(
@@ -152,7 +152,7 @@ public:
     /// Get likers
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="code"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramGetLikers(
@@ -162,7 +162,7 @@ public:
     /// Get location
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="locationPk"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramGetLocation(
@@ -192,7 +192,7 @@ public:
     /// Get tagged posts
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="username"></param>
     /// <param name="amount"> (optional, default to 0)</param>
@@ -220,7 +220,7 @@ public:
     /// Get user reels
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="username"></param>
     /// <param name="amount"> (optional, default to 0)</param>
@@ -250,7 +250,7 @@ public:
     /// Recent hashtag posts
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="tag"></param>
     /// <param name="amount"> (optional, default to 0)</param>
@@ -264,7 +264,7 @@ public:
     /// Related profiles
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="username"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramRelatedProfiles(
@@ -274,7 +274,7 @@ public:
     /// Search hashtags
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="query"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramSearchHashtags(
@@ -284,7 +284,7 @@ public:
     /// Search users
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="query"></param>
     pplx::task<std::shared_ptr<AnyType>> instagramSearchUsers(
@@ -294,7 +294,7 @@ public:
     /// Top hashtag posts
     /// </summary>
     /// <remarks>
-    /// 
+    /// **Temporarily unavailable.** The authenticated Instagram tier is offline, so this endpoint currently returns &#x60;503 temporarily_unavailable&#x60; (not billed, &#x60;Retry-After&#x60; set) — see https://docs.scrapebadger.com/instagram/overview.
     /// </remarks>
     /// <param name="tag"></param>
     /// <param name="amount"> (optional, default to 0)</param>
