@@ -24,6 +24,7 @@
 
 #include "scrapebadger/AnyType.h"
 #include "scrapebadger/model/HTTPValidationError.h"
+#include <map>
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
 
@@ -209,6 +210,16 @@ public:
     /// List all supported eBay marketplaces.
     /// </remarks>
     pplx::task<std::shared_ptr<AnyType>> ebayListMarkets(
+    ) const;
+    /// <summary>
+    /// Search by image
+    /// </summary>
+    /// <remarks>
+    /// Search active listings by image, the way eBay&#39;s camera icon does.  No &#x60;&#x60;sort_by&#x60;&#x60;: eBay ignores it on a visual results page.
+    /// </remarks>
+    /// <param name="requestBody"></param>
+    pplx::task<std::shared_ptr<AnyType>> ebaySearchByImage(
+        std::map<utility::string_t, std::shared_ptr<AnyType>> requestBody
     ) const;
     /// <summary>
     /// Search listings
