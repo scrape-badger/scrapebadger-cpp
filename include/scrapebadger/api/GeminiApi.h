@@ -53,10 +53,12 @@ public:
     /// <param name="prompt">The prompt to send to Gemini (max 4096 characters).</param>
     /// <param name="country">ISO-3166 alpha-2 egress country, e.g. &#39;US&#39;, &#39;GB&#39;, &#39;DE&#39;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="webSearch">auto (let Gemini decide) | force (ask it to browse) | off (answer from memory). &#x60;web_search_triggered&#x60; in the response always reports what actually happened. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="imageUrl">Public http(s) URL of an image to attach to the prompt. Gemini reads it and answers about it. POST also accepts &#x60;image_base64&#x60;. Exactly one of the two. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> geminiAskGeminiAQuestion(
         utility::string_t prompt,
         boost::optional<utility::string_t> country,
-        boost::optional<utility::string_t> webSearch
+        boost::optional<utility::string_t> webSearch,
+        boost::optional<utility::string_t> imageUrl
     ) const;
     /// <summary>
     /// Ask Gemini a question (POST)

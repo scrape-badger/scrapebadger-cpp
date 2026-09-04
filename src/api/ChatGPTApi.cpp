@@ -35,7 +35,7 @@ ChatGPTApi::~ChatGPTApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> ChatGPTApi::chatgptAskChatgptAQuestion(utility::string_t prompt, boost::optional<utility::string_t> country, boost::optional<utility::string_t> webSearch) const
+pplx::task<std::shared_ptr<AnyType>> ChatGPTApi::chatgptAskChatgptAQuestion(utility::string_t prompt, boost::optional<utility::string_t> country, boost::optional<utility::string_t> webSearch, boost::optional<utility::string_t> imageUrl) const
 {
 
 
@@ -86,6 +86,10 @@ pplx::task<std::shared_ptr<AnyType>> ChatGPTApi::chatgptAskChatgptAQuestion(util
     if (webSearch)
     {
         localVarQueryParams[utility::conversions::to_string_t("web_search")] = ApiClient::parameterToString(*webSearch);
+    }
+    if (imageUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("image_url")] = ApiClient::parameterToString(*imageUrl);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
