@@ -82,6 +82,7 @@ public:
     /// <param name="minPrice"> (optional, default to 0.0)</param>
     /// <param name="maxPrice"> (optional, default to 0.0)</param>
     /// <param name="location">domestic|worldwide (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="language">english|japanese|chinese|korean (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> ebayCompletedSoldListings(
         utility::string_t query,
         boost::optional<utility::string_t> domain,
@@ -92,7 +93,8 @@ public:
         boost::optional<utility::string_t> condition,
         boost::optional<double> minPrice,
         boost::optional<double> maxPrice,
-        boost::optional<utility::string_t> location
+        boost::optional<utility::string_t> location,
+        boost::optional<utility::string_t> language
     ) const;
     /// <summary>
     /// eBay scraper health check
@@ -226,6 +228,7 @@ public:
     /// <param name="maxPrice"> (optional, default to 0.0)</param>
     /// <param name="freeShipping"> (optional, default to false)</param>
     /// <param name="location">domestic|worldwide (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="language">english|japanese|chinese|korean (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> ebaySearchListings(
         utility::string_t query,
         boost::optional<utility::string_t> domain,
@@ -238,7 +241,8 @@ public:
         boost::optional<double> minPrice,
         boost::optional<double> maxPrice,
         boost::optional<bool> freeShipping,
-        boost::optional<utility::string_t> location
+        boost::optional<utility::string_t> location,
+        boost::optional<utility::string_t> language
     ) const;
 
 protected:

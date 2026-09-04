@@ -190,7 +190,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayBrowseACategory(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> location) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> location, boost::optional<utility::string_t> language) const
 {
 
 
@@ -269,6 +269,10 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(utility:
     if (location)
     {
         localVarQueryParams[utility::conversions::to_string_t("location")] = ApiClient::parameterToString(*location);
+    }
+    if (language)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1711,7 +1715,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchListings(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> buyingFormat, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<bool> freeShipping, boost::optional<utility::string_t> location) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchListings(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> buyingFormat, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<bool> freeShipping, boost::optional<utility::string_t> location, boost::optional<utility::string_t> language) const
 {
 
 
@@ -1798,6 +1802,10 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchListings(utility::string
     if (location)
     {
         localVarQueryParams[utility::conversions::to_string_t("location")] = ApiClient::parameterToString(*location);
+    }
+    if (language)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
