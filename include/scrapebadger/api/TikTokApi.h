@@ -423,18 +423,6 @@ public:
         boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
-    /// TikTok Shop best sellers
-    /// </summary>
-    /// <remarks>
-    /// TikTok Shop&#39;s own ranking of the best-selling products of the past 30 days (US only).
-    /// </remarks>
-    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="count">Max products to return (optional, default to 0)</param>
-    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopBestSellers(
-        boost::optional<utility::string_t> region,
-        boost::optional<int32_t> count
-    ) const;
-    /// <summary>
     /// TikTok Shop category: subcategories + top products
     /// </summary>
     /// <remarks>
@@ -444,18 +432,6 @@ public:
     /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopCategorySubcategoriesTopProducts(
         utility::string_t categoryId,
-        boost::optional<utility::string_t> region
-    ) const;
-    /// <summary>
-    /// TikTok Shop deals feed
-    /// </summary>
-    /// <remarks>
-    /// A curated storefront feed: recommended-for-you, or premium-offers (US only).
-    /// </remarks>
-    /// <param name="deal"></param>
-    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopDealsFeed(
-        utility::string_t deal,
         boost::optional<utility::string_t> region
     ) const;
     /// <summary>
