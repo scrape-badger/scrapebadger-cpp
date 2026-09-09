@@ -256,16 +256,17 @@ public:
     /// Search Marketplace
     /// </summary>
     /// <remarks>
-    /// Search Facebook Marketplace listings by keyword and location.
+    /// Search Facebook Marketplace listings by keyword and location.  &#x60;&#x60;location&#x60;&#x60; must be a Facebook location slug (&#x60;&#x60;london&#x60;&#x60;, &#x60;&#x60;newcastleupontyne&#x60;&#x60;) or a numeric Facebook place id — the &#x60;&#x60;city_page_id&#x60;&#x60; on any listing is one. Human-readable names such as &#x60;&#x60;Durham, UK&#x60;&#x60; are rejected with a 400 rather than silently searching Facebook&#39;s San Francisco default.
     /// </remarks>
     /// <param name="query">Search keywords</param>
-    /// <param name="location">Marketplace location slug (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="location">Marketplace location slug or numeric place id (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="minPrice"> (optional, default to 0)</param>
     /// <param name="maxPrice"> (optional, default to 0)</param>
     /// <param name="daysSinceListed"> (optional, default to 0)</param>
     /// <param name="sortBy"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="itemCondition"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="deliveryMethod"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="radius">Search radius around the location (km, or miles in the US) (optional, default to 0)</param>
     /// <param name="after"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> facebookSearchMarketplace(
         utility::string_t query,
@@ -276,6 +277,7 @@ public:
         boost::optional<utility::string_t> sortBy,
         boost::optional<utility::string_t> itemCondition,
         boost::optional<utility::string_t> deliveryMethod,
+        boost::optional<int32_t> radius,
         boost::optional<utility::string_t> after
     ) const;
     /// <summary>

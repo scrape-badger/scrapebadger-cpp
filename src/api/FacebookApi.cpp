@@ -2463,7 +2463,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchGroups(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(utility::string_t query, boost::optional<utility::string_t> location, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<int32_t> daysSinceListed, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> itemCondition, boost::optional<utility::string_t> deliveryMethod, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(utility::string_t query, boost::optional<utility::string_t> location, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<int32_t> daysSinceListed, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> itemCondition, boost::optional<utility::string_t> deliveryMethod, boost::optional<int32_t> radius, boost::optional<utility::string_t> after) const
 {
 
 
@@ -2534,6 +2534,10 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(util
     if (deliveryMethod)
     {
         localVarQueryParams[utility::conversions::to_string_t("delivery_method")] = ApiClient::parameterToString(*deliveryMethod);
+    }
+    if (radius)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("radius")] = ApiClient::parameterToString(*radius);
     }
     if (after)
     {
