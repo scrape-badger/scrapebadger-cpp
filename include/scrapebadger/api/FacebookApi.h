@@ -146,13 +146,15 @@ public:
     /// Get post comments
     /// </summary>
     /// <remarks>
-    /// Get a Facebook post&#39;s comment thread (paginated).
+    /// Get a Facebook post&#39;s comment thread, 10 per page.  &#x60;&#x60;sort&#x60;&#x60; is &#x60;&#x60;relevance&#x60;&#x60; (Facebook&#39;s ranked order, the default) or &#x60;&#x60;newest&#x60;&#x60;. Follow &#x60;&#x60;end_cursor&#x60;&#x60; while &#x60;&#x60;has_next_page&#x60;&#x60; to walk the whole thread; &#x60;&#x60;total_count&#x60;&#x60; is how many the post has.
     /// </remarks>
     /// <param name="postId"></param>
+    /// <param name="url">Full post permalink/reel URL — overrides post_id (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="after"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="sort"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="sort">relevance | newest (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> facebookGetPostComments(
         utility::string_t postId,
+        boost::optional<utility::string_t> url,
         boost::optional<utility::string_t> after,
         boost::optional<utility::string_t> sort
     ) const;
@@ -160,11 +162,13 @@ public:
     /// Get post detail
     /// </summary>
     /// <remarks>
-    /// Get a Facebook post&#39;s detail plus its top comments.
+    /// Get a Facebook post&#39;s detail: text, media, author, date and the reaction / comment / share counts. The comments themselves come from &#x60;&#x60;/posts/{post_id}/comments&#x60;&#x60;.
     /// </remarks>
     /// <param name="postId"></param>
+    /// <param name="url">Full post permalink/reel URL — overrides post_id (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> facebookGetPostDetail(
-        utility::string_t postId
+        utility::string_t postId,
+        boost::optional<utility::string_t> url
     ) const;
     /// <summary>
     /// Get profile detail

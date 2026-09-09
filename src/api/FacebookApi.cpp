@@ -1119,7 +1119,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPagePosts(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostComments(utility::string_t postId, boost::optional<utility::string_t> after, boost::optional<utility::string_t> sort) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostComments(utility::string_t postId, boost::optional<utility::string_t> url, boost::optional<utility::string_t> after, boost::optional<utility::string_t> sort) const
 {
 
 
@@ -1161,6 +1161,10 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostComments(utilit
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (url)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("url")] = ApiClient::parameterToString(*url);
+    }
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
@@ -1258,7 +1262,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostComments(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostDetail(utility::string_t postId) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostDetail(utility::string_t postId, boost::optional<utility::string_t> url) const
 {
 
 
@@ -1300,6 +1304,10 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostDetail(utility:
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (url)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("url")] = ApiClient::parameterToString(*url);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
