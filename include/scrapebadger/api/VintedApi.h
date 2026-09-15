@@ -24,6 +24,7 @@
 
 #include "scrapebadger/AnyType.h"
 #include "scrapebadger/model/HTTPValidationError.h"
+#include "scrapebadger/model/VintedMobileReadRequest.h"
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
 
@@ -113,6 +114,26 @@ public:
     pplx::task<std::shared_ptr<AnyType>> vintedListMarkets(
     ) const;
     /// <summary>
+    /// List public Vinted mobile operations
+    /// </summary>
+    /// <remarks>
+    /// Discover public read operations, parameters and runnable examples. Free.
+    /// </remarks>
+    pplx::task<std::shared_ptr<AnyType>> vintedListPublicVintedMobileOperations(
+    ) const;
+    /// <summary>
+    /// Read Vinted mobile data
+    /// </summary>
+    /// <remarks>
+    /// Read catalog, listing, seller, review, sold-comparable, pricing, reference, shipping-reference, homepage or help data. No Vinted account is required. This is an allowlisted read API, including read-only upstream POST queries. Returns operation, market, and the upstream JSON under data. One credit. Sold comparable prices are not guaranteed final negotiated sale prices.
+    /// </remarks>
+    /// <param name="operation"></param>
+    /// <param name="vintedMobileReadRequest"></param>
+    pplx::task<std::shared_ptr<AnyType>> vintedReadVintedMobileData(
+        utility::string_t operation,
+        std::shared_ptr<VintedMobileReadRequest> vintedMobileReadRequest
+    ) const;
+    /// <summary>
     /// Search brands
     /// </summary>
     /// <remarks>
@@ -140,6 +161,10 @@ public:
     /// <param name="brandIds"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="catalogIds">Comma-separated Vinted catalog (category) IDs to restrict the search to, e.g. &#39;1904&#39; or &#39;1904,79&#39;. Vinted applies this before searching, so pagination totals reflect the filtered set. A catalog ID is the &#x60;catalog[]&#x60; value in a Vinted category URL (vinted.fr/catalog?catalog[]&#x3D;1904). (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="colorIds">Comma-separated color IDs (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="sizeIds">Comma-separated size IDs (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="materialIds">Comma-separated material IDs (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="time">Pagination time returned by the preceding page (optional, default to 0)</param>
+    /// <param name="searchSessionId">Reuse across pages of one search (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="statusIds">Comma-separated condition/status IDs (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="order"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> vintedSearchVintedItems(
@@ -153,6 +178,10 @@ public:
         boost::optional<utility::string_t> brandIds,
         boost::optional<utility::string_t> catalogIds,
         boost::optional<utility::string_t> colorIds,
+        boost::optional<utility::string_t> sizeIds,
+        boost::optional<utility::string_t> materialIds,
+        boost::optional<int32_t> time,
+        boost::optional<utility::string_t> searchSessionId,
         boost::optional<utility::string_t> statusIds,
         boost::optional<utility::string_t> order
     ) const;
