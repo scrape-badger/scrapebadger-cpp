@@ -24,6 +24,7 @@
 
 #include "scrapebadger/AnyType.h"
 #include "scrapebadger/model/HTTPValidationError.h"
+#include "scrapebadger/model/VintedImageSearchRequest.h"
 #include "scrapebadger/model/VintedMobileReadRequest.h"
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
@@ -144,6 +145,16 @@ public:
     pplx::task<std::shared_ptr<AnyType>> vintedSearchBrands(
         utility::string_t keyword,
         boost::optional<utility::string_t> market
+    ) const;
+    /// <summary>
+    /// Search by image
+    /// </summary>
+    /// <remarks>
+    /// Find active Vinted listings from a photo. 10 credits per successful request. Returns the usual items, pagination and market envelope. Visual ranking; no similarity score. Resend the same image and pagination time for subsequent pages. Structured brand data may be null.
+    /// </remarks>
+    /// <param name="vintedImageSearchRequest"></param>
+    pplx::task<std::shared_ptr<AnyType>> vintedSearchByImage(
+        std::shared_ptr<VintedImageSearchRequest> vintedImageSearchRequest
     ) const;
     /// <summary>
     /// Search Vinted items

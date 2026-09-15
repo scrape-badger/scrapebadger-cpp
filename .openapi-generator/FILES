@@ -71,6 +71,7 @@ include/scrapebadger/model/TweetDeliveryLogListResponse.h
 include/scrapebadger/model/TweetDeliveryLogResponse.h
 include/scrapebadger/model/ValidationError.h
 include/scrapebadger/model/ValidationError_loc_inner.h
+include/scrapebadger/model/VintedImageSearchRequest.h
 include/scrapebadger/model/VintedMobileReadRequest.h
 include/scrapebadger/model/WebhookCreate.h
 include/scrapebadger/model/WebhookListItem.h
@@ -144,6 +145,7 @@ src/model/TweetDeliveryLogListResponse.cpp
 src/model/TweetDeliveryLogResponse.cpp
 src/model/ValidationError.cpp
 src/model/ValidationError_loc_inner.cpp
+src/model/VintedImageSearchRequest.cpp
 src/model/VintedMobileReadRequest.cpp
 src/model/WebhookCreate.cpp
 src/model/WebhookListItem.cpp
