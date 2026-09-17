@@ -125,7 +125,7 @@ public:
     /// <param name="sizes">Comma-separated size IDs (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="conditions">Comma-separated condition slugs (brand_new, used_excellent, ...) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="gender">male | female (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="sort">relevance | newlyListed | priceAscending | priceDescending (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="sort">relevance (default) | priceAscending | priceDescending (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> depopSearchDepopProducts(
         utility::string_t query,
         boost::optional<utility::string_t> market,
