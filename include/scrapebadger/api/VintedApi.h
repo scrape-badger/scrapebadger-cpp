@@ -23,7 +23,15 @@
 #include "scrapebadger/ApiClient.h"
 
 #include "scrapebadger/AnyType.h"
+#include "scrapebadger/model/BrandsResponse.h"
+#include "scrapebadger/model/ColorsResponse.h"
 #include "scrapebadger/model/HTTPValidationError.h"
+#include "scrapebadger/model/ItemDetailResponse.h"
+#include "scrapebadger/model/MarketsResponse.h"
+#include "scrapebadger/model/SearchResponse.h"
+#include "scrapebadger/model/StatusesResponse.h"
+#include "scrapebadger/model/UserItemsResponse.h"
+#include "scrapebadger/model/UserProfileResponse.h"
 #include "scrapebadger/model/VintedImageSearchRequest.h"
 #include "scrapebadger/model/VintedMobileReadRequest.h"
 #include <cpprest/details/basic_types.h>
@@ -54,7 +62,7 @@ public:
     /// </remarks>
     /// <param name="itemId"></param>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<AnyType>> vintedGetItemDetails(
+    pplx::task<std::shared_ptr<ItemDetailResponse>> vintedGetItemDetails(
         int32_t itemId,
         boost::optional<utility::string_t> market
     ) const;
@@ -66,7 +74,7 @@ public:
     /// </remarks>
     /// <param name="userId"></param>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<AnyType>> vintedGetUserProfile(
+    pplx::task<std::shared_ptr<UserProfileResponse>> vintedGetUserProfile(
         int32_t userId,
         boost::optional<utility::string_t> market
     ) const;
@@ -80,7 +88,7 @@ public:
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="page"> (optional, default to 0)</param>
     /// <param name="perPage"> (optional, default to 0)</param>
-    pplx::task<std::shared_ptr<AnyType>> vintedGetUserSListedItems(
+    pplx::task<std::shared_ptr<UserItemsResponse>> vintedGetUserSListedItems(
         int32_t userId,
         boost::optional<utility::string_t> market,
         boost::optional<int32_t> page,
@@ -93,7 +101,7 @@ public:
     /// Get available Vinted colors for filtering.
     /// </remarks>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<AnyType>> vintedListColors(
+    pplx::task<std::shared_ptr<ColorsResponse>> vintedListColors(
         boost::optional<utility::string_t> market
     ) const;
     /// <summary>
@@ -103,7 +111,7 @@ public:
     /// Get available item condition statuses.
     /// </remarks>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<AnyType>> vintedListItemConditions(
+    pplx::task<std::shared_ptr<StatusesResponse>> vintedListItemConditions(
         boost::optional<utility::string_t> market
     ) const;
     /// <summary>
@@ -112,7 +120,7 @@ public:
     /// <remarks>
     /// List all supported Vinted markets.
     /// </remarks>
-    pplx::task<std::shared_ptr<AnyType>> vintedListMarkets(
+    pplx::task<std::shared_ptr<MarketsResponse>> vintedListMarkets(
     ) const;
     /// <summary>
     /// List public Vinted mobile operations
@@ -142,7 +150,7 @@ public:
     /// </remarks>
     /// <param name="keyword">Brand search keyword</param>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<AnyType>> vintedSearchBrands(
+    pplx::task<std::shared_ptr<BrandsResponse>> vintedSearchBrands(
         utility::string_t keyword,
         boost::optional<utility::string_t> market
     ) const;
@@ -153,7 +161,7 @@ public:
     /// Find active Vinted listings from a photo. 10 credits per successful request. Returns the usual items, pagination and market envelope. Visual ranking. Each item carries &#x60;similarity_score&#x60; on the calls where Vinted returns a ranking, and null on the ones where it does not -- a null says nothing about the item. The score sits on an unbounded scale that Vinted changes without notice (0-1 in Sep 2026, ~36-44 since): compare it only with the other items in the SAME response, never to a fixed cut-off. Resend the same image and pagination time for subsequent pages. Structured brand data may be null.
     /// </remarks>
     /// <param name="vintedImageSearchRequest"></param>
-    pplx::task<std::shared_ptr<AnyType>> vintedSearchByImage(
+    pplx::task<std::shared_ptr<SearchResponse>> vintedSearchByImage(
         std::shared_ptr<VintedImageSearchRequest> vintedImageSearchRequest
     ) const;
     /// <summary>
@@ -178,7 +186,7 @@ public:
     /// <param name="searchSessionId">Reuse across pages of one search (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="statusIds">Comma-separated condition/status IDs (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="order"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<AnyType>> vintedSearchVintedItems(
+    pplx::task<std::shared_ptr<SearchResponse>> vintedSearchVintedItems(
         utility::string_t query,
         boost::optional<utility::string_t> market,
         boost::optional<utility::string_t> sellerCountry,
