@@ -24,6 +24,7 @@
 
 #include "scrapebadger/AnyType.h"
 #include "scrapebadger/model/HTTPValidationError.h"
+#include <vector>
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
 
@@ -44,6 +45,22 @@ public:
 
     virtual ~TikTokApi();
 
+    /// <summary>
+    /// Best-selling TikTok Shop products
+    /// </summary>
+    /// <remarks>
+    /// Sales-ranked best-selling products, available for every operating market.  Ranked by real sold_count (source: sales_ranked); works for SG/MY/JP where TikTok&#39;s curated /shop/rankings are not exposed. Omit category_id for a market-wide list.
+    /// </remarks>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="categoryId"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="pages"> (optional, default to 0)</param>
+    /// <param name="limit"> (optional, default to 0)</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokBestSellingTiktokShopProducts(
+        boost::optional<utility::string_t> region,
+        boost::optional<utility::string_t> categoryId,
+        boost::optional<int32_t> pages,
+        boost::optional<int32_t> limit
+    ) const;
     /// <summary>
     /// General search
     /// </summary>
@@ -383,11 +400,13 @@ public:
     /// Keyword search over TikTok Shop products: 30 per page with offset pagination (US); the first page also carries matching shops and related searches.
     /// </remarks>
     /// <param name="q">Keyword, e.g. &#39;wireless earbuds&#39;</param>
-    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="pageToken"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="offset">Pass back next_offset for the next page (US) (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokSearchTiktokShopProducts(
         utility::string_t q,
         boost::optional<utility::string_t> region,
+        boost::optional<utility::string_t> pageToken,
         boost::optional<int32_t> offset
     ) const;
     /// <summary>
@@ -423,13 +442,29 @@ public:
         boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
+    /// TikTok Shop category products
+    /// </summary>
+    /// <remarks>
+    /// Category recommendations. Pass accumulated exclusion IDs for the next page; these are not sales rankings.
+    /// </remarks>
+    /// <param name="categoryId"></param>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="count"> (optional, default to 0)</param>
+    /// <param name="excludeProductIds">Repeat for every next_exclude_product_ids value (optional, default to std::vector&lt;std::shared_ptr&lt;utility::string_t&gt;&gt;())</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopCategoryProducts(
+        utility::string_t categoryId,
+        boost::optional<utility::string_t> region,
+        boost::optional<int32_t> count,
+        boost::optional<std::vector<utility::string_t>> excludeProductIds
+    ) const;
+    /// <summary>
     /// TikTok Shop category: subcategories + top products
     /// </summary>
     /// <remarks>
     /// A category&#39;s subcategories and its top products as TikTok Shop ranks them.
     /// </remarks>
     /// <param name="categoryId"></param>
-    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopCategorySubcategoriesTopProducts(
         utility::string_t categoryId,
         boost::optional<utility::string_t> region
@@ -441,7 +476,7 @@ public:
     /// Full TikTok Shop product page: description, images, price, SKUs with stock, first reviews, shop and TikTok&#39;s AI summary.
     /// </remarks>
     /// <param name="productId"></param>
-    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopProductDetail(
         utility::string_t productId,
         boost::optional<utility::string_t> region
@@ -450,10 +485,10 @@ public:
     /// TikTok Shop product reviews
     /// </summary>
     /// <remarks>
-    /// Paginated product reviews with the rating breakdown (US).
+    /// Paginated product reviews with rating breakdown (US and ID). Indonesia supports recent/recommended ordering, star and media filters; verified&#x3D;true is not supported.
     /// </remarks>
     /// <param name="productId"></param>
-    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="page"> (optional, default to 0)</param>
     /// <param name="count"> (optional, default to 0)</param>
     /// <param name="sort">recommended | recent (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -471,12 +506,26 @@ public:
         boost::optional<bool> verified
     ) const;
     /// <summary>
+    /// TikTok Shop regional mall feed
+    /// </summary>
+    /// <remarks>
+    /// Mall navigation and recommendations with a 15-minute continuation token.  ID, SG, MY, PH, TH, VN and JP are locally verified. Tabs are not a complete category taxonomy.
+    /// </remarks>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="tabId"> (optional, default to 0)</param>
+    /// <param name="pageToken"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopRegionalMallFeed(
+        boost::optional<utility::string_t> region,
+        boost::optional<int32_t> tabId,
+        boost::optional<utility::string_t> pageToken
+    ) const;
+    /// <summary>
     /// TikTok Shop root categories
     /// </summary>
     /// <remarks>
     /// Top-level TikTok Shop categories of a market. Drill down with /shop/categories/{id}.
     /// </remarks>
-    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopRootCategories(
         boost::optional<utility::string_t> region
     ) const;
@@ -487,13 +536,31 @@ public:
     /// A store&#39;s stats and its cursor-paginated product catalogue (US).
     /// </remarks>
     /// <param name="sellerId"></param>
-    /// <param name="region">Market: US, GB, ID (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="cursor">Pass back next_cursor for the next page (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopStoreProducts(
         utility::string_t sellerId,
         boost::optional<utility::string_t> region,
         boost::optional<utility::string_t> cursor,
+        boost::optional<int32_t> count
+    ) const;
+    /// <summary>
+    /// TikTok Shop theme ranking
+    /// </summary>
+    /// <remarks>
+    /// Native category/theme ranking. ID, PH, TH and VN are locally verified.  Types: 1 high seller, 2 trending, 3 ratings. Coverage depends on the configured guest profile; a category recommendation feed is not used as a substitute.
+    /// </remarks>
+    /// <param name="rankId"></param>
+    /// <param name="region">Market: US, GB, ID, JP, MX, SG, MY, PH, TH, VN; coverage varies by endpoint (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="rankType"> (optional, default to 0)</param>
+    /// <param name="cursor"> (optional, default to 0)</param>
+    /// <param name="count"> (optional, default to 0)</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokTiktokShopThemeRanking(
+        utility::string_t rankId,
+        boost::optional<utility::string_t> region,
+        boost::optional<int32_t> rankType,
+        boost::optional<int32_t> cursor,
         boost::optional<int32_t> count
     ) const;
     /// <summary>
