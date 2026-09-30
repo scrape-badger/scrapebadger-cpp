@@ -615,7 +615,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetComments(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowersDeprecated(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowers(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
 {
 
 
@@ -650,7 +650,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowersDeprecated(uti
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokGetFollowersDeprecated does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokGetFollowers does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -664,6 +664,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowersDeprecated(uti
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (cursor)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -685,7 +689,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowersDeprecated(uti
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokGetFollowersDeprecated does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokGetFollowers does not consume any supported media type"));
     }
 
     // authentication (ApiKeyAuth) required
@@ -713,7 +717,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowersDeprecated(uti
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling tiktokGetFollowersDeprecated: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling tiktokGetFollowers: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -724,7 +728,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowersDeprecated(uti
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling tiktokGetFollowersDeprecated: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling tiktokGetFollowers: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -748,13 +752,13 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowersDeprecated(uti
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling tiktokGetFollowersDeprecated: unsupported response type"));
+                , utility::conversions::to_string_t("error calling tiktokGetFollowers: unsupported response type"));
         }
 
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowingDeprecated(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowing(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
 {
 
 
@@ -789,7 +793,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowingDeprecated(uti
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokGetFollowingDeprecated does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokGetFollowing does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -803,6 +807,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowingDeprecated(uti
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (cursor)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -824,7 +832,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowingDeprecated(uti
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokGetFollowingDeprecated does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokGetFollowing does not consume any supported media type"));
     }
 
     // authentication (ApiKeyAuth) required
@@ -852,7 +860,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowingDeprecated(uti
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling tiktokGetFollowingDeprecated: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling tiktokGetFollowing: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -863,7 +871,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowingDeprecated(uti
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling tiktokGetFollowingDeprecated: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling tiktokGetFollowing: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -887,7 +895,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowingDeprecated(uti
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling tiktokGetFollowingDeprecated: unsupported response type"));
+                , utility::conversions::to_string_t("error calling tiktokGetFollowing: unsupported response type"));
         }
 
         return localVarResult;
@@ -1171,7 +1179,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagVideos(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideosDeprecated(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideos(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
 {
 
 
@@ -1206,7 +1214,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideosDeprecated(u
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokGetLikedVideosDeprecated does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("TikTokApi->tiktokGetLikedVideos does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -1220,6 +1228,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideosDeprecated(u
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (cursor)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1241,7 +1253,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideosDeprecated(u
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokGetLikedVideosDeprecated does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("TikTokApi->tiktokGetLikedVideos does not consume any supported media type"));
     }
 
     // authentication (ApiKeyAuth) required
@@ -1269,7 +1281,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideosDeprecated(u
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling tiktokGetLikedVideosDeprecated: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling tiktokGetLikedVideos: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -1280,7 +1292,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideosDeprecated(u
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling tiktokGetLikedVideosDeprecated: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling tiktokGetLikedVideos: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -1304,7 +1316,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideosDeprecated(u
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling tiktokGetLikedVideosDeprecated: unsupported response type"));
+                , utility::conversions::to_string_t("error calling tiktokGetLikedVideos: unsupported response type"));
         }
 
         return localVarResult;
@@ -1725,7 +1737,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetOembedMetadata(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetRelatedVideos(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetRelatedVideos(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
 {
 
 
@@ -1774,6 +1786,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetRelatedVideos(utility::
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (cursor)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1864,7 +1880,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetRelatedVideos(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetReposts(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetReposts(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
 {
 
 
@@ -1913,6 +1929,10 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetReposts(utility::string
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (cursor)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

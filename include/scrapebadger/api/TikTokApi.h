@@ -70,7 +70,7 @@ public:
     /// <param name="query">Search keyword</param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
-    /// <param name="cursor">Composite pagination cursor (offset.search_id) from a prior page&#39;s pagination.cursor (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="cursor">Opaque continuation cursor from a prior page&#39;s pagination.cursor (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokGeneralSearch(
         utility::string_t query,
         boost::optional<utility::string_t> region,
@@ -112,32 +112,36 @@ public:
         boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
-    /// Get followers (deprecated)
+    /// Get followers
     /// </summary>
     /// <remarks>
-    /// DEPRECATED — TikTok followers require an authenticated account session. Returns HTTP 410.
+    /// Get publicly visible followers without an account.
     /// </remarks>
     /// <param name="username"></param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
-    pplx::task<std::shared_ptr<AnyType>> tiktokGetFollowersDeprecated(
+    /// <param name="cursor">Continuation cursor from the previous page (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokGetFollowers(
         utility::string_t username,
         boost::optional<utility::string_t> region,
-        boost::optional<int32_t> count
+        boost::optional<int32_t> count,
+        boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
-    /// Get following (deprecated)
+    /// Get following
     /// </summary>
     /// <remarks>
-    /// DEPRECATED — TikTok following requires an authenticated account session. Returns HTTP 410.
+    /// Get publicly visible followed accounts. Hidden lists return HTTP 403.
     /// </remarks>
     /// <param name="username"></param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
-    pplx::task<std::shared_ptr<AnyType>> tiktokGetFollowingDeprecated(
+    /// <param name="cursor">Continuation cursor from the previous page (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokGetFollowing(
         utility::string_t username,
         boost::optional<utility::string_t> region,
-        boost::optional<int32_t> count
+        boost::optional<int32_t> count,
+        boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
     /// Get hashtag detail
@@ -168,18 +172,20 @@ public:
         boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
-    /// Get liked videos (deprecated)
+    /// Get liked videos
     /// </summary>
     /// <remarks>
-    /// DEPRECATED — TikTok liked videos require an authenticated account session. Returns HTTP 410.
+    /// Get public liked videos. Hidden liked lists return HTTP 403.
     /// </remarks>
     /// <param name="username"></param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
-    pplx::task<std::shared_ptr<AnyType>> tiktokGetLikedVideosDeprecated(
+    /// <param name="cursor">Continuation cursor from the previous page (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> tiktokGetLikedVideos(
         utility::string_t username,
         boost::optional<utility::string_t> region,
-        boost::optional<int32_t> count
+        boost::optional<int32_t> count,
+        boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
     /// Get music/sound detail
@@ -230,10 +236,12 @@ public:
     /// <param name="videoId"></param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
+    /// <param name="cursor">Continuation cursor from the previous page (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokGetRelatedVideos(
         utility::string_t videoId,
         boost::optional<utility::string_t> region,
-        boost::optional<int32_t> count
+        boost::optional<int32_t> count,
+        boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
     /// Get reposts
@@ -244,10 +252,12 @@ public:
     /// <param name="username"></param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
+    /// <param name="cursor">Continuation cursor from the previous page (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokGetReposts(
         utility::string_t username,
         boost::optional<utility::string_t> region,
-        boost::optional<int32_t> count
+        boost::optional<int32_t> count,
+        boost::optional<utility::string_t> cursor
     ) const;
     /// <summary>
     /// Get TikTok ad detail
@@ -294,7 +304,7 @@ public:
     /// <param name="username"></param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
-    /// <param name="cursor">Pagination cursor from a prior page&#39;s &#x60;pagination.cursor&#x60; (signer path only). (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="cursor">Pagination cursor from a prior page&#39;s &#x60;pagination.cursor&#x60; (opaque; expires after 15 minutes). (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokGetUserVideos(
         utility::string_t username,
         boost::optional<utility::string_t> region,
@@ -348,7 +358,7 @@ public:
     /// <param name="query">Search keyword</param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
-    /// <param name="cursor">Composite pagination cursor (offset.search_id) from a prior page&#39;s pagination.cursor (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="cursor">Opaque continuation cursor from a prior page&#39;s pagination.cursor (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokSearchHashtags(
         utility::string_t query,
         boost::optional<utility::string_t> region,
@@ -418,7 +428,7 @@ public:
     /// <param name="query">Search keyword</param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
-    /// <param name="cursor">Composite pagination cursor (offset.search_id) from a prior page&#39;s pagination.cursor (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="cursor">Opaque continuation cursor from a prior page&#39;s pagination.cursor (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokSearchUsers(
         utility::string_t query,
         boost::optional<utility::string_t> region,
@@ -434,7 +444,7 @@ public:
     /// <param name="query">Search keyword</param>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="count"> (optional, default to 0)</param>
-    /// <param name="cursor">Composite pagination cursor (offset.search_id) from a prior page&#39;s pagination.cursor (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="cursor">Opaque continuation cursor from a prior page&#39;s pagination.cursor (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokSearchVideos(
         utility::string_t query,
         boost::optional<utility::string_t> region,
@@ -570,7 +580,7 @@ public:
     /// Get trending hashtags (mobile Discover surface — view_count + creators).
     /// </remarks>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="period"> (optional, default to 0)</param>
+    /// <param name="period">Historical windows are unavailable; omit period (optional, default to 0)</param>
     /// <param name="count"> (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTrendingHashtags(
         boost::optional<utility::string_t> region,
@@ -584,7 +594,7 @@ public:
     /// Get trending songs/sounds (mobile hot-music feed — ranked by usage).
     /// </remarks>
     /// <param name="region"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="period"> (optional, default to 0)</param>
+    /// <param name="period">Historical windows are unavailable; omit period (optional, default to 0)</param>
     /// <param name="count"> (optional, default to 0)</param>
     pplx::task<std::shared_ptr<AnyType>> tiktokTrendingSongs(
         boost::optional<utility::string_t> region,
