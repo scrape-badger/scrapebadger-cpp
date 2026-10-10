@@ -23,7 +23,9 @@
 #include "scrapebadger/ApiClient.h"
 
 #include "scrapebadger/AnyType.h"
+#include "scrapebadger/model/ExtractRequest.h"
 #include "scrapebadger/model/HTTPValidationError.h"
+#include "scrapebadger/model/ScreenshotRequest.h"
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
 
@@ -56,19 +58,11 @@ public:
     /// Extract structured data
     /// </summary>
     /// <remarks>
-    /// Extract structured data from a URL using CSS or XPath selectors. (Phase 6)
+    /// Scrape a URL and extract fields with CSS/XPath selectors and/or AI.  &#x60;&#x60;extract_rules&#x60;&#x60; maps a field to a selector and returns &#x60;&#x60;data&#x60;&#x60;; &#x60;&#x60;ai_extract_rules&#x60;&#x60; (field -&gt; description) and &#x60;&#x60;ai_query&#x60;&#x60; return &#x60;&#x60;ai_extraction&#x60;&#x60;. Billed as a scrape, plus the AI extraction credits when AI is asked for and succeeds.
     /// </remarks>
+    /// <param name="extractRequest"></param>
     pplx::task<std::shared_ptr<AnyType>> webExtractStructuredData(
-    ) const;
-    /// <summary>
-    /// Get batch job status
-    /// </summary>
-    /// <remarks>
-    /// Get the status of a batch scraping job. (Phase 6)
-    /// </remarks>
-    /// <param name="jobId"></param>
-    pplx::task<std::shared_ptr<AnyType>> webGetBatchJobStatus(
-        utility::string_t jobId
+        std::shared_ptr<ExtractRequest> extractRequest
     ) const;
     /// <summary>
     /// Poll an auto-unblock discovery job
@@ -89,20 +83,14 @@ public:
     pplx::task<std::shared_ptr<AnyType>> webScrapeAUrl(
     ) const;
     /// <summary>
-    /// Submit batch scraping job
-    /// </summary>
-    /// <remarks>
-    /// Submit a batch of URLs for scraping. (Phase 6)
-    /// </remarks>
-    pplx::task<std::shared_ptr<AnyType>> webSubmitBatchScrapingJob(
-    ) const;
-    /// <summary>
     /// Take a screenshot
     /// </summary>
     /// <remarks>
-    /// Take a screenshot of a URL. (browser engine)
+    /// Render a URL in the browser engine and return a PNG screenshot.  &#x60;&#x60;screenshot&#x60;&#x60; is the PNG, base64-encoded. &#x60;&#x60;width&#x60;&#x60;/&#x60;&#x60;height&#x60;&#x60; set the viewport; &#x60;&#x60;full_page&#x60;&#x60; captures the whole scrollable page. Billed as a browser scrape (plus the proxy tier); a page that loads without a screenshot is a 502 and costs nothing.
     /// </remarks>
+    /// <param name="screenshotRequest"></param>
     pplx::task<std::shared_ptr<AnyType>> webTakeAScreenshot(
+        std::shared_ptr<ScreenshotRequest> screenshotRequest
     ) const;
     /// <summary>
     /// Web scraper health check

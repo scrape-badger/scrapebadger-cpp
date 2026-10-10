@@ -55,6 +55,9 @@ include/scrapebadger/model/BillingLogListResponse.h
 include/scrapebadger/model/BillingLogResponse.h
 include/scrapebadger/model/BrandsResponse.h
 include/scrapebadger/model/ColorsResponse.h
+include/scrapebadger/model/ExtractRequest.h
+include/scrapebadger/model/ExtractRequest_extract_rules_value.h
+include/scrapebadger/model/ExtractRule.h
 include/scrapebadger/model/FilterRuleCreate.h
 include/scrapebadger/model/FilterRuleDeliveryLogListResponse.h
 include/scrapebadger/model/FilterRuleDeliveryLogResponse.h
@@ -67,6 +70,7 @@ include/scrapebadger/model/HTTPValidationError.h
 include/scrapebadger/model/ItemDetailResponse.h
 include/scrapebadger/model/MarketsResponse.h
 include/scrapebadger/model/Portal_api__routers__v1_twitter_filter_rules__FilterRulePricingResponse.h
+include/scrapebadger/model/ScreenshotRequest.h
 include/scrapebadger/model/SearchResponse.h
 include/scrapebadger/model/StatusesResponse.h
 include/scrapebadger/model/StreamMonitorCreate.h
@@ -149,6 +153,9 @@ src/model/BillingLogListResponse.cpp
 src/model/BillingLogResponse.cpp
 src/model/BrandsResponse.cpp
 src/model/ColorsResponse.cpp
+src/model/ExtractRequest.cpp
+src/model/ExtractRequest_extract_rules_value.cpp
+src/model/ExtractRule.cpp
 src/model/FilterRuleCreate.cpp
 src/model/FilterRuleDeliveryLogListResponse.cpp
 src/model/FilterRuleDeliveryLogResponse.cpp
@@ -161,6 +168,7 @@ src/model/HTTPValidationError.cpp
 src/model/ItemDetailResponse.cpp
 src/model/MarketsResponse.cpp
 src/model/Portal_api__routers__v1_twitter_filter_rules__FilterRulePricingResponse.cpp
+src/model/ScreenshotRequest.cpp
 src/model/SearchResponse.cpp
 src/model/StatusesResponse.cpp
 src/model/StreamMonitorCreate.cpp
