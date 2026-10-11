@@ -718,7 +718,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupDetail(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupPosts(utility::string_t groupId, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupPosts(utility::string_t groupId, boost::optional<utility::string_t> after, boost::optional<utility::string_t> sort) const
 {
 
 
@@ -763,6 +763,10 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupPosts(utility:
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (sort)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

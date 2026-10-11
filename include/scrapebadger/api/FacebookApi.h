@@ -112,13 +112,15 @@ public:
     /// Get group posts
     /// </summary>
     /// <remarks>
-    /// Get a Facebook group&#39;s post feed.
+    /// Get a public Facebook group&#39;s post feed.  &#x60;&#x60;sort&#x60;&#x60; is &#x60;&#x60;newest&#x60;&#x60; (newest first by post time, the default) or &#x60;&#x60;relevance&#x60;&#x60; (Facebook&#39;s \&quot;top posts\&quot; ranking, which moves posts with fresh comments up). Facebook serves 3 posts per page to logged-out visitors; follow &#x60;&#x60;end_cursor&#x60;&#x60; while &#x60;&#x60;has_next_page&#x60;&#x60; for older posts.
     /// </remarks>
     /// <param name="groupId"></param>
     /// <param name="after"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="sort">newest | relevance (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> facebookGetGroupPosts(
         utility::string_t groupId,
-        boost::optional<utility::string_t> after
+        boost::optional<utility::string_t> after,
+        boost::optional<utility::string_t> sort
     ) const;
     /// <summary>
     /// Get page detail
