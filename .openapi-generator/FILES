@@ -44,6 +44,7 @@ include/scrapebadger/api/RedfinApi.h
 include/scrapebadger/api/TikTokApi.h
 include/scrapebadger/api/TwitterApi.h
 include/scrapebadger/api/VintedApi.h
+include/scrapebadger/api/WallapopApi.h
 include/scrapebadger/api/WalmartApi.h
 include/scrapebadger/api/WebApi.h
 include/scrapebadger/api/YahooApi.h
@@ -142,6 +143,7 @@ src/api/RedfinApi.cpp
 src/api/TikTokApi.cpp
 src/api/TwitterApi.cpp
 src/api/VintedApi.cpp
+src/api/WallapopApi.cpp
 src/api/WalmartApi.cpp
 src/api/WebApi.cpp
 src/api/YahooApi.cpp
