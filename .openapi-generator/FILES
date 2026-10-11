@@ -30,6 +30,7 @@ include/scrapebadger/api/FacebookApi.h
 include/scrapebadger/api/GeminiApi.h
 include/scrapebadger/api/GoogleApi.h
 include/scrapebadger/api/GooglePlayApi.h
+include/scrapebadger/api/GumtreeApi.h
 include/scrapebadger/api/IdealistaApi.h
 include/scrapebadger/api/ImmobiliareApi.h
 include/scrapebadger/api/InstagramApi.h
@@ -129,6 +130,7 @@ src/api/FacebookApi.cpp
 src/api/GeminiApi.cpp
 src/api/GoogleApi.cpp
 src/api/GooglePlayApi.cpp
+src/api/GumtreeApi.cpp
 src/api/IdealistaApi.cpp
 src/api/ImmobiliareApi.cpp
 src/api/InstagramApi.cpp
