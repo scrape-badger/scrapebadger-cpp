@@ -35,7 +35,7 @@ GumtreeApi::~GumtreeApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetListing(utility::string_t listingId) const
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetListing(utility::string_t listingId, boost::optional<utility::string_t> market) const
 {
 
 
@@ -77,6 +77,10 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetListing(utility::stri
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (market)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -166,7 +170,7 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetListing(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetSearchFilters(boost::optional<utility::string_t> category, boost::optional<utility::string_t> location, boost::optional<utility::string_t> query) const
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetSearchFilters(boost::optional<utility::string_t> category, boost::optional<utility::string_t> location, boost::optional<utility::string_t> query, boost::optional<utility::string_t> filters, boost::optional<utility::string_t> market) const
 {
 
 
@@ -218,6 +222,14 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetSearchFilters(boost::
     if (query)
     {
         localVarQueryParams[utility::conversions::to_string_t("query")] = ApiClient::parameterToString(*query);
+    }
+    if (filters)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("filters")] = ApiClient::parameterToString(*filters);
+    }
+    if (market)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -308,7 +320,7 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetSearchFilters(boost::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetSellerListings(utility::string_t listingId, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetSellerListings(utility::string_t listingId, boost::optional<int32_t> page, boost::optional<utility::string_t> market) const
 {
 
 
@@ -353,6 +365,10 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGetSellerListings(utilit
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (market)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -703,7 +719,7 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeGumtreeScraperHealthChec
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListCategories(boost::optional<int32_t> parentId) const
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListCategories(boost::optional<int32_t> parentId, boost::optional<utility::string_t> market) const
 {
 
 
@@ -747,6 +763,10 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListCategories(boost::op
     if (parentId)
     {
         localVarQueryParams[utility::conversions::to_string_t("parent_id")] = ApiClient::parameterToString(*parentId);
+    }
+    if (market)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -837,7 +857,7 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListCategories(boost::op
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListLocations(boost::optional<int32_t> parentId) const
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListLocations(boost::optional<int32_t> parentId, boost::optional<utility::string_t> market) const
 {
 
 
@@ -881,6 +901,10 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListLocations(boost::opt
     if (parentId)
     {
         localVarQueryParams[utility::conversions::to_string_t("parent_id")] = ApiClient::parameterToString(*parentId);
+    }
+    if (market)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -971,7 +995,137 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListLocations(boost::opt
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeLocationSuggestions(utility::string_t query) const
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeListMarkets() const
+{
+
+
+    std::shared_ptr<const ApiConfiguration> localVarApiConfiguration( m_ApiClient->getConfiguration() );
+    utility::string_t localVarPath = utility::conversions::to_string_t("/v1/gumtree/markets");
+
+    std::map<utility::string_t, utility::string_t> localVarQueryParams;
+    std::map<utility::string_t, utility::string_t> localVarHeaderParams( localVarApiConfiguration->getDefaultHeaders() );
+    std::map<utility::string_t, utility::string_t> localVarFormParams;
+    std::map<utility::string_t, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    std::unordered_set<utility::string_t> localVarResponseHttpContentTypes;
+    localVarResponseHttpContentTypes.insert( utility::conversions::to_string_t("application/json") );
+
+    utility::string_t localVarResponseHttpContentType;
+
+    // use JSON if possible
+    if ( localVarResponseHttpContentTypes.size() == 0 )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // JSON
+    else if ( localVarResponseHttpContentTypes.find(utility::conversions::to_string_t("application/json")) != localVarResponseHttpContentTypes.end() )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // multipart formdata
+    else if( localVarResponseHttpContentTypes.find(utility::conversions::to_string_t("multipart/form-data")) != localVarResponseHttpContentTypes.end() )
+    {
+        localVarResponseHttpContentType = utility::conversions::to_string_t("multipart/form-data");
+    }
+    else
+    {
+        throw ApiException(400, utility::conversions::to_string_t("GumtreeApi->gumtreeListMarkets does not produce any supported media type"));
+    }
+
+    localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
+
+    std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
+
+
+    std::shared_ptr<IHttpBody> localVarHttpBody;
+    utility::string_t localVarRequestHttpContentType;
+
+    // use JSON if possible
+    if ( localVarConsumeHttpContentTypes.size() == 0 || localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("application/json")) != localVarConsumeHttpContentTypes.end() )
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("application/json");
+    }
+    // multipart formdata
+    else if( localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("multipart/form-data")) != localVarConsumeHttpContentTypes.end() )
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("multipart/form-data");
+    }
+    else if (localVarConsumeHttpContentTypes.find(utility::conversions::to_string_t("application/x-www-form-urlencoded")) != localVarConsumeHttpContentTypes.end())
+    {
+        localVarRequestHttpContentType = utility::conversions::to_string_t("application/x-www-form-urlencoded");
+    }
+    else
+    {
+        throw ApiException(415, utility::conversions::to_string_t("GumtreeApi->gumtreeListMarkets does not consume any supported media type"));
+    }
+
+    // authentication (ApiKeyAuth) required
+    {
+        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("X-API-Key"));
+        if ( localVarApiKey.size() > 0 )
+        {
+            localVarHeaderParams[utility::conversions::to_string_t("X-API-Key")] = localVarApiKey;
+        }
+    }
+
+    return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
+    .then([=, this](web::http::http_response localVarResponse)
+    {
+        if (m_ApiClient->getResponseHandler())
+        {
+            m_ApiClient->getResponseHandler()(localVarResponse.status_code(), localVarResponse.headers());
+        }
+
+        // 1xx - informational : OK
+        // 2xx - successful       : OK
+        // 3xx - redirection   : OK
+        // 4xx - client error  : not OK
+        // 5xx - client error  : not OK
+        if (localVarResponse.status_code() >= 400)
+        {
+            throw ApiException(localVarResponse.status_code()
+                , utility::conversions::to_string_t("error calling gumtreeListMarkets: ") + localVarResponse.reason_phrase()
+                , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
+        }
+
+        // check response content type
+        if(localVarResponse.headers().has(utility::conversions::to_string_t("Content-Type")))
+        {
+            utility::string_t localVarContentType = localVarResponse.headers()[utility::conversions::to_string_t("Content-Type")];
+            if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
+            {
+                throw ApiException(500
+                    , utility::conversions::to_string_t("error calling gumtreeListMarkets: unexpected response type: ") + localVarContentType
+                    , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
+            }
+        }
+
+        return localVarResponse.extract_string();
+    })
+    .then([=, this](utility::string_t localVarResponse)
+    {
+        std::shared_ptr<AnyType> localVarResult(nullptr);
+
+        if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
+        {
+            web::json::value localVarJson = web::json::value::parse(localVarResponse);
+
+            ModelBase::fromJson(localVarJson, localVarResult);
+        }
+        // else if(localVarResponseHttpContentType == utility::conversions::to_string_t("multipart/form-data"))
+        // {
+        // TODO multipart response parsing
+        // }
+        else
+        {
+            throw ApiException(500
+                , utility::conversions::to_string_t("error calling gumtreeListMarkets: unsupported response type"));
+        }
+
+        return localVarResult;
+    });
+}
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeLocationSuggestions(utility::string_t query, boost::optional<utility::string_t> market) const
 {
 
 
@@ -1014,6 +1168,10 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeLocationSuggestions(util
 
     {
         localVarQueryParams[utility::conversions::to_string_t("query")] = ApiClient::parameterToString(query);
+    }
+    if (market)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1104,7 +1262,7 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeLocationSuggestions(util
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeSearchListings(boost::optional<utility::string_t> query, boost::optional<utility::string_t> category, boost::optional<utility::string_t> location, boost::optional<double> distance, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> sellerType, boost::optional<bool> urgentOnly, boost::optional<bool> withPhotos, boost::optional<utility::string_t> filters, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeSearchListings(boost::optional<utility::string_t> query, boost::optional<utility::string_t> category, boost::optional<utility::string_t> location, boost::optional<double> distance, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> sellerType, boost::optional<bool> urgentOnly, boost::optional<bool> withPhotos, boost::optional<utility::string_t> filters, boost::optional<int32_t> page, boost::optional<utility::string_t> market) const
 {
 
 
@@ -1192,6 +1350,10 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeSearchListings(boost::op
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (market)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1282,7 +1444,7 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeSearchListings(boost::op
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeSearchSuggestions(utility::string_t query) const
+pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> market) const
 {
 
 
@@ -1325,6 +1487,10 @@ pplx::task<std::shared_ptr<AnyType>> GumtreeApi::gumtreeSearchSuggestions(utilit
 
     {
         localVarQueryParams[utility::conversions::to_string_t("query")] = ApiClient::parameterToString(query);
+    }
+    if (market)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
