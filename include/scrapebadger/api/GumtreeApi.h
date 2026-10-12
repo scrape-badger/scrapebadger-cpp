@@ -60,7 +60,7 @@ public:
     /// Get search filters
     /// </summary>
     /// <remarks>
-    /// Filters, sort orders and radius options for a category, with live counts.  Feed a &#x60;key&#x60; and a &#x60;value&#x60; back into &#x60;/search&#x60; as &#x60;filters&#x3D;key:value&#x60;. au bills 2x (browser render).
+    /// Filters, sort orders and radius options for a category, with live counts.  Feed a &#x60;key&#x60; and a &#x60;value&#x60; back into &#x60;/search&#x60; as &#x60;filters&#x3D;key:value&#x60;.
     /// </remarks>
     /// <param name="category">uk: category slug, e.g. &#39;cars&#39;, &#39;for-sale&#39;, &#39;property-to-rent&#39;, &#39;jobs&#39;, &#39;bicycles&#39;. au/za: numeric category id, e.g. &#39;18320&#39; (au cars) or &#39;9077&#39; (za cars). Use /categories to browse the tree. Default &#39;all&#39;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="location">uk: location slug (&#39;london&#39;), town name or UK postcode (&#39;SW1A 1AA&#39;). au/za: numeric location id, e.g. &#39;3003435&#39; (au Sydney) or &#39;3100003&#39; (za Gauteng). Use /locations/autocomplete to resolve one. Default: the whole country. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -120,7 +120,7 @@ public:
     /// List locations
     /// </summary>
     /// <remarks>
-    /// Browse Gumtree&#39;s location tree.  uk: UK -&gt; nations -&gt; counties -&gt; towns. au: states -&gt; regions -&gt; areas, each with its live ad count (browser render, bills 5x). za: provinces -&gt; towns.
+    /// Browse Gumtree&#39;s location tree.  uk: UK -&gt; nations -&gt; counties -&gt; towns. au: states -&gt; regions -&gt; areas, each with its live ad count. za: provinces -&gt; towns.
     /// </remarks>
     /// <param name="parentId">Location id to list the children of (default: the whole country) (optional, default to 0)</param>
     /// <param name="market">Which Gumtree: &#39;uk&#39; (gumtree.com, GBP), &#39;au&#39; (gumtree.com.au, AUD) or &#39;za&#39; (gumtree.co.za, ZAR). Separate sites — ids from one market mean nothing in another. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -152,7 +152,7 @@ public:
     /// Search listings
     /// </summary>
     /// <remarks>
-    /// Search Gumtree listings in the UK, Australia or South Africa.  Up to 50 pages. Page size: uk 25, au 24 (plus up to 6 featured top ads), za 20. An au search runs a real browser (~10-20 s) and bills 2x.
+    /// Search Gumtree listings in the UK, Australia or South Africa.  Up to 50 pages. Page size: uk 25, au 24 (plus up to 6 featured top ads), za 20.
     /// </remarks>
     /// <param name="query">Search keywords, e.g. &#39;mountain bike&#39; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="category">uk: category slug, e.g. &#39;cars&#39;, &#39;for-sale&#39;, &#39;property-to-rent&#39;, &#39;jobs&#39;, &#39;bicycles&#39;. au/za: numeric category id, e.g. &#39;18320&#39; (au cars) or &#39;9077&#39; (za cars). Use /categories to browse the tree. Default &#39;all&#39;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
