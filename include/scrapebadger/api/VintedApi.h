@@ -28,7 +28,7 @@
 #include "scrapebadger/model/HTTPValidationError.h"
 #include "scrapebadger/model/ItemDetailResponse.h"
 #include "scrapebadger/model/MarketsResponse.h"
-#include "scrapebadger/model/SearchResponse.h"
+#include "scrapebadger/model/Portal_api__routers___vinted_schemas__SearchResponse.h"
 #include "scrapebadger/model/StatusesResponse.h"
 #include "scrapebadger/model/UserItemsResponse.h"
 #include "scrapebadger/model/UserProfileResponse.h"
@@ -161,7 +161,7 @@ public:
     /// Find active Vinted listings from a photo. 10 credits per successful request. Returns the usual items, pagination and market envelope. Visual ranking. Each item carries &#x60;similarity_score&#x60; on the calls where Vinted returns a ranking, and null on the ones where it does not -- a null says nothing about the item. The score sits on an unbounded scale that Vinted changes without notice (0-1 in Sep 2026, ~36-44 since): compare it only with the other items in the SAME response, never to a fixed cut-off. Resend the same image and pagination time for subsequent pages. Structured brand data may be null.
     /// </remarks>
     /// <param name="vintedImageSearchRequest"></param>
-    pplx::task<std::shared_ptr<SearchResponse>> vintedSearchByImage(
+    pplx::task<std::shared_ptr<Portal_api__routers___vinted_schemas__SearchResponse>> vintedSearchByImage(
         std::shared_ptr<VintedImageSearchRequest> vintedImageSearchRequest
     ) const;
     /// <summary>
@@ -186,7 +186,7 @@ public:
     /// <param name="searchSessionId">Reuse across pages of one search (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="statusIds">Comma-separated condition/status IDs (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="order"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<SearchResponse>> vintedSearchVintedItems(
+    pplx::task<std::shared_ptr<Portal_api__routers___vinted_schemas__SearchResponse>> vintedSearchVintedItems(
         utility::string_t query,
         boost::optional<utility::string_t> market,
         boost::optional<utility::string_t> sellerCountry,

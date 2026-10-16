@@ -1267,7 +1267,7 @@ pplx::task<std::shared_ptr<BrandsResponse>> VintedApi::vintedSearchBrands(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<SearchResponse>> VintedApi::vintedSearchByImage(std::shared_ptr<VintedImageSearchRequest> vintedImageSearchRequest) const
+pplx::task<std::shared_ptr<Portal_api__routers___vinted_schemas__SearchResponse>> VintedApi::vintedSearchByImage(std::shared_ptr<VintedImageSearchRequest> vintedImageSearchRequest) const
 {
 
     // verify the required parameter 'vintedImageSearchRequest' is set
@@ -1399,7 +1399,7 @@ pplx::task<std::shared_ptr<SearchResponse>> VintedApi::vintedSearchByImage(std::
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::shared_ptr<SearchResponse> localVarResult(new SearchResponse());
+        std::shared_ptr<Portal_api__routers___vinted_schemas__SearchResponse> localVarResult(new Portal_api__routers___vinted_schemas__SearchResponse());
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
@@ -1420,7 +1420,7 @@ pplx::task<std::shared_ptr<SearchResponse>> VintedApi::vintedSearchByImage(std::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<SearchResponse>> VintedApi::vintedSearchVintedItems(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> sellerCountry, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<double> priceFrom, boost::optional<double> priceTo, boost::optional<utility::string_t> brandIds, boost::optional<utility::string_t> catalogIds, boost::optional<utility::string_t> colorIds, boost::optional<utility::string_t> sizeIds, boost::optional<utility::string_t> materialIds, boost::optional<int32_t> time, boost::optional<utility::string_t> searchSessionId, boost::optional<utility::string_t> statusIds, boost::optional<utility::string_t> order) const
+pplx::task<std::shared_ptr<Portal_api__routers___vinted_schemas__SearchResponse>> VintedApi::vintedSearchVintedItems(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> sellerCountry, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<double> priceFrom, boost::optional<double> priceTo, boost::optional<utility::string_t> brandIds, boost::optional<utility::string_t> catalogIds, boost::optional<utility::string_t> colorIds, boost::optional<utility::string_t> sizeIds, boost::optional<utility::string_t> materialIds, boost::optional<int32_t> time, boost::optional<utility::string_t> searchSessionId, boost::optional<utility::string_t> statusIds, boost::optional<utility::string_t> order) const
 {
 
 
@@ -1592,7 +1592,7 @@ pplx::task<std::shared_ptr<SearchResponse>> VintedApi::vintedSearchVintedItems(u
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::shared_ptr<SearchResponse> localVarResult(new SearchResponse());
+        std::shared_ptr<Portal_api__routers___vinted_schemas__SearchResponse> localVarResult(new Portal_api__routers___vinted_schemas__SearchResponse());
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {

@@ -11,7 +11,7 @@
 
 
 
-#include "scrapebadger/model/SearchResponse.h"
+#include "scrapebadger/model/Portal_api__routers___vinted_schemas__SearchResponse.h"
 
 namespace org {
 namespace openapitools {
@@ -20,7 +20,7 @@ namespace model {
 
 
 
-SearchResponse::SearchResponse()
+Portal_api__routers___vinted_schemas__SearchResponse::Portal_api__routers___vinted_schemas__SearchResponse()
 {
     m_ItemsIsSet = false;
     m_PaginationIsSet = false;
@@ -30,16 +30,16 @@ SearchResponse::SearchResponse()
     m_Seller_countryIsSet = false;
 }
 
-SearchResponse::~SearchResponse()
+Portal_api__routers___vinted_schemas__SearchResponse::~Portal_api__routers___vinted_schemas__SearchResponse()
 {
 }
 
-void SearchResponse::validate()
+void Portal_api__routers___vinted_schemas__SearchResponse::validate()
 {
     // TODO: implement validation
 }
 
-web::json::value SearchResponse::toJson() const
+web::json::value Portal_api__routers___vinted_schemas__SearchResponse::toJson() const
 {
 
     web::json::value val = web::json::value::object();
@@ -64,7 +64,7 @@ web::json::value SearchResponse::toJson() const
     return val;
 }
 
-bool SearchResponse::fromJson(const web::json::value& val)
+bool Portal_api__routers___vinted_schemas__SearchResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -111,7 +111,7 @@ bool SearchResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-void SearchResponse::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
+void Portal_api__routers___vinted_schemas__SearchResponse::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
 {
     utility::string_t namePrefix = prefix;
     if(namePrefix.size() > 0 && namePrefix.substr(namePrefix.size() - 1) != utility::conversions::to_string_t(U(".")))
@@ -136,7 +136,7 @@ void SearchResponse::toMultipart(std::shared_ptr<MultipartFormData> multipart, c
     }
 }
 
-bool SearchResponse::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
+bool Portal_api__routers___vinted_schemas__SearchResponse::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
 {
     bool ok = true;
     utility::string_t namePrefix = prefix;
@@ -172,83 +172,83 @@ bool SearchResponse::fromMultiPart(std::shared_ptr<MultipartFormData> multipart,
     return ok;
 }
 
-std::vector<std::shared_ptr<VintedItemSummary>>& SearchResponse::getItems()
+std::vector<std::shared_ptr<VintedItemSummary>>& Portal_api__routers___vinted_schemas__SearchResponse::getItems()
 {
     return m_Items;
 }
 
-void SearchResponse::setItems(const std::vector<std::shared_ptr<VintedItemSummary>>& value)
+void Portal_api__routers___vinted_schemas__SearchResponse::setItems(const std::vector<std::shared_ptr<VintedItemSummary>>& value)
 {
     m_Items = value;
     m_ItemsIsSet = true;
 }
 
-bool SearchResponse::itemsIsSet() const
+bool Portal_api__routers___vinted_schemas__SearchResponse::itemsIsSet() const
 {
     return m_ItemsIsSet;
 }
 
-void SearchResponse::unsetItems()
+void Portal_api__routers___vinted_schemas__SearchResponse::unsetItems()
 {
     m_ItemsIsSet = false;
 }
-std::shared_ptr<VintedPagination> SearchResponse::getPagination() const
+std::shared_ptr<VintedPagination> Portal_api__routers___vinted_schemas__SearchResponse::getPagination() const
 {
     return m_Pagination;
 }
 
-void SearchResponse::setPagination(const std::shared_ptr<VintedPagination>& value)
+void Portal_api__routers___vinted_schemas__SearchResponse::setPagination(const std::shared_ptr<VintedPagination>& value)
 {
     m_Pagination = value;
     m_PaginationIsSet = true;
 }
 
-bool SearchResponse::paginationIsSet() const
+bool Portal_api__routers___vinted_schemas__SearchResponse::paginationIsSet() const
 {
     return m_PaginationIsSet;
 }
 
-void SearchResponse::unsetPagination()
+void Portal_api__routers___vinted_schemas__SearchResponse::unsetPagination()
 {
     m_PaginationIsSet = false;
 }
-utility::string_t SearchResponse::getMarket() const
+utility::string_t Portal_api__routers___vinted_schemas__SearchResponse::getMarket() const
 {
     return m_Market;
 }
 
-void SearchResponse::setMarket(const utility::string_t& value)
+void Portal_api__routers___vinted_schemas__SearchResponse::setMarket(const utility::string_t& value)
 {
     m_Market = value;
     m_MarketIsSet = true;
 }
 
-bool SearchResponse::marketIsSet() const
+bool Portal_api__routers___vinted_schemas__SearchResponse::marketIsSet() const
 {
     return m_MarketIsSet;
 }
 
-void SearchResponse::unsetMarket()
+void Portal_api__routers___vinted_schemas__SearchResponse::unsetMarket()
 {
     m_MarketIsSet = false;
 }
-utility::string_t SearchResponse::getSellerCountry() const
+utility::string_t Portal_api__routers___vinted_schemas__SearchResponse::getSellerCountry() const
 {
     return m_Seller_country;
 }
 
-void SearchResponse::setSellerCountry(const utility::string_t& value)
+void Portal_api__routers___vinted_schemas__SearchResponse::setSellerCountry(const utility::string_t& value)
 {
     m_Seller_country = value;
     m_Seller_countryIsSet = true;
 }
 
-bool SearchResponse::sellerCountryIsSet() const
+bool Portal_api__routers___vinted_schemas__SearchResponse::sellerCountryIsSet() const
 {
     return m_Seller_countryIsSet;
 }
 
-void SearchResponse::unsetSeller_country()
+void Portal_api__routers___vinted_schemas__SearchResponse::unsetSeller_country()
 {
     m_Seller_countryIsSet = false;
 }

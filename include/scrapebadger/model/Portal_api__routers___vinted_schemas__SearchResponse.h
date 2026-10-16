@@ -10,13 +10,13 @@
  */
 
 /*
- * SearchResponse.h
+ * Portal_api__routers___vinted_schemas__SearchResponse.h
  *
  * Envelope returned by search and search_by_image.
  */
 
-#ifndef ORG_OPENAPITOOLS_CLIENT_MODEL_SearchResponse_H_
-#define ORG_OPENAPITOOLS_CLIENT_MODEL_SearchResponse_H_
+#ifndef ORG_OPENAPITOOLS_CLIENT_MODEL_Portal_api__routers___vinted_schemas__SearchResponse_H_
+#define ORG_OPENAPITOOLS_CLIENT_MODEL_Portal_api__routers___vinted_schemas__SearchResponse_H_
 
 
 #include "scrapebadger/ModelBase.h"
@@ -38,12 +38,12 @@ class VintedPagination;
 /// <summary>
 /// Envelope returned by search and search_by_image.
 /// </summary>
-class  SearchResponse
+class  Portal_api__routers___vinted_schemas__SearchResponse
     : public ModelBase
 {
 public:
-    SearchResponse();
-    virtual ~SearchResponse();
+    Portal_api__routers___vinted_schemas__SearchResponse();
+    virtual ~Portal_api__routers___vinted_schemas__SearchResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -57,7 +57,7 @@ public:
     bool fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& namePrefix) override;
 
     /////////////////////////////////////////////
-    /// SearchResponse members
+    /// Portal_api__routers___vinted_schemas__SearchResponse members
 
     /// <summary>
     /// 
@@ -113,4 +113,4 @@ protected:
 }
 }
 
-#endif /* ORG_OPENAPITOOLS_CLIENT_MODEL_SearchResponse_H_ */
+#endif /* ORG_OPENAPITOOLS_CLIENT_MODEL_Portal_api__routers___vinted_schemas__SearchResponse_H_ */
