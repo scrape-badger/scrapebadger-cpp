@@ -371,7 +371,7 @@ public:
     /// <param name="si">Cached search params (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="ibp">Layout control (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="uds">Google filter string (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="aiOverview">Chase deferred AI Overview page_token with a follow-up fetch and merge the result. Adds ~1s and 1 credit when the SERP defers the overview. (optional, default to false)</param>
+    /// <param name="aiOverview">Chase deferred AI Overview page_token with a follow-up fetch and merge the result. Adds ~1s when the SERP defers the overview; the request price is unchanged. (optional, default to false)</param>
     pplx::task<std::shared_ptr<AnyType>> googleGoogleWebSearch(
         utility::string_t q,
         boost::optional<utility::string_t> gl,
