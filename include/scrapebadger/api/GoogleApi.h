@@ -293,6 +293,42 @@ public:
         boost::optional<bool> exactMatches
     ) const;
     /// <summary>
+    /// Google Light web search
+    /// </summary>
+    /// <remarks>
+    /// Organic results and related searches only. Costs 10 credits per successful uncached request, compared with 20 credits for regular Google Search. Light always skips rich SERP blocks; mode and ai_overview cannot enable them.
+    /// </remarks>
+    /// <param name="q">Search query (supports Google operators)</param>
+    /// <param name="gl">Country code (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="hl">Language code (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="num"> (optional, default to 0)</param>
+    /// <param name="start">Page offset (0, 10, 20...) (optional, default to 0)</param>
+    /// <param name="domain">Google domain (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="location">City-level geo-targeting (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="uule">Encoded location (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="lr">Language restrict (e.g. lang_en) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="tbs">Time filter (e.g. qdr:d) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="safe">Safe search: off or active (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="filter"> (optional, default to 0)</param>
+    /// <param name="nfpr">Disable auto-correction (optional, default to 0)</param>
+    /// <param name="output"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> googleGoogleLightWebSearch(
+        utility::string_t q,
+        boost::optional<utility::string_t> gl,
+        boost::optional<utility::string_t> hl,
+        boost::optional<int32_t> num,
+        boost::optional<int32_t> start,
+        boost::optional<utility::string_t> domain,
+        boost::optional<utility::string_t> location,
+        boost::optional<utility::string_t> uule,
+        boost::optional<utility::string_t> lr,
+        boost::optional<utility::string_t> tbs,
+        boost::optional<utility::string_t> safe,
+        boost::optional<int32_t> filter,
+        boost::optional<int32_t> nfpr,
+        boost::optional<utility::string_t> output
+    ) const;
+    /// <summary>
     /// Google scraper health check
     /// </summary>
     /// <remarks>
