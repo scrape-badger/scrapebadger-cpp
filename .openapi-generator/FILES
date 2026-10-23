@@ -31,6 +31,7 @@ include/scrapebadger/api/DuckDuckGoApi.h
 include/scrapebadger/api/EBayApi.h
 include/scrapebadger/api/EtsyApi.h
 include/scrapebadger/api/FacebookApi.h
+include/scrapebadger/api/FeedbackApi.h
 include/scrapebadger/api/GeminiApi.h
 include/scrapebadger/api/GoogleApi.h
 include/scrapebadger/api/GooglePlayApi.h
@@ -43,9 +44,12 @@ include/scrapebadger/api/LinkedInApi.h
 include/scrapebadger/api/LoopNetApi.h
 include/scrapebadger/api/NaverApi.h
 include/scrapebadger/api/PerplexityApi.h
+include/scrapebadger/api/QuoteApi.h
 include/scrapebadger/api/RealtorApi.h
 include/scrapebadger/api/RedditApi.h
 include/scrapebadger/api/RedfinApi.h
+include/scrapebadger/api/RequestsApi.h
+include/scrapebadger/api/ResultsApi.h
 include/scrapebadger/api/TargetApi.h
 include/scrapebadger/api/TikTokApi.h
 include/scrapebadger/api/TwitterApi.h
@@ -58,6 +62,7 @@ include/scrapebadger/api/YandexApi.h
 include/scrapebadger/api/YouTubeApi.h
 include/scrapebadger/api/ZillowApi.h
 include/scrapebadger/model/AccountInfo.h
+include/scrapebadger/model/AgentTrialInfo.h
 include/scrapebadger/model/BillingLogListResponse.h
 include/scrapebadger/model/BillingLogResponse.h
 include/scrapebadger/model/Brandid.h
@@ -71,6 +76,7 @@ include/scrapebadger/model/Description.h
 include/scrapebadger/model/ExtractRequest.h
 include/scrapebadger/model/ExtractRequest_extract_rules_value.h
 include/scrapebadger/model/ExtractRule.h
+include/scrapebadger/model/FeedbackRequest.h
 include/scrapebadger/model/FilterRuleCreate.h
 include/scrapebadger/model/FilterRuleDeliveryLogListResponse.h
 include/scrapebadger/model/FilterRuleDeliveryLogResponse.h
@@ -97,6 +103,7 @@ include/scrapebadger/model/Product.h
 include/scrapebadger/model/ProductResponse.h
 include/scrapebadger/model/Product_price.h
 include/scrapebadger/model/Productcode.h
+include/scrapebadger/model/QuoteRequest.h
 include/scrapebadger/model/Ratings.h
 include/scrapebadger/model/ScreenshotRequest.h
 include/scrapebadger/model/Searchterm.h
@@ -161,6 +168,7 @@ src/api/DuckDuckGoApi.cpp
 src/api/EBayApi.cpp
 src/api/EtsyApi.cpp
 src/api/FacebookApi.cpp
+src/api/FeedbackApi.cpp
 src/api/GeminiApi.cpp
 src/api/GoogleApi.cpp
 src/api/GooglePlayApi.cpp
@@ -173,9 +181,12 @@ src/api/LinkedInApi.cpp
 src/api/LoopNetApi.cpp
 src/api/NaverApi.cpp
 src/api/PerplexityApi.cpp
+src/api/QuoteApi.cpp
 src/api/RealtorApi.cpp
 src/api/RedditApi.cpp
 src/api/RedfinApi.cpp
+src/api/RequestsApi.cpp
+src/api/ResultsApi.cpp
 src/api/TargetApi.cpp
 src/api/TikTokApi.cpp
 src/api/TwitterApi.cpp
@@ -188,6 +199,7 @@ src/api/YandexApi.cpp
 src/api/YouTubeApi.cpp
 src/api/ZillowApi.cpp
 src/model/AccountInfo.cpp
+src/model/AgentTrialInfo.cpp
 src/model/BillingLogListResponse.cpp
 src/model/BillingLogResponse.cpp
 src/model/Brandid.cpp
@@ -201,6 +213,7 @@ src/model/Description.cpp
 src/model/ExtractRequest.cpp
 src/model/ExtractRequest_extract_rules_value.cpp
 src/model/ExtractRule.cpp
+src/model/FeedbackRequest.cpp
 src/model/FilterRuleCreate.cpp
 src/model/FilterRuleDeliveryLogListResponse.cpp
 src/model/FilterRuleDeliveryLogResponse.cpp
@@ -227,6 +240,7 @@ src/model/Product.cpp
 src/model/ProductResponse.cpp
 src/model/Product_price.cpp
 src/model/Productcode.cpp
+src/model/QuoteRequest.cpp
 src/model/Ratings.cpp
 src/model/ScreenshotRequest.cpp
 src/model/Searchterm.cpp

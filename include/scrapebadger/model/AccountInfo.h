@@ -23,6 +23,7 @@
 
 #include "scrapebadger/model/SubscriptionInfo.h"
 #include <cpprest/details/basic_types.h>
+#include "scrapebadger/model/AgentTrialInfo.h"
 
 namespace org {
 namespace openapitools {
@@ -30,6 +31,7 @@ namespace client {
 namespace model {
 
 class SubscriptionInfo;
+class AgentTrialInfo;
 
 
 /// <summary>
@@ -110,6 +112,15 @@ public:
 
     void setSubscription(const std::shared_ptr<SubscriptionInfo>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+    std::shared_ptr<AgentTrialInfo> getAgentTrial() const;
+    bool agentTrialIsSet() const;
+    void unsetAgent_trial();
+
+    void setAgentTrial(const std::shared_ptr<AgentTrialInfo>& value);
+
 
 protected:
     int32_t m_Credits_balance;
@@ -124,6 +135,8 @@ protected:
     bool m_Rate_limit_per_minuteIsSet;
     std::shared_ptr<SubscriptionInfo> m_Subscription;
     bool m_SubscriptionIsSet;
+    std::shared_ptr<AgentTrialInfo> m_Agent_trial;
+    bool m_Agent_trialIsSet;
 };
 
 

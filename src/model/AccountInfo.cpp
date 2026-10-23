@@ -33,6 +33,7 @@ AccountInfo::AccountInfo()
     m_Rate_limit_per_minute = 0;
     m_Rate_limit_per_minuteIsSet = false;
     m_SubscriptionIsSet = false;
+    m_Agent_trialIsSet = false;
 }
 
 AccountInfo::~AccountInfo()
@@ -72,6 +73,10 @@ web::json::value AccountInfo::toJson() const
     if(m_SubscriptionIsSet)
     {
         val[utility::conversions::to_string_t(U("subscription"))] = ModelBase::toJson(m_Subscription);
+    }
+    if(m_Agent_trialIsSet)
+    {
+        val[utility::conversions::to_string_t(U("agent_trial"))] = ModelBase::toJson(m_Agent_trial);
     }
 
     return val;
@@ -141,6 +146,16 @@ bool AccountInfo::fromJson(const web::json::value& val)
             setSubscription(refVal_setSubscription);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t(U("agent_trial"))))
+    {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(U("agent_trial")));
+        if(!fieldValue.is_null())
+        {
+            std::shared_ptr<AgentTrialInfo> refVal_setAgentTrial;
+            ok &= ModelBase::fromJson(fieldValue, refVal_setAgentTrial);
+            setAgentTrial(refVal_setAgentTrial);
+        }
+    }
     return ok;
 }
 
@@ -174,6 +189,10 @@ void AccountInfo::toMultipart(std::shared_ptr<MultipartFormData> multipart, cons
     if(m_SubscriptionIsSet)
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(U("subscription")), m_Subscription));
+    }
+    if(m_Agent_trialIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(U("agent_trial")), m_Agent_trial));
     }
 }
 
@@ -221,6 +240,12 @@ bool AccountInfo::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, co
         std::shared_ptr<SubscriptionInfo> refVal_setSubscription;
         ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(U("subscription"))), refVal_setSubscription );
         setSubscription(refVal_setSubscription);
+    }
+    if(multipart->hasContent(utility::conversions::to_string_t(U("agent_trial"))))
+    {
+        std::shared_ptr<AgentTrialInfo> refVal_setAgentTrial;
+        ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(U("agent_trial"))), refVal_setAgentTrial );
+        setAgentTrial(refVal_setAgentTrial);
     }
     return ok;
 }
@@ -344,6 +369,26 @@ bool AccountInfo::subscriptionIsSet() const
 void AccountInfo::unsetSubscription()
 {
     m_SubscriptionIsSet = false;
+}
+std::shared_ptr<AgentTrialInfo> AccountInfo::getAgentTrial() const
+{
+    return m_Agent_trial;
+}
+
+void AccountInfo::setAgentTrial(const std::shared_ptr<AgentTrialInfo>& value)
+{
+    m_Agent_trial = value;
+    m_Agent_trialIsSet = true;
+}
+
+bool AccountInfo::agentTrialIsSet() const
+{
+    return m_Agent_trialIsSet;
+}
+
+void AccountInfo::unsetAgent_trial()
+{
+    m_Agent_trialIsSet = false;
 }
 }
 }
