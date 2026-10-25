@@ -55,6 +55,7 @@ public:
     /// <param name="minPrice"> (optional, default to 0)</param>
     /// <param name="maxPrice"> (optional, default to 0)</param>
     /// <param name="sortBy"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="radius">Radius around the location (km, or miles in the US) (optional, default to 0)</param>
     /// <param name="after"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> facebookBrowseAMarketplaceCategory(
         utility::string_t category,
@@ -62,6 +63,7 @@ public:
         boost::optional<int32_t> minPrice,
         boost::optional<int32_t> maxPrice,
         boost::optional<utility::string_t> sortBy,
+        boost::optional<int32_t> radius,
         boost::optional<utility::string_t> after
     ) const;
     /// <summary>
