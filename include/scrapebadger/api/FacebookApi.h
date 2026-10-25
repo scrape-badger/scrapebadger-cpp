@@ -213,6 +213,22 @@ public:
     pplx::task<std::shared_ptr<AnyType>> facebookListLocations(
     ) const;
     /// <summary>
+    /// Resolve a town/postcode to a Marketplace location
+    /// </summary>
+    /// <remarks>
+    /// Resolve a town, postcode or coordinates to a Facebook Marketplace place id.  Facebook keys Marketplace by place, not coordinates, and only a place slug or numeric place id works as &#x60;&#x60;location&#x60;&#x60;. Pass the returned &#x60;&#x60;place_id&#x60;&#x60; as &#x60;&#x60;location&#x60;&#x60; on Marketplace search/category to centre results anywhere, not just the preset catalogue. Postcodes resolve exactly; a bare town name in an ambiguous country is best paired with &#x60;&#x60;country&#x60;&#x60; (e.g. &#x60;&#x60;gb&#x60;&#x60;).
+    /// </remarks>
+    /// <param name="query">Town, city, postcode or address (e.g. &#39;Durham&#39;, &#39;DH1 3LE&#39;) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="latitude">Resolve this exact point instead (optional, default to 0.0)</param>
+    /// <param name="longitude"> (optional, default to 0.0)</param>
+    /// <param name="country">ISO country code hint for an ambiguous name (e.g. gb) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> facebookResolveATownPostcodeToAMarketplaceLocation(
+        boost::optional<utility::string_t> query,
+        boost::optional<double> latitude,
+        boost::optional<double> longitude,
+        boost::optional<utility::string_t> country
+    ) const;
+    /// <summary>
     /// Search advertiser pages
     /// </summary>
     /// <remarks>
