@@ -22,6 +22,7 @@ include/scrapebadger/api/AmazonApi.h
 include/scrapebadger/api/ApartmentsApi.h
 include/scrapebadger/api/AppStoreApi.h
 include/scrapebadger/api/BaiduApi.h
+include/scrapebadger/api/BatchApi.h
 include/scrapebadger/api/BestBuyApi.h
 include/scrapebadger/api/BingApi.h
 include/scrapebadger/api/BookingApi.h
@@ -63,6 +64,10 @@ include/scrapebadger/api/YouTubeApi.h
 include/scrapebadger/api/ZillowApi.h
 include/scrapebadger/model/AccountInfo.h
 include/scrapebadger/model/AgentTrialInfo.h
+include/scrapebadger/model/BatchItem.h
+include/scrapebadger/model/BatchItem_query_value.h
+include/scrapebadger/model/BatchItem_query_value_anyOf_inner.h
+include/scrapebadger/model/BatchRequest.h
 include/scrapebadger/model/BillingLogListResponse.h
 include/scrapebadger/model/BillingLogResponse.h
 include/scrapebadger/model/Brandid.h
@@ -140,6 +145,7 @@ include/scrapebadger/model/WebhookCreate.h
 include/scrapebadger/model/WebhookListItem.h
 include/scrapebadger/model/WebhookListResponse.h
 include/scrapebadger/model/WebhookResponse.h
+include/scrapebadger/model/WebhookSecret.h
 include/scrapebadger/model/WebhookTestRequest.h
 include/scrapebadger/model/WebhookTestResponse.h
 src/AnyType.cpp
@@ -159,6 +165,7 @@ src/api/AmazonApi.cpp
 src/api/ApartmentsApi.cpp
 src/api/AppStoreApi.cpp
 src/api/BaiduApi.cpp
+src/api/BatchApi.cpp
 src/api/BestBuyApi.cpp
 src/api/BingApi.cpp
 src/api/BookingApi.cpp
@@ -200,6 +207,10 @@ src/api/YouTubeApi.cpp
 src/api/ZillowApi.cpp
 src/model/AccountInfo.cpp
 src/model/AgentTrialInfo.cpp
+src/model/BatchItem.cpp
+src/model/BatchItem_query_value.cpp
+src/model/BatchItem_query_value_anyOf_inner.cpp
+src/model/BatchRequest.cpp
 src/model/BillingLogListResponse.cpp
 src/model/BillingLogResponse.cpp
 src/model/Brandid.cpp
@@ -277,5 +288,6 @@ src/model/WebhookCreate.cpp
 src/model/WebhookListItem.cpp
 src/model/WebhookListResponse.cpp
 src/model/WebhookResponse.cpp
+src/model/WebhookSecret.cpp
 src/model/WebhookTestRequest.cpp
 src/model/WebhookTestResponse.cpp

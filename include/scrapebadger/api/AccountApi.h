@@ -23,6 +23,7 @@
 #include "scrapebadger/ApiClient.h"
 
 #include "scrapebadger/model/AccountInfo.h"
+#include "scrapebadger/model/WebhookSecret.h"
 #include <boost/optional.hpp>
 
 namespace org {
@@ -49,6 +50,22 @@ public:
     /// Get account details for the authenticated API key.  Returns credit balances, tier, rate limit, and subscription details. No credits are deducted for this call.
     /// </remarks>
     pplx::task<std::shared_ptr<AccountInfo>> accountGetAccountInfo(
+    ) const;
+    /// <summary>
+    /// Get the webhook signing secret
+    /// </summary>
+    /// <remarks>
+    /// The secret that signs this account&#39;s async-request webhooks, created on first read. Verify a delivery by comparing &#x60;&#x60;X-ScrapeBadger-Signature&#x60;&#x60; with &#x60;&#x60;sha256&#x3D;&#x60;&#x60; + hex HMAC-SHA256(secret, raw body).
+    /// </remarks>
+    pplx::task<std::shared_ptr<WebhookSecret>> accountGetTheWebhookSigningSecret(
+    ) const;
+    /// <summary>
+    /// Rotate the webhook signing secret
+    /// </summary>
+    /// <remarks>
+    /// Replace the signing secret. Deliveries that start from now on are signed with the new one; retries of a delivery already under way keep the old one.
+    /// </remarks>
+    pplx::task<std::shared_ptr<WebhookSecret>> accountRotateTheWebhookSigningSecret(
     ) const;
 
 protected:
