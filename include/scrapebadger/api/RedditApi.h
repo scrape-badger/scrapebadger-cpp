@@ -288,7 +288,7 @@ public:
     /// Search Reddit posts
     /// </summary>
     /// <remarks>
-    /// Search Reddit posts globally or within a subreddit.
+    /// Search Reddit&#39;s current web UI globally or within a subreddit.  Pass pagination.after unchanged with the same query, scope, sort and time filter. Search cursors expire after 30 minutes. Reddit&#39;s native page may contain fewer rows than limit; continue while after is present.
     /// </remarks>
     /// <param name="q">Search query</param>
     /// <param name="subreddit">Restrict to subreddit (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -308,7 +308,7 @@ public:
     /// Search subreddits
     /// </summary>
     /// <remarks>
-    /// Search for subreddits by keyword.
+    /// Search communities using Reddit&#39;s current web UI ranking and pagination.  Pass pagination.after unchanged with the same query. Search cursors expire after 30 minutes. weekly_visitors and weekly_contributions are activity counters, separate from the subscriber count.
     /// </remarks>
     /// <param name="q">Search query</param>
     /// <param name="limit"> (optional, default to 0)</param>
@@ -322,7 +322,7 @@ public:
     /// Search users
     /// </summary>
     /// <remarks>
-    /// Search for Reddit users.
+    /// Search profiles using Reddit&#39;s current web UI ranking and pagination.  Pass pagination.after unchanged with the same query. Search cursors expire after 30 minutes. The native page may contain fewer rows than limit.
     /// </remarks>
     /// <param name="q">Search query</param>
     /// <param name="limit"> (optional, default to 0)</param>
