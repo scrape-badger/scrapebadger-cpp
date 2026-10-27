@@ -35,7 +35,7 @@ PerplexityApi::~PerplexityApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQuestion(utility::string_t prompt, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQuestion(utility::string_t prompt, boost::optional<utility::string_t> country, boost::optional<bool> strictCountry) const
 {
 
 
@@ -82,6 +82,10 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQues
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (strictCountry)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("strict_country")] = ApiClient::parameterToString(*strictCountry);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -302,7 +306,7 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQues
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisibilityInAPerplexityAnswer(utility::string_t prompt, utility::string_t brand, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> aliases, boost::optional<utility::string_t> competitors, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisibilityInAPerplexityAnswer(utility::string_t prompt, utility::string_t brand, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> aliases, boost::optional<utility::string_t> competitors, boost::optional<utility::string_t> country, boost::optional<bool> strictCountry) const
 {
 
 
@@ -364,6 +368,10 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisi
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (strictCountry)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("strict_country")] = ApiClient::parameterToString(*strictCountry);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

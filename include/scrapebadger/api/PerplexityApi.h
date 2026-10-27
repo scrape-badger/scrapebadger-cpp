@@ -52,9 +52,11 @@ public:
     /// </remarks>
     /// <param name="prompt">The prompt to send to Perplexity (max 4096 characters).</param>
     /// <param name="country">ISO-3166 alpha-2 egress country, e.g. &#39;US&#39;, &#39;GB&#39;, &#39;DE&#39;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="strictCountry">Answer only from an exit in &#x60;country&#x60;, never another one; 503 &#x60;country_unavailable&#x60; (not billed) when none answers. Requires &#x60;country&#x60;. (optional, default to false)</param>
     pplx::task<std::shared_ptr<AnyType>> perplexityAskPerplexityAQuestion(
         utility::string_t prompt,
-        boost::optional<utility::string_t> country
+        boost::optional<utility::string_t> country,
+        boost::optional<bool> strictCountry
     ) const;
     /// <summary>
     /// Ask Perplexity a question (POST)
@@ -76,13 +78,15 @@ public:
     /// <param name="aliases">Comma-separated alternative names. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="competitors">Comma-separated competitor names. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="country">ISO-3166 alpha-2 egress country. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="strictCountry">Answer only from an exit in &#x60;country&#x60;, never another one; 503 &#x60;country_unavailable&#x60; (not billed) when none answers. Requires &#x60;country&#x60;. (optional, default to false)</param>
     pplx::task<std::shared_ptr<AnyType>> perplexityMeasureABrandSVisibilityInAPerplexityAnswer(
         utility::string_t prompt,
         utility::string_t brand,
         boost::optional<utility::string_t> domain,
         boost::optional<utility::string_t> aliases,
         boost::optional<utility::string_t> competitors,
-        boost::optional<utility::string_t> country
+        boost::optional<utility::string_t> country,
+        boost::optional<bool> strictCountry
     ) const;
     /// <summary>
     /// Measure a brand&#39;s visibility in a Perplexity answer (POST)
