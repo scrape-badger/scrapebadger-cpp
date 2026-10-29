@@ -27,6 +27,7 @@ include/scrapebadger/api/BestBuyApi.h
 include/scrapebadger/api/BingApi.h
 include/scrapebadger/api/BookingApi.h
 include/scrapebadger/api/ChatGPTApi.h
+include/scrapebadger/api/CopilotApi.h
 include/scrapebadger/api/DepopApi.h
 include/scrapebadger/api/DuckDuckGoApi.h
 include/scrapebadger/api/EBayApi.h
@@ -170,6 +171,7 @@ src/api/BestBuyApi.cpp
 src/api/BingApi.cpp
 src/api/BookingApi.cpp
 src/api/ChatGPTApi.cpp
+src/api/CopilotApi.cpp
 src/api/DepopApi.cpp
 src/api/DuckDuckGoApi.cpp
 src/api/EBayApi.cpp
