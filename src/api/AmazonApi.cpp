@@ -868,7 +868,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductDetail(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductReviews(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> star, boost::optional<bool> verifiedOnly, boost::optional<bool> mediaOnly) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductReviews(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> star, boost::optional<bool> verifiedOnly, boost::optional<bool> mediaOnly, boost::optional<utility::string_t> mode, boost::optional<int32_t> maxPages, boost::optional<bool> perStar, boost::optional<int32_t> limit, boost::optional<utility::string_t> wootOffer) const
 {
 
 
@@ -933,6 +933,26 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductReviews(utility:
     if (mediaOnly)
     {
         localVarQueryParams[utility::conversions::to_string_t("media_only")] = ApiClient::parameterToString(*mediaOnly);
+    }
+    if (mode)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("mode")] = ApiClient::parameterToString(*mode);
+    }
+    if (maxPages)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("max_pages")] = ApiClient::parameterToString(*maxPages);
+    }
+    if (perStar)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("per_star")] = ApiClient::parameterToString(*perStar);
+    }
+    if (limit)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
+    }
+    if (wootOffer)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("woot_offer")] = ApiClient::parameterToString(*wootOffer);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
