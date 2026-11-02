@@ -68,7 +68,7 @@ public:
     /// </remarks>
     /// <param name="roomId"></param>
     /// <param name="month">Start month (1-12) (optional, default to 0)</param>
-    /// <param name="year">Start year (optional, default to 0)</param>
+    /// <param name="year">Start year (current UTC year when omitted) (optional, default to 0)</param>
     /// <param name="months">Number of months (max 12) (optional, default to 0)</param>
     /// <param name="currency"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="locale"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
