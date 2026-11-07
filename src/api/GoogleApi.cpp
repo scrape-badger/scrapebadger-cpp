@@ -1996,7 +1996,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLensVisualSearch(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLightWebSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> location, boost::optional<utility::string_t> uule, boost::optional<utility::string_t> lr, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<int32_t> filter, boost::optional<int32_t> nfpr, boost::optional<utility::string_t> output) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLightWebSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> location, boost::optional<utility::string_t> uule, boost::optional<utility::string_t> lr, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<int32_t> filter, boost::optional<int32_t> nfpr, boost::optional<utility::string_t> output, boost::optional<utility::string_t> googleDomain, boost::optional<double> lat, boost::optional<double> lon, boost::optional<double> radius, boost::optional<utility::string_t> colorScheme, boost::optional<utility::string_t> tbm, boost::optional<utility::string_t> udm, boost::optional<bool> noCache, boost::optional<utility::string_t> asDt, boost::optional<utility::string_t> asEpq, boost::optional<utility::string_t> asEq, boost::optional<utility::string_t> asLq, boost::optional<utility::string_t> asNlo, boost::optional<utility::string_t> asNhi, boost::optional<utility::string_t> asOq, boost::optional<utility::string_t> asQ, boost::optional<utility::string_t> asQdr, boost::optional<utility::string_t> asRq, boost::optional<utility::string_t> asSitesearch, boost::optional<utility::string_t> device, boost::optional<utility::string_t> userAgent, boost::optional<utility::string_t> cr, boost::optional<utility::string_t> ludocid, boost::optional<utility::string_t> lsig, boost::optional<utility::string_t> kgmid, boost::optional<utility::string_t> si, boost::optional<utility::string_t> ibp, boost::optional<utility::string_t> uds) const
 {
 
 
@@ -2091,6 +2091,118 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLightWebSearch(utili
     if (output)
     {
         localVarQueryParams[utility::conversions::to_string_t("output")] = ApiClient::parameterToString(*output);
+    }
+    if (googleDomain)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("google_domain")] = ApiClient::parameterToString(*googleDomain);
+    }
+    if (lat)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("lat")] = ApiClient::parameterToString(*lat);
+    }
+    if (lon)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("lon")] = ApiClient::parameterToString(*lon);
+    }
+    if (radius)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("radius")] = ApiClient::parameterToString(*radius);
+    }
+    if (colorScheme)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("color_scheme")] = ApiClient::parameterToString(*colorScheme);
+    }
+    if (tbm)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("tbm")] = ApiClient::parameterToString(*tbm);
+    }
+    if (udm)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("udm")] = ApiClient::parameterToString(*udm);
+    }
+    if (noCache)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("no_cache")] = ApiClient::parameterToString(*noCache);
+    }
+    if (asDt)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_dt")] = ApiClient::parameterToString(*asDt);
+    }
+    if (asEpq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_epq")] = ApiClient::parameterToString(*asEpq);
+    }
+    if (asEq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_eq")] = ApiClient::parameterToString(*asEq);
+    }
+    if (asLq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_lq")] = ApiClient::parameterToString(*asLq);
+    }
+    if (asNlo)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_nlo")] = ApiClient::parameterToString(*asNlo);
+    }
+    if (asNhi)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_nhi")] = ApiClient::parameterToString(*asNhi);
+    }
+    if (asOq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_oq")] = ApiClient::parameterToString(*asOq);
+    }
+    if (asQ)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_q")] = ApiClient::parameterToString(*asQ);
+    }
+    if (asQdr)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_qdr")] = ApiClient::parameterToString(*asQdr);
+    }
+    if (asRq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_rq")] = ApiClient::parameterToString(*asRq);
+    }
+    if (asSitesearch)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_sitesearch")] = ApiClient::parameterToString(*asSitesearch);
+    }
+    if (device)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("device")] = ApiClient::parameterToString(*device);
+    }
+    if (userAgent)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("user_agent")] = ApiClient::parameterToString(*userAgent);
+    }
+    if (cr)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("cr")] = ApiClient::parameterToString(*cr);
+    }
+    if (ludocid)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("ludocid")] = ApiClient::parameterToString(*ludocid);
+    }
+    if (lsig)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("lsig")] = ApiClient::parameterToString(*lsig);
+    }
+    if (kgmid)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("kgmid")] = ApiClient::parameterToString(*kgmid);
+    }
+    if (si)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("si")] = ApiClient::parameterToString(*si);
+    }
+    if (ibp)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("ibp")] = ApiClient::parameterToString(*ibp);
+    }
+    if (uds)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("uds")] = ApiClient::parameterToString(*uds);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2735,7 +2847,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleShortsSearch(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleWebSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> device, boost::optional<utility::string_t> userAgent, boost::optional<utility::string_t> output, boost::optional<utility::string_t> location, boost::optional<utility::string_t> lr, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<utility::string_t> uule, boost::optional<int32_t> filter, boost::optional<int32_t> nfpr, boost::optional<utility::string_t> cr, boost::optional<utility::string_t> ludocid, boost::optional<utility::string_t> lsig, boost::optional<utility::string_t> kgmid, boost::optional<utility::string_t> si, boost::optional<utility::string_t> ibp, boost::optional<utility::string_t> uds, boost::optional<bool> aiOverview) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleWebSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> device, boost::optional<utility::string_t> userAgent, boost::optional<utility::string_t> output, boost::optional<utility::string_t> location, boost::optional<utility::string_t> lr, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<utility::string_t> uule, boost::optional<int32_t> filter, boost::optional<int32_t> nfpr, boost::optional<utility::string_t> cr, boost::optional<utility::string_t> ludocid, boost::optional<utility::string_t> lsig, boost::optional<utility::string_t> kgmid, boost::optional<utility::string_t> si, boost::optional<utility::string_t> ibp, boost::optional<utility::string_t> uds, boost::optional<bool> aiOverview, boost::optional<utility::string_t> mode, boost::optional<utility::string_t> expandRelatedQuestions, boost::optional<utility::string_t> googleDomain, boost::optional<double> lat, boost::optional<double> lon, boost::optional<double> radius, boost::optional<utility::string_t> colorScheme, boost::optional<utility::string_t> tbm, boost::optional<utility::string_t> udm, boost::optional<bool> noCache, boost::optional<utility::string_t> asDt, boost::optional<utility::string_t> asEpq, boost::optional<utility::string_t> asEq, boost::optional<utility::string_t> asLq, boost::optional<utility::string_t> asNlo, boost::optional<utility::string_t> asNhi, boost::optional<utility::string_t> asOq, boost::optional<utility::string_t> asQ, boost::optional<utility::string_t> asQdr, boost::optional<utility::string_t> asRq, boost::optional<utility::string_t> asSitesearch) const
 {
 
 
@@ -2870,6 +2982,90 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleWebSearch(utility::s
     if (aiOverview)
     {
         localVarQueryParams[utility::conversions::to_string_t("ai_overview")] = ApiClient::parameterToString(*aiOverview);
+    }
+    if (mode)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("mode")] = ApiClient::parameterToString(*mode);
+    }
+    if (expandRelatedQuestions)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("expand_related_questions")] = ApiClient::parameterToString(*expandRelatedQuestions);
+    }
+    if (googleDomain)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("google_domain")] = ApiClient::parameterToString(*googleDomain);
+    }
+    if (lat)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("lat")] = ApiClient::parameterToString(*lat);
+    }
+    if (lon)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("lon")] = ApiClient::parameterToString(*lon);
+    }
+    if (radius)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("radius")] = ApiClient::parameterToString(*radius);
+    }
+    if (colorScheme)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("color_scheme")] = ApiClient::parameterToString(*colorScheme);
+    }
+    if (tbm)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("tbm")] = ApiClient::parameterToString(*tbm);
+    }
+    if (udm)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("udm")] = ApiClient::parameterToString(*udm);
+    }
+    if (noCache)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("no_cache")] = ApiClient::parameterToString(*noCache);
+    }
+    if (asDt)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_dt")] = ApiClient::parameterToString(*asDt);
+    }
+    if (asEpq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_epq")] = ApiClient::parameterToString(*asEpq);
+    }
+    if (asEq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_eq")] = ApiClient::parameterToString(*asEq);
+    }
+    if (asLq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_lq")] = ApiClient::parameterToString(*asLq);
+    }
+    if (asNlo)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_nlo")] = ApiClient::parameterToString(*asNlo);
+    }
+    if (asNhi)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_nhi")] = ApiClient::parameterToString(*asNhi);
+    }
+    if (asOq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_oq")] = ApiClient::parameterToString(*asOq);
+    }
+    if (asQ)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_q")] = ApiClient::parameterToString(*asQ);
+    }
+    if (asQdr)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_qdr")] = ApiClient::parameterToString(*asQdr);
+    }
+    if (asRq)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_rq")] = ApiClient::parameterToString(*asRq);
+    }
+    if (asSitesearch)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("as_sitesearch")] = ApiClient::parameterToString(*asSitesearch);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

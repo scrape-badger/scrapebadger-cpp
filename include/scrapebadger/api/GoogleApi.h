@@ -312,6 +312,34 @@ public:
     /// <param name="filter"> (optional, default to 0)</param>
     /// <param name="nfpr">Disable auto-correction (optional, default to 0)</param>
     /// <param name="output"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="googleDomain">Alias for domain; Google requests use google.com with country targeting. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="lat">Latitude; supply together with lon instead of location or uule. (optional, default to 0.0)</param>
+    /// <param name="lon">Longitude; supply together with lat. (optional, default to 0.0)</param>
+    /// <param name="radius">Location accuracy in meters; requires lat/lon or a named city with a known center. (optional, default to 0.0)</param>
+    /// <param name="colorScheme">Google color scheme. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="tbm">Google search type. Use output&#x3D;html for verticals; dedicated APIs provide parsed vertical results. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="udm">Google result filter: 14 web, 18 forums. Other verticals require output&#x3D;html. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="noCache">Bypass result caches and request a fresh Google fetch. (optional, default to false)</param>
+    /// <param name="asDt">Site restriction mode: i includes, e excludes as_sitesearch. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asEpq">Exact phrase. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asEq">Words to exclude. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asLq">Find pages linking to this URL; availability depends on Google. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asNlo">Numeric range minimum. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asNhi">Numeric range maximum. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asOq">Match any of these words. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asQ">Additional query words. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asQdr">Time range, such as d, w, m or y1. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asRq">Related URL; availability depends on Google. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asSitesearch">Restrict results to a site. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="device">Device target. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="userAgent">Custom User-Agent. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="cr">Country restrict. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="ludocid">Place CID. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="lsig">Map view ID. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="kgmid">Knowledge Graph entity ID. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="si">Cached Google parameters. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="ibp">Layout control. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="uds">Google filter string. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> googleGoogleLightWebSearch(
         utility::string_t q,
         boost::optional<utility::string_t> gl,
@@ -326,7 +354,35 @@ public:
         boost::optional<utility::string_t> safe,
         boost::optional<int32_t> filter,
         boost::optional<int32_t> nfpr,
-        boost::optional<utility::string_t> output
+        boost::optional<utility::string_t> output,
+        boost::optional<utility::string_t> googleDomain,
+        boost::optional<double> lat,
+        boost::optional<double> lon,
+        boost::optional<double> radius,
+        boost::optional<utility::string_t> colorScheme,
+        boost::optional<utility::string_t> tbm,
+        boost::optional<utility::string_t> udm,
+        boost::optional<bool> noCache,
+        boost::optional<utility::string_t> asDt,
+        boost::optional<utility::string_t> asEpq,
+        boost::optional<utility::string_t> asEq,
+        boost::optional<utility::string_t> asLq,
+        boost::optional<utility::string_t> asNlo,
+        boost::optional<utility::string_t> asNhi,
+        boost::optional<utility::string_t> asOq,
+        boost::optional<utility::string_t> asQ,
+        boost::optional<utility::string_t> asQdr,
+        boost::optional<utility::string_t> asRq,
+        boost::optional<utility::string_t> asSitesearch,
+        boost::optional<utility::string_t> device,
+        boost::optional<utility::string_t> userAgent,
+        boost::optional<utility::string_t> cr,
+        boost::optional<utility::string_t> ludocid,
+        boost::optional<utility::string_t> lsig,
+        boost::optional<utility::string_t> kgmid,
+        boost::optional<utility::string_t> si,
+        boost::optional<utility::string_t> ibp,
+        boost::optional<utility::string_t> uds
     ) const;
     /// <summary>
     /// Google scraper health check
@@ -408,6 +464,27 @@ public:
     /// <param name="ibp">Layout control (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="uds">Google filter string (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="aiOverview">Chase deferred AI Overview page_token with a follow-up fetch and merge the result. Adds ~1s when the SERP defers the overview; the request price is unchanged. (optional, default to false)</param>
+    /// <param name="mode"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="expandRelatedQuestions">Open all People Also Ask answers (true) or the first N (0-99). (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="googleDomain">Alias for domain; Google requests use google.com with country targeting. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="lat">Latitude; supply together with lon instead of location or uule. (optional, default to 0.0)</param>
+    /// <param name="lon">Longitude; supply together with lat. (optional, default to 0.0)</param>
+    /// <param name="radius">Location accuracy in meters; requires lat/lon or a named city with a known center. (optional, default to 0.0)</param>
+    /// <param name="colorScheme">Google color scheme. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="tbm">Google search type. Use output&#x3D;html for verticals; dedicated APIs provide parsed vertical results. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="udm">Google result filter: 14 web, 18 forums. Other verticals require output&#x3D;html. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="noCache">Bypass result caches and request a fresh Google fetch. (optional, default to false)</param>
+    /// <param name="asDt">Site restriction mode: i includes, e excludes as_sitesearch. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asEpq">Exact phrase. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asEq">Words to exclude. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asLq">Find pages linking to this URL; availability depends on Google. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asNlo">Numeric range minimum. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asNhi">Numeric range maximum. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asOq">Match any of these words. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asQ">Additional query words. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asQdr">Time range, such as d, w, m or y1. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asRq">Related URL; availability depends on Google. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="asSitesearch">Restrict results to a site. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> googleGoogleWebSearch(
         utility::string_t q,
         boost::optional<utility::string_t> gl,
@@ -432,7 +509,28 @@ public:
         boost::optional<utility::string_t> si,
         boost::optional<utility::string_t> ibp,
         boost::optional<utility::string_t> uds,
-        boost::optional<bool> aiOverview
+        boost::optional<bool> aiOverview,
+        boost::optional<utility::string_t> mode,
+        boost::optional<utility::string_t> expandRelatedQuestions,
+        boost::optional<utility::string_t> googleDomain,
+        boost::optional<double> lat,
+        boost::optional<double> lon,
+        boost::optional<double> radius,
+        boost::optional<utility::string_t> colorScheme,
+        boost::optional<utility::string_t> tbm,
+        boost::optional<utility::string_t> udm,
+        boost::optional<bool> noCache,
+        boost::optional<utility::string_t> asDt,
+        boost::optional<utility::string_t> asEpq,
+        boost::optional<utility::string_t> asEq,
+        boost::optional<utility::string_t> asLq,
+        boost::optional<utility::string_t> asNlo,
+        boost::optional<utility::string_t> asNhi,
+        boost::optional<utility::string_t> asOq,
+        boost::optional<utility::string_t> asQ,
+        boost::optional<utility::string_t> asQdr,
+        boost::optional<utility::string_t> asRq,
+        boost::optional<utility::string_t> asSitesearch
     ) const;
     /// <summary>
     /// Hotel details
