@@ -64,6 +64,7 @@ include/scrapebadger/api/WalmartApi.h
 include/scrapebadger/api/WebApi.h
 include/scrapebadger/api/YahooApi.h
 include/scrapebadger/api/YandexApi.h
+include/scrapebadger/api/YelpApi.h
 include/scrapebadger/api/YouTubeApi.h
 include/scrapebadger/api/ZillowApi.h
 include/scrapebadger/model/AccountInfo.h
@@ -240,6 +241,16 @@ include/scrapebadger/model/WebhookResponse.h
 include/scrapebadger/model/WebhookSecret.h
 include/scrapebadger/model/WebhookTestRequest.h
 include/scrapebadger/model/WebhookTestResponse.h
+include/scrapebadger/model/YelpBusiness.h
+include/scrapebadger/model/YelpCategory.h
+include/scrapebadger/model/YelpFilterGroup.h
+include/scrapebadger/model/YelpFilterOption.h
+include/scrapebadger/model/YelpHours.h
+include/scrapebadger/model/YelpLink.h
+include/scrapebadger/model/YelpMarket.h
+include/scrapebadger/model/YelpMarketsResponse.h
+include/scrapebadger/model/YelpResolvedLocation.h
+include/scrapebadger/model/YelpSearchResponse.h
 src/AnyType.cpp
 src/ApiClient.cpp
 src/ApiConfiguration.cpp
@@ -299,6 +310,7 @@ src/api/WalmartApi.cpp
 src/api/WebApi.cpp
 src/api/YahooApi.cpp
 src/api/YandexApi.cpp
+src/api/YelpApi.cpp
 src/api/YouTubeApi.cpp
 src/api/ZillowApi.cpp
 src/model/AccountInfo.cpp
@@ -475,3 +487,13 @@ src/model/WebhookResponse.cpp
 src/model/WebhookSecret.cpp
 src/model/WebhookTestRequest.cpp
 src/model/WebhookTestResponse.cpp
+src/model/YelpBusiness.cpp
+src/model/YelpCategory.cpp
+src/model/YelpFilterGroup.cpp
+src/model/YelpFilterOption.cpp
+src/model/YelpHours.cpp
+src/model/YelpLink.cpp
+src/model/YelpMarket.cpp
+src/model/YelpMarketsResponse.cpp
+src/model/YelpResolvedLocation.cpp
+src/model/YelpSearchResponse.cpp
