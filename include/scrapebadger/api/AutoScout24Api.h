@@ -24,6 +24,7 @@
 
 #include "scrapebadger/AnyType.h"
 #include "scrapebadger/model/AutoScout24FiltersResponse.h"
+#include "scrapebadger/model/AutoScout24ListingResponse.h"
 #include "scrapebadger/model/AutoScout24MarketsResponse.h"
 #include "scrapebadger/model/AutoScout24SearchResponse.h"
 #include "scrapebadger/model/HTTPValidationError.h"
@@ -56,6 +57,20 @@ public:
     pplx::task<std::shared_ptr<AnyType>> autoscout24CheckAutoscout24Health(
     ) const;
     /// <summary>
+    /// Get listing
+    /// </summary>
+    /// <remarks>
+    /// Full public vehicle specifications, equipment, photos, price and seller data.  Exactly one of url or listing_id is required. Supported markets match /markets. Successful detail costs 10 credits; removed or missing listings return an unbilled 404. Invalid inputs return 422 and source failures 503.
+    /// </remarks>
+    /// <param name="url">Full HTTPS listing URL from search results. Supply url or listing_id, not both. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="listingId">Listing UUID from search results; requires no SEO slug. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="market">Inferred from URL, otherwise de. Explicit market must match the URL host. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AutoScout24ListingResponse>> autoscout24GetListing(
+        boost::optional<utility::string_t> url,
+        boost::optional<utility::string_t> listingId,
+        boost::optional<utility::string_t> market
+    ) const;
+    /// <summary>
     /// List markets
     /// </summary>
     /// <remarks>
@@ -79,7 +94,7 @@ public:
     /// Search vehicles
     /// </summary>
     /// <remarks>
-    /// Search live vehicle cards, seller/location information and current filter taxonomy.  Browsing is capped at 200 pages (normally 20 cards each). Narrow the query to reach more inventory. Empty results cost zero credits. Listing detail is not included in this API.
+    /// Search live vehicle cards, seller/location information and current filter taxonomy.  Browsing is capped at 200 pages (normally 20 cards each). Narrow the query to reach more inventory. Empty results cost zero credits. Pass a result&#39;s url or id to /listing for its full specifications and equipment.
     /// </remarks>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="make">Native make slug, e.g. volkswagen or bmw. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>

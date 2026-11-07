@@ -72,6 +72,8 @@ include/scrapebadger/model/AgentTrialInfo.h
 include/scrapebadger/model/Article.h
 include/scrapebadger/model/AutoScout24FiltersResponse.h
 include/scrapebadger/model/AutoScout24Listing.h
+include/scrapebadger/model/AutoScout24ListingDetail.h
+include/scrapebadger/model/AutoScout24ListingResponse.h
 include/scrapebadger/model/AutoScout24Market.h
 include/scrapebadger/model/AutoScout24MarketsResponse.h
 include/scrapebadger/model/AutoScout24SearchResponse.h
@@ -288,6 +290,8 @@ src/model/AgentTrialInfo.cpp
 src/model/Article.cpp
 src/model/AutoScout24FiltersResponse.cpp
 src/model/AutoScout24Listing.cpp
+src/model/AutoScout24ListingDetail.cpp
+src/model/AutoScout24ListingResponse.cpp
 src/model/AutoScout24Market.cpp
 src/model/AutoScout24MarketsResponse.cpp
 src/model/AutoScout24SearchResponse.cpp
