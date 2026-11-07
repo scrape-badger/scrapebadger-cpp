@@ -23,6 +23,7 @@
 #include "scrapebadger/ApiClient.h"
 
 #include "scrapebadger/model/GitHubProfileResponse.h"
+#include "scrapebadger/model/GitHubRepositoryResponse.h"
 #include "scrapebadger/model/HTTPValidationError.h"
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
@@ -61,6 +62,18 @@ public:
         boost::optional<int32_t> year,
         boost::optional<int32_t> page,
         boost::optional<utility::string_t> nextPageToken
+    ) const;
+    /// <summary>
+    /// Get repository
+    /// </summary>
+    /// <remarks>
+    /// Public default-branch repository detail, native README, files and latest commit.  Use owner.login and name from a profile repository summary. Root file and contributor previews are not exhaustive recursive trees or membership lists. No GitHub token, market, ref, search or pagination parameter is accepted.
+    /// </remarks>
+    /// <param name="owner"></param>
+    /// <param name="repo"></param>
+    pplx::task<std::shared_ptr<GitHubRepositoryResponse>> githubGetRepository(
+        utility::string_t owner,
+        utility::string_t repo
     ) const;
 
 protected:
