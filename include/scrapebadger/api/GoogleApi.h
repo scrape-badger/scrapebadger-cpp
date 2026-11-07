@@ -312,13 +312,16 @@ public:
     /// <param name="filter"> (optional, default to 0)</param>
     /// <param name="nfpr">Disable auto-correction (optional, default to 0)</param>
     /// <param name="output"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="oq">Original query sent to Google. Defaults to q; an empty string omits it. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="sourceid">Google source identifier. Defaults to chrome; an empty string omits it. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="ie">Google input encoding hint. Defaults to UTF-8; an empty string omits it. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="googleDomain">Alias for domain; Google requests use google.com with country targeting. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="lat">Latitude; supply together with lon instead of location or uule. (optional, default to 0.0)</param>
     /// <param name="lon">Longitude; supply together with lat. (optional, default to 0.0)</param>
     /// <param name="radius">Location accuracy in meters; requires lat/lon or a named city with a known center. (optional, default to 0.0)</param>
     /// <param name="colorScheme">Google color scheme. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="tbm">Google search type. Use output&#x3D;html for verticals; dedicated APIs provide parsed vertical results. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="udm">Google result filter: 14 web, 18 forums. Other verticals require output&#x3D;html. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="udm">Google result filter: web or 14 for web, 18 for forums. Other verticals require output&#x3D;html. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="noCache">Bypass result caches and request a fresh Google fetch. (optional, default to false)</param>
     /// <param name="asDt">Site restriction mode: i includes, e excludes as_sitesearch. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="asEpq">Exact phrase. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -355,6 +358,9 @@ public:
         boost::optional<int32_t> filter,
         boost::optional<int32_t> nfpr,
         boost::optional<utility::string_t> output,
+        boost::optional<utility::string_t> oq,
+        boost::optional<utility::string_t> sourceid,
+        boost::optional<utility::string_t> ie,
         boost::optional<utility::string_t> googleDomain,
         boost::optional<double> lat,
         boost::optional<double> lon,
@@ -466,13 +472,16 @@ public:
     /// <param name="aiOverview">Chase deferred AI Overview page_token with a follow-up fetch and merge the result. Adds ~1s when the SERP defers the overview; the request price is unchanged. (optional, default to false)</param>
     /// <param name="mode"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="expandRelatedQuestions">Open all People Also Ask answers (true) or the first N (0-99). (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="oq">Original query sent to Google. Defaults to q; an empty string omits it. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="sourceid">Google source identifier. Defaults to chrome; an empty string omits it. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="ie">Google input encoding hint. Defaults to UTF-8; an empty string omits it. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="googleDomain">Alias for domain; Google requests use google.com with country targeting. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="lat">Latitude; supply together with lon instead of location or uule. (optional, default to 0.0)</param>
     /// <param name="lon">Longitude; supply together with lat. (optional, default to 0.0)</param>
     /// <param name="radius">Location accuracy in meters; requires lat/lon or a named city with a known center. (optional, default to 0.0)</param>
     /// <param name="colorScheme">Google color scheme. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="tbm">Google search type. Use output&#x3D;html for verticals; dedicated APIs provide parsed vertical results. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="udm">Google result filter: 14 web, 18 forums. Other verticals require output&#x3D;html. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="udm">Google result filter: web or 14 for web, 18 for forums. Other verticals require output&#x3D;html. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="noCache">Bypass result caches and request a fresh Google fetch. (optional, default to false)</param>
     /// <param name="asDt">Site restriction mode: i includes, e excludes as_sitesearch. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="asEpq">Exact phrase. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -512,6 +521,9 @@ public:
         boost::optional<bool> aiOverview,
         boost::optional<utility::string_t> mode,
         boost::optional<utility::string_t> expandRelatedQuestions,
+        boost::optional<utility::string_t> oq,
+        boost::optional<utility::string_t> sourceid,
+        boost::optional<utility::string_t> ie,
         boost::optional<utility::string_t> googleDomain,
         boost::optional<double> lat,
         boost::optional<double> lon,
