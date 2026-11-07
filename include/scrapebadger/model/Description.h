@@ -21,7 +21,6 @@
 
 #include "scrapebadger/ModelBase.h"
 
-#include "scrapebadger/AnyType.h"
 
 namespace org {
 namespace openapitools {

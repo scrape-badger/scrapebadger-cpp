@@ -36,10 +36,10 @@
 #include "scrapebadger/model/Url.h"
 #include "scrapebadger/model/Colour.h"
 #include "scrapebadger/model/Issellingfast.h"
+#include "scrapebadger/model/Description_1.h"
 #include "scrapebadger/model/Productcode.h"
 #include <cpprest/details/basic_types.h>
 #include <map>
-#include "scrapebadger/model/Description.h"
 
 namespace org {
 namespace openapitools {
@@ -229,11 +229,11 @@ public:
     /// <summary>
     /// 
     /// </summary>
-    std::shared_ptr<Description> getDescription() const;
+    std::shared_ptr<Description_1> getDescription() const;
     bool descriptionIsSet() const;
     void unsetDescription();
 
-    void setDescription(const std::shared_ptr<Description>& value);
+    void setDescription(const std::shared_ptr<Description_1>& value);
 
     /// <summary>
     /// 
@@ -289,7 +289,7 @@ protected:
     bool m_IsInStockIsSet;
     std::shared_ptr<Gender> m_Gender;
     bool m_GenderIsSet;
-    std::shared_ptr<Description> m_Description;
+    std::shared_ptr<Description_1> m_Description;
     bool m_DescriptionIsSet;
     std::shared_ptr<Ratings> m_Ratings;
     bool m_RatingsIsSet;

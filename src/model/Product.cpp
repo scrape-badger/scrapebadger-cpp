@@ -323,7 +323,7 @@ bool Product::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(U("description")));
         if(!fieldValue.is_null())
         {
-            std::shared_ptr<Description> refVal_setDescription;
+            std::shared_ptr<Description_1> refVal_setDescription;
             ok &= ModelBase::fromJson(fieldValue, refVal_setDescription);
             setDescription(refVal_setDescription);
         }
@@ -553,7 +553,7 @@ bool Product::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const 
     }
     if(multipart->hasContent(utility::conversions::to_string_t(U("description"))))
     {
-        std::shared_ptr<Description> refVal_setDescription;
+        std::shared_ptr<Description_1> refVal_setDescription;
         ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(U("description"))), refVal_setDescription );
         setDescription(refVal_setDescription);
     }
@@ -912,12 +912,12 @@ void Product::unsetGender()
 {
     m_GenderIsSet = false;
 }
-std::shared_ptr<Description> Product::getDescription() const
+std::shared_ptr<Description_1> Product::getDescription() const
 {
     return m_Description;
 }
 
-void Product::setDescription(const std::shared_ptr<Description>& value)
+void Product::setDescription(const std::shared_ptr<Description_1>& value)
 {
     m_Description = value;
     m_DescriptionIsSet = true;
