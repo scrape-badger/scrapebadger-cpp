@@ -2625,7 +2625,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchGroups(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(utility::string_t query, boost::optional<utility::string_t> location, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<int32_t> daysSinceListed, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> itemCondition, boost::optional<utility::string_t> deliveryMethod, boost::optional<int32_t> radius, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(utility::string_t query, boost::optional<utility::string_t> location, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<int32_t> daysSinceListed, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> itemCondition, boost::optional<utility::string_t> deliveryMethod, boost::optional<int32_t> radius, boost::optional<utility::string_t> after, boost::optional<bool> strictFilters, boost::optional<bool> includeDetails) const
 {
 
 
@@ -2704,6 +2704,14 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(util
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (strictFilters)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("strict_filters")] = ApiClient::parameterToString(*strictFilters);
+    }
+    if (includeDetails)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("include_details")] = ApiClient::parameterToString(*includeDetails);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
