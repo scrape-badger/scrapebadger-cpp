@@ -25,7 +25,6 @@
 #include "scrapebadger/AnyType.h"
 #include "scrapebadger/model/BillingLogListResponse.h"
 #include "scrapebadger/model/FilterRuleCreate.h"
-#include "scrapebadger/model/FilterRuleDeliveryLogListResponse.h"
 #include "scrapebadger/model/FilterRuleListResponse.h"
 #include "scrapebadger/model/FilterRuleResponse.h"
 #include "scrapebadger/model/FilterRuleUpdate.h"
@@ -37,7 +36,6 @@
 #include "scrapebadger/model/StreamMonitorListResponse.h"
 #include "scrapebadger/model/StreamMonitorResponse.h"
 #include "scrapebadger/model/StreamMonitorUpdate.h"
-#include "scrapebadger/model/TweetDeliveryLogListResponse.h"
 #include "scrapebadger/model/WebhookCreate.h"
 #include "scrapebadger/model/WebhookListResponse.h"
 #include "scrapebadger/model/WebhookResponse.h"
@@ -497,21 +495,11 @@ public:
     /// List delivery logs for a filter rule
     /// </summary>
     /// <remarks>
-    /// List tweet delivery logs for a specific filter rule.
+    /// Removed on 2026-11-09 (SCR-396): ScrapeBadger no longer stores delivered tweets.  Always answers &#x60;&#x60;410 Gone&#x60;&#x60; with &#x60;&#x60;error: delivery_logs_removed&#x60;&#x60;.
     /// </remarks>
     /// <param name="ruleId"></param>
-    /// <param name="deliveryStatus"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="authorUsername"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="page"> (optional, default to 0)</param>
-    /// <param name="pageSize"> (optional, default to 0)</param>
-    /// <param name="sort"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<FilterRuleDeliveryLogListResponse>> twitterListDeliveryLogsForAFilterRule(
-        utility::string_t ruleId,
-        boost::optional<utility::string_t> deliveryStatus,
-        boost::optional<utility::string_t> authorUsername,
-        boost::optional<int32_t> page,
-        boost::optional<int32_t> pageSize,
-        boost::optional<utility::string_t> sort
+    pplx::task<void> twitterListDeliveryLogsForAFilterRule(
+        utility::string_t ruleId
     ) const;
     /// <summary>
     /// List filter rules
@@ -545,21 +533,9 @@ public:
     /// List tweet delivery logs
     /// </summary>
     /// <remarks>
-    /// List tweet delivery logs for the authenticated API key&#39;s monitors.
+    /// Removed on 2026-11-09 (SCR-396): ScrapeBadger no longer stores delivered tweets.  Always answers &#x60;&#x60;410 Gone&#x60;&#x60; with &#x60;&#x60;error: delivery_logs_removed&#x60;&#x60;. Each tweet is delivered to your webhook or WebSocket only; keep your own log there.
     /// </remarks>
-    /// <param name="monitorId"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="authorUsername"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="deliveryStatus"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="page"> (optional, default to 0)</param>
-    /// <param name="pageSize"> (optional, default to 0)</param>
-    /// <param name="sort"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::shared_ptr<TweetDeliveryLogListResponse>> twitterListTweetDeliveryLogs(
-        boost::optional<utility::string_t> monitorId,
-        boost::optional<utility::string_t> authorUsername,
-        boost::optional<utility::string_t> deliveryStatus,
-        boost::optional<int32_t> page,
-        boost::optional<int32_t> pageSize,
-        boost::optional<utility::string_t> sort
+    pplx::task<void> twitterListTweetDeliveryLogs(
     ) const;
     /// <summary>
     /// List webhooks

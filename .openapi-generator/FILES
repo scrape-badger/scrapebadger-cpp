@@ -114,8 +114,6 @@ include/scrapebadger/model/Family_Friendly.h
 include/scrapebadger/model/Faq.h
 include/scrapebadger/model/FeedbackRequest.h
 include/scrapebadger/model/FilterRuleCreate.h
-include/scrapebadger/model/FilterRuleDeliveryLogListResponse.h
-include/scrapebadger/model/FilterRuleDeliveryLogResponse.h
 include/scrapebadger/model/FilterRuleListResponse.h
 include/scrapebadger/model/FilterRuleResponse.h
 include/scrapebadger/model/FilterRuleUpdate.h
@@ -211,8 +209,6 @@ include/scrapebadger/model/StreamMonitorUpdate.h
 include/scrapebadger/model/SubscriptionInfo.h
 include/scrapebadger/model/Subtype.h
 include/scrapebadger/model/Thumbnail.h
-include/scrapebadger/model/TweetDeliveryLogListResponse.h
-include/scrapebadger/model/TweetDeliveryLogResponse.h
 include/scrapebadger/model/Type.h
 include/scrapebadger/model/Url.h
 include/scrapebadger/model/UserItemsResponse.h
@@ -360,8 +356,6 @@ src/model/Family_Friendly.cpp
 src/model/Faq.cpp
 src/model/FeedbackRequest.cpp
 src/model/FilterRuleCreate.cpp
-src/model/FilterRuleDeliveryLogListResponse.cpp
-src/model/FilterRuleDeliveryLogResponse.cpp
 src/model/FilterRuleListResponse.cpp
 src/model/FilterRuleResponse.cpp
 src/model/FilterRuleUpdate.cpp
@@ -457,8 +451,6 @@ src/model/StreamMonitorUpdate.cpp
 src/model/SubscriptionInfo.cpp
 src/model/Subtype.cpp
 src/model/Thumbnail.cpp
-src/model/TweetDeliveryLogListResponse.cpp
-src/model/TweetDeliveryLogResponse.cpp
 src/model/Type.cpp
 src/model/Url.cpp
 src/model/UserItemsResponse.cpp

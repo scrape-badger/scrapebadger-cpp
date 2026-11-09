@@ -5271,7 +5271,7 @@ pplx::task<std::shared_ptr<BillingLogListResponse>> TwitterApi::twitterListBilli
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<FilterRuleDeliveryLogListResponse>> TwitterApi::twitterListDeliveryLogsForAFilterRule(utility::string_t ruleId, boost::optional<utility::string_t> deliveryStatus, boost::optional<utility::string_t> authorUsername, boost::optional<int32_t> page, boost::optional<int32_t> pageSize, boost::optional<utility::string_t> sort) const
+pplx::task<void> TwitterApi::twitterListDeliveryLogsForAFilterRule(utility::string_t ruleId) const
 {
 
 
@@ -5313,26 +5313,6 @@ pplx::task<std::shared_ptr<FilterRuleDeliveryLogListResponse>> TwitterApi::twitt
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
-    if (deliveryStatus)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("delivery_status")] = ApiClient::parameterToString(*deliveryStatus);
-    }
-    if (authorUsername)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("author_username")] = ApiClient::parameterToString(*authorUsername);
-    }
-    if (page)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
-    }
-    if (pageSize)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("page_size")] = ApiClient::parameterToString(*pageSize);
-    }
-    if (sort)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
-    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -5401,25 +5381,7 @@ pplx::task<std::shared_ptr<FilterRuleDeliveryLogListResponse>> TwitterApi::twitt
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::shared_ptr<FilterRuleDeliveryLogListResponse> localVarResult(new FilterRuleDeliveryLogListResponse());
-
-        if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
-        {
-            web::json::value localVarJson = web::json::value::parse(localVarResponse);
-
-            ModelBase::fromJson(localVarJson, localVarResult);
-        }
-        // else if(localVarResponseHttpContentType == utility::conversions::to_string_t("multipart/form-data"))
-        // {
-        // TODO multipart response parsing
-        // }
-        else
-        {
-            throw ApiException(500
-                , utility::conversions::to_string_t("error calling twitterListDeliveryLogsForAFilterRule: unsupported response type"));
-        }
-
-        return localVarResult;
+        return void();
     });
 }
 pplx::task<std::shared_ptr<FilterRuleListResponse>> TwitterApi::twitterListFilterRules(boost::optional<utility::string_t> status, boost::optional<int32_t> page, boost::optional<int32_t> pageSize) const
@@ -5706,7 +5668,7 @@ pplx::task<std::shared_ptr<StreamMonitorListResponse>> TwitterApi::twitterListSt
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<TweetDeliveryLogListResponse>> TwitterApi::twitterListTweetDeliveryLogs(boost::optional<utility::string_t> monitorId, boost::optional<utility::string_t> authorUsername, boost::optional<utility::string_t> deliveryStatus, boost::optional<int32_t> page, boost::optional<int32_t> pageSize, boost::optional<utility::string_t> sort) const
+pplx::task<void> TwitterApi::twitterListTweetDeliveryLogs() const
 {
 
 
@@ -5747,30 +5709,6 @@ pplx::task<std::shared_ptr<TweetDeliveryLogListResponse>> TwitterApi::twitterLis
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
-    if (monitorId)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("monitor_id")] = ApiClient::parameterToString(*monitorId);
-    }
-    if (authorUsername)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("author_username")] = ApiClient::parameterToString(*authorUsername);
-    }
-    if (deliveryStatus)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("delivery_status")] = ApiClient::parameterToString(*deliveryStatus);
-    }
-    if (page)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
-    }
-    if (pageSize)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("page_size")] = ApiClient::parameterToString(*pageSize);
-    }
-    if (sort)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
-    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -5839,25 +5777,7 @@ pplx::task<std::shared_ptr<TweetDeliveryLogListResponse>> TwitterApi::twitterLis
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::shared_ptr<TweetDeliveryLogListResponse> localVarResult(new TweetDeliveryLogListResponse());
-
-        if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
-        {
-            web::json::value localVarJson = web::json::value::parse(localVarResponse);
-
-            ModelBase::fromJson(localVarJson, localVarResult);
-        }
-        // else if(localVarResponseHttpContentType == utility::conversions::to_string_t("multipart/form-data"))
-        // {
-        // TODO multipart response parsing
-        // }
-        else
-        {
-            throw ApiException(500
-                , utility::conversions::to_string_t("error calling twitterListTweetDeliveryLogs: unsupported response type"));
-        }
-
-        return localVarResult;
+        return void();
     });
 }
 pplx::task<std::shared_ptr<WebhookListResponse>> TwitterApi::twitterListWebhooks(boost::optional<utility::string_t> monitorId) const
