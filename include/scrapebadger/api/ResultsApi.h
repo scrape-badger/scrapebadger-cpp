@@ -45,13 +45,13 @@ public:
     virtual ~ResultsApi();
 
     /// <summary>
-    /// Re-read a result
+    /// Re-read a result (removed)
     /// </summary>
     /// <remarks>
-    /// Replay a billed result (X-Result-ID) for free for ~15 minutes, optionally trimmed with jq / fields / max_items / summary. Never re-run a paid call just to reshape it.
+    /// Removed (SCR-396): ScrapeBadger no longer stores results, so there is nothing to re-read. Always 410. Narrow a call with _jq / _fields / _max_items instead.
     /// </remarks>
     /// <param name="resultId"></param>
-    pplx::task<std::shared_ptr<AnyType>> resultsReReadAResult(
+    pplx::task<std::shared_ptr<AnyType>> resultsReReadAResultRemoved(
         utility::string_t resultId
     ) const;
 

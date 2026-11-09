@@ -35,7 +35,7 @@ ResultsApi::~ResultsApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> ResultsApi::resultsReReadAResult(utility::string_t resultId) const
+pplx::task<std::shared_ptr<AnyType>> ResultsApi::resultsReReadAResultRemoved(utility::string_t resultId) const
 {
 
 
@@ -70,7 +70,7 @@ pplx::task<std::shared_ptr<AnyType>> ResultsApi::resultsReReadAResult(utility::s
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("ResultsApi->resultsReReadAResult does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("ResultsApi->resultsReReadAResultRemoved does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -97,7 +97,7 @@ pplx::task<std::shared_ptr<AnyType>> ResultsApi::resultsReReadAResult(utility::s
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("ResultsApi->resultsReReadAResult does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("ResultsApi->resultsReReadAResultRemoved does not consume any supported media type"));
     }
 
     // authentication (ApiKeyAuth) required
@@ -125,7 +125,7 @@ pplx::task<std::shared_ptr<AnyType>> ResultsApi::resultsReReadAResult(utility::s
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling resultsReReadAResult: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling resultsReReadAResultRemoved: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -136,7 +136,7 @@ pplx::task<std::shared_ptr<AnyType>> ResultsApi::resultsReReadAResult(utility::s
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling resultsReReadAResult: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling resultsReReadAResultRemoved: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -160,7 +160,7 @@ pplx::task<std::shared_ptr<AnyType>> ResultsApi::resultsReReadAResult(utility::s
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling resultsReReadAResult: unsupported response type"));
+                , utility::conversions::to_string_t("error calling resultsReReadAResultRemoved: unsupported response type"));
         }
 
         return localVarResult;
