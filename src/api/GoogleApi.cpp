@@ -1164,7 +1164,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetStockIndexQuote(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiModeSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<bool> includeHtml) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiModeSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<bool> includeHtml, boost::optional<utility::string_t> location, boost::optional<utility::string_t> uule, boost::optional<double> lat, boost::optional<double> lon) const
 {
 
 
@@ -1219,6 +1219,22 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiModeSearch(utility
     if (includeHtml)
     {
         localVarQueryParams[utility::conversions::to_string_t("include_html")] = ApiClient::parameterToString(*includeHtml);
+    }
+    if (location)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("location")] = ApiClient::parameterToString(*location);
+    }
+    if (uule)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("uule")] = ApiClient::parameterToString(*uule);
+    }
+    if (lat)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("lat")] = ApiClient::parameterToString(*lat);
+    }
+    if (lon)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("lon")] = ApiClient::parameterToString(*lon);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
