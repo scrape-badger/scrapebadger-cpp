@@ -47,6 +47,7 @@ include/scrapebadger/api/InstagramApi.h
 include/scrapebadger/api/LeboncoinApi.h
 include/scrapebadger/api/LinkedInApi.h
 include/scrapebadger/api/LoopNetApi.h
+include/scrapebadger/api/MetaAiApi.h
 include/scrapebadger/api/NaverApi.h
 include/scrapebadger/api/PerplexityApi.h
 include/scrapebadger/api/QuoteApi.h
@@ -289,6 +290,7 @@ src/api/InstagramApi.cpp
 src/api/LeboncoinApi.cpp
 src/api/LinkedInApi.cpp
 src/api/LoopNetApi.cpp
+src/api/MetaAiApi.cpp
 src/api/NaverApi.cpp
 src/api/PerplexityApi.cpp
 src/api/QuoteApi.cpp
