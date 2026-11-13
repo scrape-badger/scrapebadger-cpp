@@ -40,6 +40,7 @@ include/scrapebadger/api/GeminiApi.h
 include/scrapebadger/api/GitHubApi.h
 include/scrapebadger/api/GoogleApi.h
 include/scrapebadger/api/GooglePlayApi.h
+include/scrapebadger/api/GrokApi.h
 include/scrapebadger/api/GumtreeApi.h
 include/scrapebadger/api/IdealistaApi.h
 include/scrapebadger/api/ImmobiliareApi.h
@@ -283,6 +284,7 @@ src/api/GeminiApi.cpp
 src/api/GitHubApi.cpp
 src/api/GoogleApi.cpp
 src/api/GooglePlayApi.cpp
+src/api/GrokApi.cpp
 src/api/GumtreeApi.cpp
 src/api/IdealistaApi.cpp
 src/api/ImmobiliareApi.cpp

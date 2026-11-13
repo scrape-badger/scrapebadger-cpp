@@ -107,6 +107,18 @@ public:
         boost::optional<utility::string_t> country
     ) const;
     /// <summary>
+    /// Get full profile through the authenticated projection
+    /// </summary>
+    /// <remarks>
+    /// Full profile using the server-owned authenticated LinkedIn session.
+    /// </remarks>
+    /// <param name="publicId"></param>
+    /// <param name="country">Residential proxy country (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    pplx::task<std::shared_ptr<AnyType>> linkedinGetFullProfileThroughTheAuthenticatedProjection(
+        utility::string_t publicId,
+        boost::optional<utility::string_t> country
+    ) const;
+    /// <summary>
     /// Get job detail
     /// </summary>
     /// <remarks>
