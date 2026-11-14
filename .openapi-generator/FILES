@@ -57,6 +57,7 @@ include/scrapebadger/api/RedditApi.h
 include/scrapebadger/api/RedfinApi.h
 include/scrapebadger/api/RequestsApi.h
 include/scrapebadger/api/ResultsApi.h
+include/scrapebadger/api/RufusApi.h
 include/scrapebadger/api/TargetApi.h
 include/scrapebadger/api/TikTokApi.h
 include/scrapebadger/api/TwitterApi.h
@@ -195,6 +196,7 @@ include/scrapebadger/model/Rating.h
 include/scrapebadger/model/Ratings.h
 include/scrapebadger/model/Recipe.h
 include/scrapebadger/model/Review.h
+include/scrapebadger/model/RufusAskRequest.h
 include/scrapebadger/model/ScreenshotRequest.h
 include/scrapebadger/model/Searchterm.h
 include/scrapebadger/model/Site_Name.h
@@ -301,6 +303,7 @@ src/api/RedditApi.cpp
 src/api/RedfinApi.cpp
 src/api/RequestsApi.cpp
 src/api/ResultsApi.cpp
+src/api/RufusApi.cpp
 src/api/TargetApi.cpp
 src/api/TikTokApi.cpp
 src/api/TwitterApi.cpp
@@ -439,6 +442,7 @@ src/model/Rating.cpp
 src/model/Ratings.cpp
 src/model/Recipe.cpp
 src/model/Review.cpp
+src/model/RufusAskRequest.cpp
 src/model/ScreenshotRequest.cpp
 src/model/Searchterm.cpp
 src/model/Site_Name.cpp
