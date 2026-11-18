@@ -35,7 +35,7 @@ PerplexityApi::~PerplexityApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQuestion(utility::string_t prompt, boost::optional<utility::string_t> country, boost::optional<bool> strictCountry, boost::optional<utility::string_t> location, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
+pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQuestion(utility::string_t prompt, boost::optional<utility::string_t> country, boost::optional<bool> strictCountry, boost::optional<utility::string_t> location, boost::optional<bool> html, boost::optional<bool> raw, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -90,6 +90,14 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQues
     if (location)
     {
         localVarQueryParams[utility::conversions::to_string_t("location")] = ApiClient::parameterToString(*location);
+    }
+    if (html)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("html")] = ApiClient::parameterToString(*html);
+    }
+    if (raw)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("raw")] = ApiClient::parameterToString(*raw);
     }
     if (prefer)
     {
