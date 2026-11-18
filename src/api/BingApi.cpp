@@ -295,7 +295,7 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingBingScraperHealthCheckHead() c
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BingApi::bingImageSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count, boost::optional<utility::string_t> safeSearch) const
+pplx::task<std::shared_ptr<AnyType>> BingApi::bingImageSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count, boost::optional<utility::string_t> safeSearch, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -350,6 +350,34 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingImageSearch(utility::string_t 
     if (safeSearch)
     {
         localVarQueryParams[utility::conversions::to_string_t("safe_search")] = ApiClient::parameterToString(*safeSearch);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -440,7 +468,7 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingImageSearch(utility::string_t 
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BingApi::bingListSupportedMarkets() const
+pplx::task<std::shared_ptr<AnyType>> BingApi::bingListSupportedMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -481,6 +509,34 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingListSupportedMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -570,7 +626,7 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingListSupportedMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BingApi::bingNewsSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> freshness) const
+pplx::task<std::shared_ptr<AnyType>> BingApi::bingNewsSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> freshness, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -621,6 +677,34 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingNewsSearch(utility::string_t q
     if (freshness)
     {
         localVarQueryParams[utility::conversions::to_string_t("freshness")] = ApiClient::parameterToString(*freshness);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -711,7 +795,7 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingNewsSearch(utility::string_t q
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BingApi::bingSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> BingApi::bingSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -758,6 +842,34 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingSearchSuggestions(utility::str
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -848,7 +960,7 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingSearchSuggestions(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BingApi::bingVideoSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count, boost::optional<utility::string_t> safeSearch) const
+pplx::task<std::shared_ptr<AnyType>> BingApi::bingVideoSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count, boost::optional<utility::string_t> safeSearch, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -903,6 +1015,34 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingVideoSearch(utility::string_t 
     if (safeSearch)
     {
         localVarQueryParams[utility::conversions::to_string_t("safe_search")] = ApiClient::parameterToString(*safeSearch);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -993,7 +1133,7 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingVideoSearch(utility::string_t 
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BingApi::bingWebSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count, boost::optional<int32_t> offset, boost::optional<utility::string_t> safeSearch) const
+pplx::task<std::shared_ptr<AnyType>> BingApi::bingWebSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count, boost::optional<int32_t> offset, boost::optional<utility::string_t> safeSearch, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1052,6 +1192,34 @@ pplx::task<std::shared_ptr<AnyType>> BingApi::bingWebSearch(utility::string_t qu
     if (safeSearch)
     {
         localVarQueryParams[utility::conversions::to_string_t("safe_search")] = ApiClient::parameterToString(*safeSearch);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

@@ -35,7 +35,7 @@ RedditApi::~RedditApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetCrossPosts(utility::string_t postId, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetCrossPosts(utility::string_t postId, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -84,6 +84,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetCrossPosts(utility::str
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -174,7 +202,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetCrossPosts(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostComments(utility::string_t postId, boost::optional<utility::string_t> sort, boost::optional<int32_t> limit, boost::optional<int32_t> depth) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostComments(utility::string_t postId, boost::optional<utility::string_t> sort, boost::optional<int32_t> limit, boost::optional<int32_t> depth, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -227,6 +255,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostComments(utility::s
     if (depth)
     {
         localVarQueryParams[utility::conversions::to_string_t("depth")] = ApiClient::parameterToString(*depth);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -317,7 +373,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostComments(utility::s
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostDetail(utility::string_t postId) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostDetail(utility::string_t postId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -359,6 +415,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostDetail(utility::str
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -448,7 +532,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostDetail(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostsByDomain(utility::string_t domain, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostsByDomain(utility::string_t domain, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -505,6 +589,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostsByDomain(utility::
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -595,7 +707,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetPostsByDomain(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditInfo(utility::string_t subreddit) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditInfo(utility::string_t subreddit, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -637,6 +749,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditInfo(utility::
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -726,7 +866,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditInfo(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditPosts(utility::string_t subreddit, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditPosts(utility::string_t subreddit, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -783,6 +923,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditPosts(utility:
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -873,7 +1041,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditPosts(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditRules(utility::string_t subreddit) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditRules(utility::string_t subreddit, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -915,6 +1083,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditRules(utility:
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1004,7 +1200,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetSubredditRules(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetTrendingPosts(boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetTrendingPosts(boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1060,6 +1256,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetTrendingPosts(boost::op
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1150,7 +1374,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetTrendingPosts(boost::op
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserProfile(utility::string_t username) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserProfile(utility::string_t username, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1192,6 +1416,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserProfile(utility::st
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1281,7 +1533,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserProfile(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSComments(utility::string_t username, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSComments(utility::string_t username, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1338,6 +1590,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSComments(utility::
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1428,7 +1708,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSComments(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSModeratedSubreddits(utility::string_t username) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSModeratedSubreddits(utility::string_t username, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1470,6 +1750,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSModeratedSubreddit
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1559,7 +1867,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSModeratedSubreddit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSPosts(utility::string_t username, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSPosts(utility::string_t username, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1616,6 +1924,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSPosts(utility::str
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1706,7 +2042,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSPosts(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSTrophies(utility::string_t username) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSTrophies(utility::string_t username, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1748,6 +2084,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSTrophies(utility::
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1837,7 +2201,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetUserSTrophies(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetWikiPageContent(utility::string_t subreddit, utility::string_t page) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetWikiPageContent(utility::string_t subreddit, utility::string_t page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1880,6 +2244,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetWikiPageContent(utility
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1969,7 +2361,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditGetWikiPageContent(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditListWikiPages(utility::string_t subreddit) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditListWikiPages(utility::string_t subreddit, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2011,6 +2403,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditListWikiPages(utility::str
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -2100,7 +2520,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditListWikiPages(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditNewSubreddits(boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditNewSubreddits(boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2148,6 +2568,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditNewSubreddits(boost::optio
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2238,7 +2686,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditNewSubreddits(boost::optio
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditPopularSubreddits(boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditPopularSubreddits(boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2286,6 +2734,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditPopularSubreddits(boost::o
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2636,7 +3112,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditRedditScraperHealthCheckHe
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchRedditPosts(utility::string_t q, boost::optional<utility::string_t> subreddit, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchRedditPosts(utility::string_t q, boost::optional<utility::string_t> subreddit, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> t, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2699,6 +3175,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchRedditPosts(utility:
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2789,7 +3293,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchRedditPosts(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchSubreddits(utility::string_t q, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchSubreddits(utility::string_t q, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2840,6 +3344,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchSubreddits(utility::
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2930,7 +3462,7 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchSubreddits(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchUsers(utility::string_t q, boost::optional<int32_t> limit, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchUsers(utility::string_t q, boost::optional<int32_t> limit, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2981,6 +3513,34 @@ pplx::task<std::shared_ptr<AnyType>> RedditApi::redditSearchUsers(utility::strin
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

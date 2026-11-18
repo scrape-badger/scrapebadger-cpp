@@ -23,6 +23,7 @@
 #include "scrapebadger/ApiClient.h"
 
 #include "scrapebadger/AnyType.h"
+#include "scrapebadger/model/AsyncAccepted.h"
 #include "scrapebadger/model/HTTPValidationError.h"
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
@@ -52,9 +53,23 @@ public:
     /// </remarks>
     /// <param name="username">Zillow profile username (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="url">Full Zillow /profile/... URL (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> zillowGetAgentProfileListings(
         boost::optional<utility::string_t> username,
-        boost::optional<utility::string_t> url
+        boost::optional<utility::string_t> url,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Get multifamily building
@@ -63,8 +78,22 @@ public:
     /// Get a Zillow apartment community with per-unit pricing and availability.  Multi-unit rentals are served on &#x60;/apartments/...&#x60; and &#x60;/b/...&#x60; pages, which &#x60;/property&#x60; cannot read — pass a &#x60;home_type&#x3D;BUILDING&#x60; search result&#39;s &#x60;detail_url&#x60; here instead.
     /// </remarks>
     /// <param name="url">Full Zillow building URL, e.g. https://www.zillow.com/apartments/kansas-city-mo/brookside-51/CkBJqt/</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> zillowGetMultifamilyBuilding(
-        utility::string_t url
+        utility::string_t url,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Get property detail
@@ -73,8 +102,22 @@ public:
     /// Get a single Zillow property&#39;s full detail by zpid.
     /// </remarks>
     /// <param name="zpid"></param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> zillowGetPropertyDetail(
-        utility::string_t zpid
+        utility::string_t zpid,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Get property detail by URL
@@ -83,8 +126,22 @@ public:
     /// Get a single Zillow property&#39;s full detail by its homedetails URL.
     /// </remarks>
     /// <param name="url">Full Zillow /homedetails/... URL</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> zillowGetPropertyDetailByUrl(
-        utility::string_t url
+        utility::string_t url,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// List coverage markets
@@ -92,7 +149,21 @@ public:
     /// <remarks>
     /// List Zillow coverage regions (US + Canada).
     /// </remarks>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> zillowListCoverageMarkets(
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Region/address suggestions
@@ -101,8 +172,22 @@ public:
     /// Resolve a search term to Zillow regions/addresses.
     /// </remarks>
     /// <param name="query">Partial location — city, ZIP, address, neighborhood</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> zillowRegionAddressSuggestions(
-        utility::string_t query
+        utility::string_t query,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Search properties
@@ -132,6 +217,13 @@ public:
     /// <param name="south"> (optional, default to 0.0)</param>
     /// <param name="east"> (optional, default to 0.0)</param>
     /// <param name="west"> (optional, default to 0.0)</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> zillowSearchProperties(
         utility::string_t location,
         boost::optional<utility::string_t> status,
@@ -154,7 +246,14 @@ public:
         boost::optional<double> north,
         boost::optional<double> south,
         boost::optional<double> east,
-        boost::optional<double> west
+        boost::optional<double> west,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Zillow scraper health check

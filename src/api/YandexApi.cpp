@@ -35,7 +35,7 @@ YandexApi::~YandexApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexImageSearch(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexImageSearch(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -86,6 +86,34 @@ pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexImageSearch(utility::strin
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -176,7 +204,7 @@ pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexImageSearch(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexListSupportedMarkets() const
+pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexListSupportedMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -217,6 +245,34 @@ pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexListSupportedMarkets() con
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -306,7 +362,7 @@ pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexListSupportedMarkets() con
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexReverseImageSearch(utility::string_t imageUrl, boost::optional<utility::string_t> domain) const
+pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexReverseImageSearch(utility::string_t imageUrl, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -353,6 +409,34 @@ pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexReverseImageSearch(utility
     if (domain)
     {
         localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -443,7 +527,7 @@ pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexReverseImageSearch(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexWebSearch(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<int32_t> lr, boost::optional<utility::string_t> lang) const
+pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexWebSearch(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<int32_t> lr, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -502,6 +586,34 @@ pplx::task<std::shared_ptr<AnyType>> YandexApi::yandexWebSearch(utility::string_
     if (lang)
     {
         localVarQueryParams[utility::conversions::to_string_t("lang")] = ApiClient::parameterToString(*lang);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

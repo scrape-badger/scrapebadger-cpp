@@ -35,7 +35,7 @@ LoopNetApi::~LoopNetApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetGetBrokerProfile(utility::string_t slug, utility::string_t brokerId, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetGetBrokerProfile(utility::string_t slug, utility::string_t brokerId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -81,6 +81,34 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetGetBrokerProfile(utility
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -171,7 +199,7 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetGetBrokerProfile(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetGetListingDetail(utility::string_t listingId, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetGetListingDetail(utility::string_t listingId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -216,6 +244,34 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetGetListingDetail(utility
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -306,7 +362,7 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetGetListingDetail(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetListCoverageMarkets() const
+pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetListCoverageMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -347,6 +403,34 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetListCoverageMarkets() co
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -436,7 +520,7 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetListCoverageMarkets() co
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetListPropertyTypes() const
+pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetListPropertyTypes(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -477,6 +561,34 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetListPropertyTypes() cons
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -826,7 +938,7 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetLoopnetScraperHealthChec
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetSearchCommercialRealEstate(utility::string_t location, boost::optional<utility::string_t> market, boost::optional<utility::string_t> listingType, boost::optional<utility::string_t> propertyType, boost::optional<int32_t> page, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> priceType, boost::optional<int32_t> minSize, boost::optional<int32_t> maxSize) const
+pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetSearchCommercialRealEstate(utility::string_t location, boost::optional<utility::string_t> market, boost::optional<utility::string_t> listingType, boost::optional<utility::string_t> propertyType, boost::optional<int32_t> page, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> priceType, boost::optional<int32_t> minSize, boost::optional<int32_t> maxSize, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -905,6 +1017,34 @@ pplx::task<std::shared_ptr<AnyType>> LoopNetApi::loopnetSearchCommercialRealEsta
     if (maxSize)
     {
         localVarQueryParams[utility::conversions::to_string_t("max_size")] = ApiClient::parameterToString(*maxSize);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

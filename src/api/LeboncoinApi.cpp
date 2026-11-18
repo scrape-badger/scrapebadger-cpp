@@ -35,7 +35,7 @@ LeboncoinApi::~LeboncoinApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetASellerSAds(utility::string_t userId, boost::optional<int32_t> page, boost::optional<int32_t> limit) const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetASellerSAds(utility::string_t userId, boost::optional<int32_t> page, boost::optional<int32_t> limit, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -84,6 +84,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetASellerSAds(utili
     if (limit)
     {
         localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -174,7 +202,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetASellerSAds(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetAdDetail(int32_t listId) const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetAdDetail(int32_t listId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -216,6 +244,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetAdDetail(int32_t 
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -305,7 +361,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetAdDetail(int32_t 
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetSellerProfile(utility::string_t userId) const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetSellerProfile(utility::string_t userId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -347,6 +403,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetSellerProfile(uti
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -436,7 +520,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetSellerProfile(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetSimilarAds(int32_t listId, boost::optional<int32_t> limit) const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetSimilarAds(int32_t listId, boost::optional<int32_t> limit, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -481,6 +565,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinGetSimilarAds(int32_
     if (limit)
     {
         localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -831,7 +943,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinLeboncoinScraperHeal
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListCategories() const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListCategories(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -872,6 +984,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListCategories() con
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -961,7 +1101,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListCategories() con
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListDepartments(boost::optional<utility::string_t> regionId) const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListDepartments(boost::optional<utility::string_t> regionId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1005,6 +1145,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListDepartments(boos
     if (regionId)
     {
         localVarQueryParams[utility::conversions::to_string_t("region_id")] = ApiClient::parameterToString(*regionId);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1095,7 +1263,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListDepartments(boos
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1136,6 +1304,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1225,7 +1421,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListRegions() const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListRegions(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1266,6 +1462,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListRegions() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1355,7 +1579,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinListRegions() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinLocationAutocomplete(utility::string_t q) const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinLocationAutocomplete(utility::string_t q, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1398,6 +1622,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinLocationAutocomplete
 
     {
         localVarQueryParams[utility::conversions::to_string_t("q")] = ApiClient::parameterToString(q);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1488,7 +1740,7 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinLocationAutocomplete
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinSearchLeboncoinAds(boost::optional<utility::string_t> text, boost::optional<utility::string_t> category, boost::optional<utility::string_t> regionId, boost::optional<utility::string_t> departmentId, boost::optional<utility::string_t> city, boost::optional<utility::string_t> zipcode, boost::optional<int32_t> priceMin, boost::optional<int32_t> priceMax, boost::optional<utility::string_t> ownerType, boost::optional<utility::string_t> adType, boost::optional<utility::string_t> sort, boost::optional<int32_t> page, boost::optional<int32_t> limit) const
+pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinSearchLeboncoinAds(boost::optional<utility::string_t> text, boost::optional<utility::string_t> category, boost::optional<utility::string_t> regionId, boost::optional<utility::string_t> departmentId, boost::optional<utility::string_t> city, boost::optional<utility::string_t> zipcode, boost::optional<int32_t> priceMin, boost::optional<int32_t> priceMax, boost::optional<utility::string_t> ownerType, boost::optional<utility::string_t> adType, boost::optional<utility::string_t> sort, boost::optional<int32_t> page, boost::optional<int32_t> limit, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1580,6 +1832,34 @@ pplx::task<std::shared_ptr<AnyType>> LeboncoinApi::leboncoinSearchLeboncoinAds(b
     if (limit)
     {
         localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

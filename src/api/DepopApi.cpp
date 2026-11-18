@@ -295,7 +295,7 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopDepopScraperHealthCheckHead(
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetAUserSProducts(utility::string_t username, boost::optional<utility::string_t> market, boost::optional<int32_t> perPage, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetAUserSProducts(utility::string_t username, boost::optional<utility::string_t> market, boost::optional<int32_t> perPage, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -348,6 +348,34 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetAUserSProducts(utility::s
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -438,7 +466,7 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetAUserSProducts(utility::s
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetProductDetail(utility::string_t productId, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetProductDetail(utility::string_t productId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -483,6 +511,34 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetProductDetail(utility::st
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -573,7 +629,7 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetProductDetail(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetShopUserProfile(utility::string_t username, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetShopUserProfile(utility::string_t username, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -618,6 +674,34 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetShopUserProfile(utility::
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -708,7 +792,7 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopGetShopUserProfile(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DepopApi::depopListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> DepopApi::depopListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -749,6 +833,34 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopListMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -838,7 +950,7 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DepopApi::depopSearchDepopProducts(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> perPage, boost::optional<utility::string_t> cursor, boost::optional<double> priceMin, boost::optional<double> priceMax, boost::optional<utility::string_t> brands, boost::optional<utility::string_t> categories, boost::optional<utility::string_t> sizes, boost::optional<utility::string_t> conditions, boost::optional<utility::string_t> gender, boost::optional<utility::string_t> sort) const
+pplx::task<std::shared_ptr<AnyType>> DepopApi::depopSearchDepopProducts(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> perPage, boost::optional<utility::string_t> cursor, boost::optional<double> priceMin, boost::optional<double> priceMax, boost::optional<utility::string_t> brands, boost::optional<utility::string_t> categories, boost::optional<utility::string_t> sizes, boost::optional<utility::string_t> conditions, boost::optional<utility::string_t> gender, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -925,6 +1037,34 @@ pplx::task<std::shared_ptr<AnyType>> DepopApi::depopSearchDepopProducts(utility:
     if (sort)
     {
         localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

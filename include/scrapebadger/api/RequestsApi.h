@@ -22,7 +22,10 @@
 
 #include "scrapebadger/ApiClient.h"
 
+#include "scrapebadger/model/Account_webhook_deliveries_403_response.h"
 #include "scrapebadger/AnyType.h"
+#include "scrapebadger/model/AsyncAccepted.h"
+#include "scrapebadger/model/AsyncCallbackStatus.h"
 #include "scrapebadger/model/HTTPValidationError.h"
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
@@ -45,10 +48,20 @@ public:
     virtual ~RequestsApi();
 
     /// <summary>
+    /// Callback status
+    /// </summary>
+    /// <remarks>
+    /// Webhook delivery state of a call submitted with &#x60;X-Callback-URL&#x60; / &#x60;callback_url&#x60;: kept for 24 h. Free. &#x60;404 callback_not_found&#x60; for a request without a callback, of another account, or older than 24 h.
+    /// </remarks>
+    /// <param name="requestId"></param>
+    pplx::task<std::shared_ptr<AsyncCallbackStatus>> requestsCallbackStatus(
+        utility::string_t requestId
+    ) const;
+    /// <summary>
     /// Poll an async request
     /// </summary>
     /// <remarks>
-    /// Status or final response of a call made with &#x60;&#x60;Prefer: respond-async&#x60;&#x60;. While it runs: 202. When done: the original status, headers and body.
+    /// Status or final response of a call made with &#x60;&#x60;Prefer: respond-async&#x60;&#x60;. While it runs: 202. When done: the original status, headers and body.  The final response carries &#x60;X-Callback-Status&#x60;, &#x60;X-Callback-Attempts&#x60; and &#x60;X-Callback-Error&#x60; for a call submitted with a callback; while it runs, the &#x60;202&#x60; body has a &#x60;callback&#x60; object. Full delivery state: &#x60;GET /v1/requests/{request_id}/callback&#x60;.
     /// </remarks>
     /// <param name="requestId"></param>
     pplx::task<std::shared_ptr<AnyType>> requestsPollAnAsyncRequest(

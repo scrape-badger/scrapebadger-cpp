@@ -35,7 +35,7 @@ ZillowApi::~ZillowApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetAgentProfileListings(boost::optional<utility::string_t> username, boost::optional<utility::string_t> url) const
+pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetAgentProfileListings(boost::optional<utility::string_t> username, boost::optional<utility::string_t> url, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -83,6 +83,34 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetAgentProfileListings(bo
     if (url)
     {
         localVarQueryParams[utility::conversions::to_string_t("url")] = ApiClient::parameterToString(*url);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -173,7 +201,7 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetAgentProfileListings(bo
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetMultifamilyBuilding(utility::string_t url) const
+pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetMultifamilyBuilding(utility::string_t url, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -216,6 +244,34 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetMultifamilyBuilding(uti
 
     {
         localVarQueryParams[utility::conversions::to_string_t("url")] = ApiClient::parameterToString(url);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -306,7 +362,7 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetMultifamilyBuilding(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetPropertyDetail(utility::string_t zpid) const
+pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetPropertyDetail(utility::string_t zpid, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -348,6 +404,34 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetPropertyDetail(utility:
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -437,7 +521,7 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetPropertyDetail(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetPropertyDetailByUrl(utility::string_t url) const
+pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetPropertyDetailByUrl(utility::string_t url, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -480,6 +564,34 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetPropertyDetailByUrl(uti
 
     {
         localVarQueryParams[utility::conversions::to_string_t("url")] = ApiClient::parameterToString(url);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -570,7 +682,7 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowGetPropertyDetailByUrl(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowListCoverageMarkets() const
+pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowListCoverageMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -611,6 +723,34 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowListCoverageMarkets() cons
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -700,7 +840,7 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowListCoverageMarkets() cons
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowRegionAddressSuggestions(utility::string_t query) const
+pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowRegionAddressSuggestions(utility::string_t query, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -743,6 +883,34 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowRegionAddressSuggestions(u
 
     {
         localVarQueryParams[utility::conversions::to_string_t("query")] = ApiClient::parameterToString(query);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -833,7 +1001,7 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowRegionAddressSuggestions(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowSearchProperties(utility::string_t location, boost::optional<utility::string_t> status, boost::optional<int32_t> page, boost::optional<utility::string_t> sort, boost::optional<int32_t> priceMin, boost::optional<int32_t> priceMax, boost::optional<int32_t> bedsMin, boost::optional<double> bathsMin, boost::optional<utility::string_t> homeType, boost::optional<int32_t> sqftMin, boost::optional<int32_t> sqftMax, boost::optional<int32_t> lotMin, boost::optional<int32_t> lotMax, boost::optional<int32_t> yearBuiltMin, boost::optional<int32_t> yearBuiltMax, boost::optional<int32_t> hoaMax, boost::optional<utility::string_t> keywords, boost::optional<utility::string_t> daysOn, boost::optional<double> north, boost::optional<double> south, boost::optional<double> east, boost::optional<double> west) const
+pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowSearchProperties(utility::string_t location, boost::optional<utility::string_t> status, boost::optional<int32_t> page, boost::optional<utility::string_t> sort, boost::optional<int32_t> priceMin, boost::optional<int32_t> priceMax, boost::optional<int32_t> bedsMin, boost::optional<double> bathsMin, boost::optional<utility::string_t> homeType, boost::optional<int32_t> sqftMin, boost::optional<int32_t> sqftMax, boost::optional<int32_t> lotMin, boost::optional<int32_t> lotMax, boost::optional<int32_t> yearBuiltMin, boost::optional<int32_t> yearBuiltMax, boost::optional<int32_t> hoaMax, boost::optional<utility::string_t> keywords, boost::optional<utility::string_t> daysOn, boost::optional<double> north, boost::optional<double> south, boost::optional<double> east, boost::optional<double> west, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -960,6 +1128,34 @@ pplx::task<std::shared_ptr<AnyType>> ZillowApi::zillowSearchProperties(utility::
     if (west)
     {
         localVarQueryParams[utility::conversions::to_string_t("west")] = ApiClient::parameterToString(*west);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

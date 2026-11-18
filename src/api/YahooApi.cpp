@@ -35,7 +35,7 @@ YahooApi::~YahooApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooImageSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooImageSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -86,6 +86,34 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooImageSearch(utility::string_
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -176,7 +204,7 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooImageSearch(utility::string_
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooListSupportedMarkets() const
+pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooListSupportedMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -217,6 +245,34 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooListSupportedMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -306,7 +362,7 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooListSupportedMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooNewsSearch(utility::string_t query, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooNewsSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -353,6 +409,34 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooNewsSearch(utility::string_t
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -443,7 +527,7 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooNewsSearch(utility::string_t
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -490,6 +574,34 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooSearchSuggestions(utility::s
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -580,7 +692,7 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooSearchSuggestions(utility::s
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooVideoSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooVideoSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -631,6 +743,34 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooVideoSearch(utility::string_
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -721,7 +861,7 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooVideoSearch(utility::string_
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooWebSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> offset, boost::optional<utility::string_t> safeSearch) const
+pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooWebSearch(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> offset, boost::optional<utility::string_t> safeSearch, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -776,6 +916,34 @@ pplx::task<std::shared_ptr<AnyType>> YahooApi::yahooWebSearch(utility::string_t 
     if (safeSearch)
     {
         localVarQueryParams[utility::conversions::to_string_t("safe_search")] = ApiClient::parameterToString(*safeSearch);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

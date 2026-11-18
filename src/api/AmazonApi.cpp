@@ -295,7 +295,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonAmazonScraperHealthCheckHe
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBestsellersByCategory(boost::optional<utility::string_t> domain, boost::optional<utility::string_t> category, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBestsellersByCategory(boost::optional<utility::string_t> domain, boost::optional<utility::string_t> category, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -347,6 +347,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBestsellersByCategory(boos
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -437,7 +465,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBestsellersByCategory(boos
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBrowseNodeCategoryListing(utility::string_t node, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> sortBy) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBrowseNodeCategoryListing(utility::string_t node, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -492,6 +520,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBrowseNodeCategoryListing(
     if (sortBy)
     {
         localVarQueryParams[utility::conversions::to_string_t("sort_by")] = ApiClient::parameterToString(*sortBy);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -582,7 +638,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonBrowseNodeCategoryListing(
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetAllSellerOffersBuybox(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> zip, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetAllSellerOffersBuybox(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> zip, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -635,6 +691,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetAllSellerOffersBuybox(u
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -725,7 +809,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetAllSellerOffersBuybox(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductDetail(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> zip, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductDetail(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> zip, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -778,6 +862,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductDetail(utility::
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -868,7 +980,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductDetail(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductReviews(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> star, boost::optional<bool> verifiedOnly, boost::optional<bool> mediaOnly, boost::optional<utility::string_t> mode, boost::optional<int32_t> maxPages, boost::optional<bool> perStar, boost::optional<int32_t> limit, boost::optional<utility::string_t> wootOffer) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductReviews(utility::string_t asin, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> star, boost::optional<bool> verifiedOnly, boost::optional<bool> mediaOnly, boost::optional<utility::string_t> mode, boost::optional<int32_t> maxPages, boost::optional<bool> perStar, boost::optional<int32_t> limit, boost::optional<utility::string_t> wootOffer, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -953,6 +1065,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductReviews(utility:
     if (wootOffer)
     {
         localVarQueryParams[utility::conversions::to_string_t("woot_offer")] = ApiClient::parameterToString(*wootOffer);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1043,7 +1183,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetProductReviews(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerFeedback(utility::string_t sellerId, boost::optional<utility::string_t> domain, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerFeedback(utility::string_t sellerId, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1092,6 +1232,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerFeedback(utility:
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1182,7 +1350,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerFeedback(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerProfile(utility::string_t sellerId, boost::optional<utility::string_t> domain) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerProfile(utility::string_t sellerId, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1227,6 +1395,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerProfile(utility::
     if (domain)
     {
         localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1317,7 +1513,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerProfile(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerStorefrontProducts(utility::string_t sellerId, boost::optional<utility::string_t> domain, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerStorefrontProducts(utility::string_t sellerId, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1366,6 +1562,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerStorefrontProduct
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1456,7 +1680,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonGetSellerStorefrontProduct
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonKeywordSuggestions(utility::string_t query, boost::optional<utility::string_t> domain) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonKeywordSuggestions(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1503,6 +1727,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonKeywordSuggestions(utility
     if (domain)
     {
         localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1593,7 +1845,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonKeywordSuggestions(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonListCategoryAliases(boost::optional<utility::string_t> domain) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonListCategoryAliases(boost::optional<utility::string_t> domain, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1637,6 +1889,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonListCategoryAliases(boost:
     if (domain)
     {
         localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1727,7 +2007,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonListCategoryAliases(boost:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonListMarketplaces() const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonListMarketplaces(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1768,6 +2048,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonListMarketplaces() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1857,7 +2165,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonListMarketplaces() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonNewReleasesByCategory(boost::optional<utility::string_t> domain, boost::optional<utility::string_t> category, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonNewReleasesByCategory(boost::optional<utility::string_t> domain, boost::optional<utility::string_t> category, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1909,6 +2217,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonNewReleasesByCategory(boos
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1999,7 +2335,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonNewReleasesByCategory(boos
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonSearchAmazonProducts(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> category, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> zip, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonSearchAmazonProducts(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> category, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> zip, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2074,6 +2410,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonSearchAmazonProducts(utili
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2164,7 +2528,7 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonSearchAmazonProducts(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonTodaySDeals(boost::optional<utility::string_t> domain, boost::optional<utility::string_t> category, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonTodaySDeals(boost::optional<utility::string_t> domain, boost::optional<utility::string_t> category, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2216,6 +2580,34 @@ pplx::task<std::shared_ptr<AnyType>> AmazonApi::amazonTodaySDeals(boost::optiona
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

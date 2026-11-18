@@ -35,7 +35,7 @@ GooglePlayApi::~GooglePlayApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayBrowseACategory(utility::string_t categoryId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<int32_t> num) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayBrowseACategory(utility::string_t categoryId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<int32_t> num, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -88,6 +88,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayBrowseACategory(ut
     if (num)
     {
         localVarQueryParams[utility::conversions::to_string_t("num")] = ApiClient::parameterToString(*num);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -178,7 +206,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayBrowseACategory(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppDetail(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppDetail(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -227,6 +255,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppDetail(utili
     if (lang)
     {
         localVarQueryParams[utility::conversions::to_string_t("lang")] = ApiClient::parameterToString(*lang);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -317,7 +373,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppDetail(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppPermissions(utility::string_t appId, boost::optional<utility::string_t> lang) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppPermissions(utility::string_t appId, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -362,6 +418,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppPermissions(
     if (lang)
     {
         localVarQueryParams[utility::conversions::to_string_t("lang")] = ApiClient::parameterToString(*lang);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -452,7 +536,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppPermissions(
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppReviews(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> sort, boost::optional<int32_t> count, boost::optional<utility::string_t> pageToken) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppReviews(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> sort, boost::optional<int32_t> count, boost::optional<utility::string_t> pageToken, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -513,6 +597,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppReviews(util
     if (pageToken)
     {
         localVarQueryParams[utility::conversions::to_string_t("page_token")] = ApiClient::parameterToString(*pageToken);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -603,7 +715,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetAppReviews(util
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetDeveloperApps(utility::string_t developer, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<int32_t> num) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetDeveloperApps(utility::string_t developer, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<int32_t> num, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -656,6 +768,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetDeveloperApps(u
     if (num)
     {
         localVarQueryParams[utility::conversions::to_string_t("num")] = ApiClient::parameterToString(*num);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -746,7 +886,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetDeveloperApps(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetSimilarApps(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetSimilarApps(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -795,6 +935,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetSimilarApps(uti
     if (lang)
     {
         localVarQueryParams[utility::conversions::to_string_t("lang")] = ApiClient::parameterToString(*lang);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -885,7 +1053,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayGetSimilarApps(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayListCategories() const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayListCategories(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -926,6 +1094,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayListCategories() c
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1015,7 +1211,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayListCategories() c
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1056,6 +1252,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayListMarkets() cons
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1145,7 +1369,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayListMarkets() cons
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlaySearchApps(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> price) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlaySearchApps(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> price, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1200,6 +1424,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlaySearchApps(utility
     if (price)
     {
         localVarQueryParams[utility::conversions::to_string_t("price")] = ApiClient::parameterToString(*price);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1290,7 +1542,7 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlaySearchApps(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayTopCharts(utility::string_t collection, boost::optional<utility::string_t> category, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang) const
+pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayTopCharts(utility::string_t collection, boost::optional<utility::string_t> category, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1343,6 +1595,34 @@ pplx::task<std::shared_ptr<AnyType>> GooglePlayApi::googlePlayTopCharts(utility:
     if (lang)
     {
         localVarQueryParams[utility::conversions::to_string_t("lang")] = ApiClient::parameterToString(*lang);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

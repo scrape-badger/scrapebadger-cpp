@@ -35,7 +35,7 @@ EBayApi::~EBayApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayBrowseACategory(utility::string_t categoryId, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<double> minPrice, boost::optional<double> maxPrice) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayBrowseACategory(utility::string_t categoryId, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -100,6 +100,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayBrowseACategory(utility::strin
     if (maxPrice)
     {
         localVarQueryParams[utility::conversions::to_string_t("max_price")] = ApiClient::parameterToString(*maxPrice);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -190,7 +218,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayBrowseACategory(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(boost::optional<utility::string_t> query, boost::optional<utility::string_t> seller, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> location, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(boost::optional<utility::string_t> query, boost::optional<utility::string_t> seller, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> location, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -278,6 +306,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayCompletedSoldListings(boost::o
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -628,7 +684,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayEbayScraperHealthCheckHead() c
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetItemDetail(utility::string_t itemId, boost::optional<utility::string_t> domain) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetItemDetail(utility::string_t itemId, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -673,6 +729,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetItemDetail(utility::string_
     if (domain)
     {
         localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -763,7 +847,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetItemDetail(utility::string_
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetItemReviews(utility::string_t itemId, boost::optional<utility::string_t> domain, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetItemReviews(utility::string_t itemId, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -812,6 +896,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetItemReviews(utility::string
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -902,7 +1014,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetItemReviews(utility::string
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerFeedback(utility::string_t username, boost::optional<utility::string_t> domain, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerFeedback(utility::string_t username, boost::optional<utility::string_t> domain, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -951,6 +1063,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerFeedback(utility::str
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1041,7 +1181,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerFeedback(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerListings(utility::string_t username, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> query, boost::optional<int32_t> page, boost::optional<int32_t> perPage) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerListings(utility::string_t username, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> query, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1098,6 +1238,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerListings(utility::str
     if (perPage)
     {
         localVarQueryParams[utility::conversions::to_string_t("per_page")] = ApiClient::parameterToString(*perPage);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1188,7 +1356,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerListings(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerProfile(utility::string_t username, boost::optional<utility::string_t> domain) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerProfile(utility::string_t username, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1233,6 +1401,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerProfile(utility::stri
     if (domain)
     {
         localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1323,7 +1519,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayGetSellerProfile(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayKeywordSuggestions(utility::string_t query, boost::optional<utility::string_t> domain) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayKeywordSuggestions(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1370,6 +1566,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayKeywordSuggestions(utility::st
     if (domain)
     {
         localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1460,7 +1684,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayKeywordSuggestions(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListCategories() const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListCategories(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1501,6 +1725,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListCategories() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1590,7 +1842,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListCategories() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1631,6 +1883,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1720,7 +2000,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebayListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchByImage(std::map<utility::string_t, std::shared_ptr<AnyType>> requestBody) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchByImage(std::map<utility::string_t, std::shared_ptr<AnyType>> requestBody, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1762,6 +2042,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchByImage(std::map<utility
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
     localVarConsumeHttpContentTypes.insert( utility::conversions::to_string_t("application/json") );
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1872,7 +2180,7 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchByImage(std::map<utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchListings(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> buyingFormat, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<bool> freeShipping, boost::optional<utility::string_t> location, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchListings(utility::string_t query, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> page, boost::optional<int32_t> perPage, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> buyingFormat, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<bool> freeShipping, boost::optional<utility::string_t> location, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1963,6 +2271,34 @@ pplx::task<std::shared_ptr<AnyType>> EBayApi::ebaySearchListings(utility::string
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

@@ -35,7 +35,7 @@ AppStoreApi::~AppStoreApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetAppDetail(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<bool> includeExtras) const
+pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetAppDetail(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> lang, boost::optional<bool> includeExtras, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -88,6 +88,34 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetAppDetail(utility::
     if (includeExtras)
     {
         localVarQueryParams[utility::conversions::to_string_t("include_extras")] = ApiClient::parameterToString(*includeExtras);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -178,7 +206,7 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetAppDetail(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetAppReviews(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<int32_t> page, boost::optional<utility::string_t> sort) const
+pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetAppReviews(utility::string_t appId, boost::optional<utility::string_t> country, boost::optional<int32_t> page, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -231,6 +259,34 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetAppReviews(utility:
     if (sort)
     {
         localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -321,7 +377,7 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetAppReviews(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetDeveloperApps(utility::string_t artistId, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetDeveloperApps(utility::string_t artistId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -366,6 +422,34 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetDeveloperApps(utili
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -456,7 +540,7 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreGetDeveloperApps(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreListGenres() const
+pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreListGenres(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -497,6 +581,34 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreListGenres() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -586,7 +698,7 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreListGenres() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -627,6 +739,34 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreListMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -716,7 +856,7 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreSearchApps(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> entity, boost::optional<int32_t> limit, boost::optional<int32_t> offset, boost::optional<utility::string_t> lang) const
+pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreSearchApps(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> entity, boost::optional<int32_t> limit, boost::optional<int32_t> offset, boost::optional<utility::string_t> lang, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -779,6 +919,34 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreSearchApps(utility::st
     if (lang)
     {
         localVarQueryParams[utility::conversions::to_string_t("lang")] = ApiClient::parameterToString(*lang);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -869,7 +1037,7 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreSearchApps(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreTopCharts(boost::optional<utility::string_t> country, boost::optional<utility::string_t> type, boost::optional<int32_t> genre, boost::optional<int32_t> limit, boost::optional<utility::string_t> entity) const
+pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreTopCharts(boost::optional<utility::string_t> country, boost::optional<utility::string_t> type, boost::optional<int32_t> genre, boost::optional<int32_t> limit, boost::optional<utility::string_t> entity, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -929,6 +1097,34 @@ pplx::task<std::shared_ptr<AnyType>> AppStoreApi::appStoreTopCharts(boost::optio
     if (entity)
     {
         localVarQueryParams[utility::conversions::to_string_t("entity")] = ApiClient::parameterToString(*entity);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

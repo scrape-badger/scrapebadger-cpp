@@ -35,7 +35,7 @@ EtsyApi::~EtsyApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetCategories(boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetCategories(boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -87,6 +87,34 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetCategories(boost::optional<
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -177,7 +205,7 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetCategories(boost::optional<
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetListingDetail(utility::string_t listingId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetListingDetail(utility::string_t listingId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -230,6 +258,34 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetListingDetail(utility::stri
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -320,7 +376,7 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetListingDetail(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetListingReviews(utility::string_t listingId, boost::optional<int32_t> page, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetListingReviews(utility::string_t listingId, boost::optional<int32_t> page, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -381,6 +437,34 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetListingReviews(utility::str
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -471,7 +555,7 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetListingReviews(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -526,6 +610,34 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetSearchSuggestions(utility::
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -616,7 +728,7 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetSearchSuggestions(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopListings(utility::string_t shopName, boost::optional<int32_t> page, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopListings(utility::string_t shopName, boost::optional<int32_t> page, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -673,6 +785,34 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopListings(utility::strin
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -763,7 +903,7 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopListings(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopProfile(utility::string_t shopName, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopProfile(utility::string_t shopName, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -816,6 +956,34 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopProfile(utility::string
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -906,7 +1074,7 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopProfile(utility::string
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopReviews(utility::string_t shopName, boost::optional<int32_t> page, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopReviews(utility::string_t shopName, boost::optional<int32_t> page, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -963,6 +1131,34 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopReviews(utility::string
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1053,7 +1249,7 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsyGetShopReviews(utility::string
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsySearchListings(utility::string_t query, boost::optional<int32_t> page, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> sort, boost::optional<double> minPrice, boost::optional<double> maxPrice) const
+pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsySearchListings(utility::string_t query, boost::optional<int32_t> page, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> sort, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1124,6 +1320,34 @@ pplx::task<std::shared_ptr<AnyType>> EtsyApi::etsySearchListings(utility::string
     if (maxPrice)
     {
         localVarQueryParams[utility::conversions::to_string_t("max_price")] = ApiClient::parameterToString(*maxPrice);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

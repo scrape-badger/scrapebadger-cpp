@@ -35,7 +35,7 @@ ASOSApi::~ASOSApi()
 {
 }
 
-pplx::task<std::shared_ptr<ProductResponse>> ASOSApi::asosGetProductDetail(int32_t productId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<ProductResponse>> ASOSApi::asosGetProductDetail(int32_t productId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -96,6 +96,34 @@ pplx::task<std::shared_ptr<ProductResponse>> ASOSApi::asosGetProductDetail(int32
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -186,7 +214,7 @@ pplx::task<std::shared_ptr<ProductResponse>> ASOSApi::asosGetProductDetail(int32
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<StockResponse>> ASOSApi::asosGetStockAndPrices(utility::string_t productIds, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<StockResponse>> ASOSApi::asosGetStockAndPrices(utility::string_t productIds, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -249,6 +277,34 @@ pplx::task<std::shared_ptr<StockResponse>> ASOSApi::asosGetStockAndPrices(utilit
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -339,7 +395,7 @@ pplx::task<std::shared_ptr<StockResponse>> ASOSApi::asosGetStockAndPrices(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListCategories(boost::optional<utility::string_t> gender, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListCategories(boost::optional<utility::string_t> gender, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -403,6 +459,34 @@ pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListCategories(boost::optional
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -493,7 +577,7 @@ pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListCategories(boost::optional
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -534,6 +618,34 @@ pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -623,7 +735,7 @@ pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListSearchFilters(boost::optional<utility::string_t> query, boost::optional<int32_t> categoryId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListSearchFilters(boost::optional<utility::string_t> query, boost::optional<int32_t> categoryId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -691,6 +803,34 @@ pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListSearchFilters(boost::optio
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -781,7 +921,7 @@ pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosListSearchFilters(boost::optio
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<Portal_api__routers__v1_asos__SearchResponse>> ASOSApi::asosSearchProducts(boost::optional<utility::string_t> query, boost::optional<int32_t> categoryId, boost::optional<int32_t> offset, boost::optional<int32_t> limit, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> brand, boost::optional<utility::string_t> colour, boost::optional<utility::string_t> size, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<Portal_api__routers__v1_asos__SearchResponse>> ASOSApi::asosSearchProducts(boost::optional<utility::string_t> query, boost::optional<int32_t> categoryId, boost::optional<int32_t> offset, boost::optional<int32_t> limit, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> brand, boost::optional<utility::string_t> colour, boost::optional<utility::string_t> size, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -882,6 +1022,34 @@ pplx::task<std::shared_ptr<Portal_api__routers__v1_asos__SearchResponse>> ASOSAp
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
     }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -971,7 +1139,7 @@ pplx::task<std::shared_ptr<Portal_api__routers__v1_asos__SearchResponse>> ASOSAp
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> store, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1034,6 +1202,34 @@ pplx::task<std::shared_ptr<AnyType>> ASOSApi::asosSearchSuggestions(utility::str
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

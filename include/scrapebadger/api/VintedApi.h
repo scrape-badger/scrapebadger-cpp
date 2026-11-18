@@ -23,6 +23,7 @@
 #include "scrapebadger/ApiClient.h"
 
 #include "scrapebadger/AnyType.h"
+#include "scrapebadger/model/AsyncAccepted.h"
 #include "scrapebadger/model/BrandsResponse.h"
 #include "scrapebadger/model/ColorsResponse.h"
 #include "scrapebadger/model/HTTPValidationError.h"
@@ -62,9 +63,23 @@ public:
     /// </remarks>
     /// <param name="itemId"></param>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<ItemDetailResponse>> vintedGetItemDetails(
         int32_t itemId,
-        boost::optional<utility::string_t> market
+        boost::optional<utility::string_t> market,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Get user profile
@@ -74,9 +89,23 @@ public:
     /// </remarks>
     /// <param name="userId"></param>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<UserProfileResponse>> vintedGetUserProfile(
         int32_t userId,
-        boost::optional<utility::string_t> market
+        boost::optional<utility::string_t> market,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Get user&#39;s listed items
@@ -88,11 +117,25 @@ public:
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="page"> (optional, default to 0)</param>
     /// <param name="perPage"> (optional, default to 0)</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<UserItemsResponse>> vintedGetUserSListedItems(
         int32_t userId,
         boost::optional<utility::string_t> market,
         boost::optional<int32_t> page,
-        boost::optional<int32_t> perPage
+        boost::optional<int32_t> perPage,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// List colors
@@ -101,8 +144,22 @@ public:
     /// Get available Vinted colors for filtering.
     /// </remarks>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<ColorsResponse>> vintedListColors(
-        boost::optional<utility::string_t> market
+        boost::optional<utility::string_t> market,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// List item conditions
@@ -111,8 +168,22 @@ public:
     /// Get available item condition statuses.
     /// </remarks>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<StatusesResponse>> vintedListItemConditions(
-        boost::optional<utility::string_t> market
+        boost::optional<utility::string_t> market,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// List markets
@@ -120,7 +191,21 @@ public:
     /// <remarks>
     /// List all supported Vinted markets.
     /// </remarks>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<MarketsResponse>> vintedListMarkets(
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// List public Vinted mobile operations
@@ -128,7 +213,21 @@ public:
     /// <remarks>
     /// Discover public read operations, parameters and runnable examples. Free.
     /// </remarks>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> vintedListPublicVintedMobileOperations(
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Read Vinted mobile data
@@ -138,9 +237,23 @@ public:
     /// </remarks>
     /// <param name="operation"></param>
     /// <param name="vintedMobileReadRequest"></param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> vintedReadVintedMobileData(
         utility::string_t operation,
-        std::shared_ptr<VintedMobileReadRequest> vintedMobileReadRequest
+        std::shared_ptr<VintedMobileReadRequest> vintedMobileReadRequest,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Search brands
@@ -150,9 +263,23 @@ public:
     /// </remarks>
     /// <param name="keyword">Brand search keyword</param>
     /// <param name="market"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<BrandsResponse>> vintedSearchBrands(
         utility::string_t keyword,
-        boost::optional<utility::string_t> market
+        boost::optional<utility::string_t> market,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Search by image
@@ -161,8 +288,22 @@ public:
     /// Find active Vinted listings from a photo. 10 credits per successful request. Returns the usual items, pagination and market envelope. Visual ranking. Each item carries &#x60;similarity_score&#x60; on the calls where Vinted returns a ranking, and null on the ones where it does not -- a null says nothing about the item. The score sits on an unbounded scale that Vinted changes without notice (0-1 in Sep 2026, ~36-44 since): compare it only with the other items in the SAME response, never to a fixed cut-off. Resend the same image and pagination time for subsequent pages. Structured brand data may be null.
     /// </remarks>
     /// <param name="vintedImageSearchRequest"></param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<Portal_api__routers___vinted_schemas__SearchResponse>> vintedSearchByImage(
-        std::shared_ptr<VintedImageSearchRequest> vintedImageSearchRequest
+        std::shared_ptr<VintedImageSearchRequest> vintedImageSearchRequest,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Search Vinted items
@@ -186,6 +327,13 @@ public:
     /// <param name="searchSessionId">Reuse across pages of one search (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="statusIds">Comma-separated condition/status IDs (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="order"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="xCallbackURL">An &#x60;https&#x60; URL that receives the signed &#x60;request.completed&#x60; webhook when the call finishes. Implies async: on its own (no &#x60;Prefer&#x60;, &#x60;async&#x60; or &#x60;async_wait&#x60;) the answer is an immediate &#x60;202&#x60;; with &#x60;Prefer: respond-async&#x60; or &#x60;async&#x3D;true&#x60; the call still waits 25 s unless a wait is given. Wins over &#x60;callback_url&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey">1-200 visible ASCII characters, per account, kept as long as the result (about 15 minutes). The same key on the same call returns that call&#39;s current state (&#x60;Idempotent-Replayed: true&#x60;) without running or billing it again; on a different call it is &#x60;409 idempotency_key_reused&#x60;. Applies to async calls only; on a synchronous call it is ignored. Wins over &#x60;idempotency_key&#x60;. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="async">Query form of &#x60;Prefer: respond-async&#x60;: &#x60;true&#x60; or &#x60;1&#x60; (also &#x60;yes&#x60;, &#x60;on&#x60;; &#x60;false&#x60;, &#x60;0&#x60;, &#x60;no&#x60;, &#x60;off&#x60; leave the call synchronous). Waits 25 s unless &#x60;async_wait&#x60; is given. Not sent to the scraper. (optional, default to false)</param>
+    /// <param name="asyncWait">Seconds (0-120; values outside are clamped) to wait for the result before answering &#x60;202&#x60;. Implies async. Not sent to the scraper. (optional, default to 0)</param>
+    /// <param name="callbackUrl">Query form of &#x60;X-Callback-URL&#x60; (URL-encode it). Implies async; on its own the answer is an immediate &#x60;202&#x60; (wait 0). Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<Portal_api__routers___vinted_schemas__SearchResponse>> vintedSearchVintedItems(
         utility::string_t query,
         boost::optional<utility::string_t> market,
@@ -202,7 +350,14 @@ public:
         boost::optional<int32_t> time,
         boost::optional<utility::string_t> searchSessionId,
         boost::optional<utility::string_t> statusIds,
-        boost::optional<utility::string_t> order
+        boost::optional<utility::string_t> order,
+        boost::optional<utility::string_t> prefer,
+        boost::optional<utility::string_t> xCallbackURL,
+        boost::optional<utility::string_t> idempotencyKey,
+        boost::optional<bool> async,
+        boost::optional<int32_t> asyncWait,
+        boost::optional<utility::string_t> callbackUrl,
+        boost::optional<utility::string_t> idempotencyKey2
     ) const;
     /// <summary>
     /// Vinted scraper health check

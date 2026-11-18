@@ -35,7 +35,7 @@ PerplexityApi::~PerplexityApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQuestion(utility::string_t prompt, boost::optional<utility::string_t> country, boost::optional<bool> strictCountry, boost::optional<utility::string_t> location) const
+pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQuestion(utility::string_t prompt, boost::optional<utility::string_t> country, boost::optional<bool> strictCountry, boost::optional<utility::string_t> location, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -90,6 +90,34 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQues
     if (location)
     {
         localVarQueryParams[utility::conversions::to_string_t("location")] = ApiClient::parameterToString(*location);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -180,7 +208,7 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQues
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQuestionPost() const
+pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQuestionPost(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -221,6 +249,34 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQues
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -310,7 +366,7 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityAskPerplexityAQues
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisibilityInAPerplexityAnswer(utility::string_t prompt, utility::string_t brand, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> aliases, boost::optional<utility::string_t> competitors, boost::optional<utility::string_t> country, boost::optional<bool> strictCountry, boost::optional<utility::string_t> location) const
+pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisibilityInAPerplexityAnswer(utility::string_t prompt, utility::string_t brand, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> aliases, boost::optional<utility::string_t> competitors, boost::optional<utility::string_t> country, boost::optional<bool> strictCountry, boost::optional<utility::string_t> location, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -380,6 +436,34 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisi
     if (location)
     {
         localVarQueryParams[utility::conversions::to_string_t("location")] = ApiClient::parameterToString(*location);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -470,7 +554,7 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisi
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisibilityInAPerplexityAnswerPost() const
+pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisibilityInAPerplexityAnswerPost(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -511,6 +595,34 @@ pplx::task<std::shared_ptr<AnyType>> PerplexityApi::perplexityMeasureABrandSVisi
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;

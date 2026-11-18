@@ -23,6 +23,8 @@
 #include "scrapebadger/ApiClient.h"
 
 #include "scrapebadger/model/AccountInfo.h"
+#include "scrapebadger/model/Account_webhook_deliveries_403_response.h"
+#include "scrapebadger/model/WebhookDeliveries.h"
 #include "scrapebadger/model/WebhookSecret.h"
 #include <boost/optional.hpp>
 
@@ -66,6 +68,16 @@ public:
     /// Replace the signing secret. Deliveries that start from now on are signed with the new one; retries of a delivery already under way keep the old one.
     /// </remarks>
     pplx::task<std::shared_ptr<WebhookSecret>> accountRotateTheWebhookSigningSecret(
+    ) const;
+    /// <summary>
+    /// Webhook deliveries
+    /// </summary>
+    /// <remarks>
+    /// This account&#39;s async-request webhook deliveries of the last 24 h, newest first. Free. Needs a full-access API key, like the webhook secret: a trial key gets &#x60;403 trial_not_allowed&#x60;, a key restricted to some APIs &#x60;403 full_access_required&#x60;.
+    /// </remarks>
+    /// <param name="limit">How many deliveries to return (1-200). (optional, default to 0)</param>
+    pplx::task<std::shared_ptr<WebhookDeliveries>> accountWebhookDeliveries(
+        boost::optional<int32_t> limit
     ) const;
 
 protected:

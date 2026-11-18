@@ -35,7 +35,7 @@ GoogleApi::~GoogleApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetAuthorCitationsPerYearChart(utility::string_t authorId, boost::optional<utility::string_t> hl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetAuthorCitationsPerYearChart(utility::string_t authorId, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -82,6 +82,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetAuthorCitationsPerYearC
     if (hl)
     {
         localVarQueryParams[utility::conversions::to_string_t("hl")] = ApiClient::parameterToString(*hl);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -172,7 +200,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetAuthorCitationsPerYearC
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetBusinessPosts(utility::string_t dataId, boost::optional<utility::string_t> nextPageToken) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetBusinessPosts(utility::string_t dataId, boost::optional<utility::string_t> nextPageToken, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -219,6 +247,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetBusinessPosts(utility::
     if (nextPageToken)
     {
         localVarQueryParams[utility::conversions::to_string_t("next_page_token")] = ApiClient::parameterToString(*nextPageToken);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -309,7 +365,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetBusinessPosts(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetCitationFormatsForAScholarPaper(utility::string_t q, boost::optional<utility::string_t> hl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetCitationFormatsForAScholarPaper(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -356,6 +412,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetCitationFormatsForAScho
     if (hl)
     {
         localVarQueryParams[utility::conversions::to_string_t("hl")] = ApiClient::parameterToString(*hl);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -446,7 +530,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetCitationFormatsForAScho
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlaceDetails(boost::optional<utility::string_t> placeId, boost::optional<utility::string_t> dataId, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlaceDetails(boost::optional<utility::string_t> placeId, boost::optional<utility::string_t> dataId, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -502,6 +586,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlaceDetails(boost::opt
     if (gl)
     {
         localVarQueryParams[utility::conversions::to_string_t("gl")] = ApiClient::parameterToString(*gl);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -592,7 +704,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlaceDetails(boost::opt
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlacePhotos(utility::string_t dataId, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> nextPageToken) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlacePhotos(utility::string_t dataId, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> nextPageToken, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -643,6 +755,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlacePhotos(utility::st
     if (nextPageToken)
     {
         localVarQueryParams[utility::conversions::to_string_t("next_page_token")] = ApiClient::parameterToString(*nextPageToken);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -733,7 +873,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlacePhotos(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlaceReviews(utility::string_t dataId, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> nextPageToken, boost::optional<int32_t> results) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlaceReviews(utility::string_t dataId, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> nextPageToken, boost::optional<int32_t> results, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -792,6 +932,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlaceReviews(utility::s
     if (results)
     {
         localVarQueryParams[utility::conversions::to_string_t("results")] = ApiClient::parameterToString(*results);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -882,7 +1050,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetPlaceReviews(utility::s
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetScholarAuthorProfile(utility::string_t authorId, boost::optional<utility::string_t> hl, boost::optional<int32_t> cstart, boost::optional<int32_t> pagesize) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetScholarAuthorProfile(utility::string_t authorId, boost::optional<utility::string_t> hl, boost::optional<int32_t> cstart, boost::optional<int32_t> pagesize, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -937,6 +1105,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetScholarAuthorProfile(ut
     if (pagesize)
     {
         localVarQueryParams[utility::conversions::to_string_t("pagesize")] = ApiClient::parameterToString(*pagesize);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1027,7 +1223,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetScholarAuthorProfile(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetStockIndexQuote(utility::string_t q, boost::optional<utility::string_t> hl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetStockIndexQuote(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1074,6 +1270,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetStockIndexQuote(utility
     if (hl)
     {
         localVarQueryParams[utility::conversions::to_string_t("hl")] = ApiClient::parameterToString(*hl);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1164,7 +1388,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGetStockIndexQuote(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiModeSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<bool> includeHtml, boost::optional<utility::string_t> location, boost::optional<utility::string_t> uule, boost::optional<double> lat, boost::optional<double> lon) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiModeSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<bool> includeHtml, boost::optional<utility::string_t> location, boost::optional<utility::string_t> uule, boost::optional<double> lat, boost::optional<double> lon, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1235,6 +1459,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiModeSearch(utility
     if (lon)
     {
         localVarQueryParams[utility::conversions::to_string_t("lon")] = ApiClient::parameterToString(*lon);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1325,7 +1577,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiModeSearch(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiOverviewInlineSerpBlock(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiOverviewInlineSerpBlock(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1376,6 +1628,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiOverviewInlineSerp
     if (hl)
     {
         localVarQueryParams[utility::conversions::to_string_t("hl")] = ApiClient::parameterToString(*hl);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1466,7 +1746,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleAiOverviewInlineSerp
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleFlightsCalendarCheapestFarePerDate(utility::string_t departureId, utility::string_t arrivalId, utility::string_t outboundDateFrom, utility::string_t outboundDateTo, boost::optional<utility::string_t> tripType, boost::optional<int32_t> tripLengthDays, boost::optional<utility::string_t> returnDateFrom, boost::optional<utility::string_t> returnDateTo, boost::optional<int32_t> adults, boost::optional<int32_t> children, boost::optional<int32_t> infantsInSeat, boost::optional<int32_t> infantsOnLap, boost::optional<utility::string_t> travelClass, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleFlightsCalendarCheapestFarePerDate(utility::string_t departureId, utility::string_t arrivalId, utility::string_t outboundDateFrom, utility::string_t outboundDateTo, boost::optional<utility::string_t> tripType, boost::optional<int32_t> tripLengthDays, boost::optional<utility::string_t> returnDateFrom, boost::optional<utility::string_t> returnDateTo, boost::optional<int32_t> adults, boost::optional<int32_t> children, boost::optional<int32_t> infantsInSeat, boost::optional<int32_t> infantsOnLap, boost::optional<utility::string_t> travelClass, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1567,6 +1847,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleFlightsCalendarCheap
     {
         localVarQueryParams[utility::conversions::to_string_t("hl")] = ApiClient::parameterToString(*hl);
     }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1656,7 +1964,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleFlightsCalendarCheap
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleFlightsSearch(utility::string_t departureId, utility::string_t arrivalId, utility::string_t outboundDate, boost::optional<utility::string_t> returnDate, boost::optional<utility::string_t> tripType, boost::optional<int32_t> adults, boost::optional<int32_t> children, boost::optional<int32_t> infantsInSeat, boost::optional<int32_t> infantsOnLap, boost::optional<utility::string_t> travelClass, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> stops, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> departureToken) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleFlightsSearch(utility::string_t departureId, utility::string_t arrivalId, utility::string_t outboundDate, boost::optional<utility::string_t> returnDate, boost::optional<utility::string_t> tripType, boost::optional<int32_t> adults, boost::optional<int32_t> children, boost::optional<int32_t> infantsInSeat, boost::optional<int32_t> infantsOnLap, boost::optional<utility::string_t> travelClass, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> stops, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> departureToken, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1758,6 +2066,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleFlightsSearch(utilit
     {
         localVarQueryParams[utility::conversions::to_string_t("departure_token")] = ApiClient::parameterToString(*departureToken);
     }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1847,7 +2183,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleFlightsSearch(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLensVisualSearch(utility::string_t url, boost::optional<utility::string_t> query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> language, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<bool> product, boost::optional<bool> visualMatches, boost::optional<bool> exactMatches) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLensVisualSearch(utility::string_t url, boost::optional<utility::string_t> query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> language, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<bool> product, boost::optional<bool> visualMatches, boost::optional<bool> exactMatches, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1922,6 +2258,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLensVisualSearch(uti
     if (exactMatches)
     {
         localVarQueryParams[utility::conversions::to_string_t("exact_matches")] = ApiClient::parameterToString(*exactMatches);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2012,7 +2376,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLensVisualSearch(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLightWebSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> location, boost::optional<utility::string_t> uule, boost::optional<utility::string_t> lr, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<int32_t> filter, boost::optional<int32_t> nfpr, boost::optional<utility::string_t> output, boost::optional<utility::string_t> oq, boost::optional<utility::string_t> sourceid, boost::optional<utility::string_t> ie, boost::optional<utility::string_t> googleDomain, boost::optional<double> lat, boost::optional<double> lon, boost::optional<double> radius, boost::optional<utility::string_t> colorScheme, boost::optional<utility::string_t> tbm, boost::optional<utility::string_t> udm, boost::optional<bool> noCache, boost::optional<utility::string_t> asDt, boost::optional<utility::string_t> asEpq, boost::optional<utility::string_t> asEq, boost::optional<utility::string_t> asLq, boost::optional<utility::string_t> asNlo, boost::optional<utility::string_t> asNhi, boost::optional<utility::string_t> asOq, boost::optional<utility::string_t> asQ, boost::optional<utility::string_t> asQdr, boost::optional<utility::string_t> asRq, boost::optional<utility::string_t> asSitesearch, boost::optional<utility::string_t> device, boost::optional<utility::string_t> userAgent, boost::optional<utility::string_t> cr, boost::optional<utility::string_t> ludocid, boost::optional<utility::string_t> lsig, boost::optional<utility::string_t> kgmid, boost::optional<utility::string_t> si, boost::optional<utility::string_t> ibp, boost::optional<utility::string_t> uds) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLightWebSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> location, boost::optional<utility::string_t> uule, boost::optional<utility::string_t> lr, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<int32_t> filter, boost::optional<int32_t> nfpr, boost::optional<utility::string_t> output, boost::optional<utility::string_t> oq, boost::optional<utility::string_t> sourceid, boost::optional<utility::string_t> ie, boost::optional<utility::string_t> googleDomain, boost::optional<double> lat, boost::optional<double> lon, boost::optional<double> radius, boost::optional<utility::string_t> colorScheme, boost::optional<utility::string_t> tbm, boost::optional<utility::string_t> udm, boost::optional<bool> noCache, boost::optional<utility::string_t> asDt, boost::optional<utility::string_t> asEpq, boost::optional<utility::string_t> asEq, boost::optional<utility::string_t> asLq, boost::optional<utility::string_t> asNlo, boost::optional<utility::string_t> asNhi, boost::optional<utility::string_t> asOq, boost::optional<utility::string_t> asQ, boost::optional<utility::string_t> asQdr, boost::optional<utility::string_t> asRq, boost::optional<utility::string_t> asSitesearch, boost::optional<utility::string_t> device, boost::optional<utility::string_t> userAgent, boost::optional<utility::string_t> cr, boost::optional<utility::string_t> ludocid, boost::optional<utility::string_t> lsig, boost::optional<utility::string_t> kgmid, boost::optional<utility::string_t> si, boost::optional<utility::string_t> ibp, boost::optional<utility::string_t> uds, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2231,6 +2595,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleLightWebSearch(utili
     if (uds)
     {
         localVarQueryParams[utility::conversions::to_string_t("uds")] = ApiClient::parameterToString(*uds);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2581,7 +2973,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleScraperHealthCheckHe
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleSearchSuggestions(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleSearchSuggestions(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2632,6 +3024,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleSearchSuggestions(ut
     if (gl)
     {
         localVarQueryParams[utility::conversions::to_string_t("gl")] = ApiClient::parameterToString(*gl);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2722,7 +3142,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleSearchSuggestions(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleShortsSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> domain, boost::optional<int32_t> num, boost::optional<int32_t> start) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleShortsSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> domain, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2785,6 +3205,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleShortsSearch(utility
     if (start)
     {
         localVarQueryParams[utility::conversions::to_string_t("start")] = ApiClient::parameterToString(*start);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2875,7 +3323,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleShortsSearch(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleWebSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> device, boost::optional<utility::string_t> userAgent, boost::optional<utility::string_t> output, boost::optional<utility::string_t> location, boost::optional<utility::string_t> lr, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<utility::string_t> uule, boost::optional<int32_t> filter, boost::optional<int32_t> nfpr, boost::optional<utility::string_t> cr, boost::optional<utility::string_t> ludocid, boost::optional<utility::string_t> lsig, boost::optional<utility::string_t> kgmid, boost::optional<utility::string_t> si, boost::optional<utility::string_t> ibp, boost::optional<utility::string_t> uds, boost::optional<bool> aiOverview, boost::optional<utility::string_t> mode, boost::optional<utility::string_t> expandRelatedQuestions, boost::optional<utility::string_t> oq, boost::optional<utility::string_t> sourceid, boost::optional<utility::string_t> ie, boost::optional<utility::string_t> googleDomain, boost::optional<double> lat, boost::optional<double> lon, boost::optional<double> radius, boost::optional<utility::string_t> colorScheme, boost::optional<utility::string_t> tbm, boost::optional<utility::string_t> udm, boost::optional<bool> noCache, boost::optional<utility::string_t> asDt, boost::optional<utility::string_t> asEpq, boost::optional<utility::string_t> asEq, boost::optional<utility::string_t> asLq, boost::optional<utility::string_t> asNlo, boost::optional<utility::string_t> asNhi, boost::optional<utility::string_t> asOq, boost::optional<utility::string_t> asQ, boost::optional<utility::string_t> asQdr, boost::optional<utility::string_t> asRq, boost::optional<utility::string_t> asSitesearch) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleWebSearch(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> num, boost::optional<int32_t> start, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> device, boost::optional<utility::string_t> userAgent, boost::optional<utility::string_t> output, boost::optional<utility::string_t> location, boost::optional<utility::string_t> lr, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<utility::string_t> uule, boost::optional<int32_t> filter, boost::optional<int32_t> nfpr, boost::optional<utility::string_t> cr, boost::optional<utility::string_t> ludocid, boost::optional<utility::string_t> lsig, boost::optional<utility::string_t> kgmid, boost::optional<utility::string_t> si, boost::optional<utility::string_t> ibp, boost::optional<utility::string_t> uds, boost::optional<bool> aiOverview, boost::optional<utility::string_t> mode, boost::optional<utility::string_t> expandRelatedQuestions, boost::optional<utility::string_t> oq, boost::optional<utility::string_t> sourceid, boost::optional<utility::string_t> ie, boost::optional<utility::string_t> googleDomain, boost::optional<double> lat, boost::optional<double> lon, boost::optional<double> radius, boost::optional<utility::string_t> colorScheme, boost::optional<utility::string_t> tbm, boost::optional<utility::string_t> udm, boost::optional<bool> noCache, boost::optional<utility::string_t> asDt, boost::optional<utility::string_t> asEpq, boost::optional<utility::string_t> asEq, boost::optional<utility::string_t> asLq, boost::optional<utility::string_t> asNlo, boost::optional<utility::string_t> asNhi, boost::optional<utility::string_t> asOq, boost::optional<utility::string_t> asQ, boost::optional<utility::string_t> asQdr, boost::optional<utility::string_t> asRq, boost::optional<utility::string_t> asSitesearch, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3107,6 +3555,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleWebSearch(utility::s
     {
         localVarQueryParams[utility::conversions::to_string_t("as_sitesearch")] = ApiClient::parameterToString(*asSitesearch);
     }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -3196,7 +3672,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleGoogleWebSearch(utility::s
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleHotelDetails(utility::string_t propertyToken, utility::string_t checkIn, utility::string_t checkOut) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleHotelDetails(utility::string_t propertyToken, utility::string_t checkIn, utility::string_t checkOut, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3245,6 +3721,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleHotelDetails(utility::stri
     }
     {
         localVarQueryParams[utility::conversions::to_string_t("check_out")] = ApiClient::parameterToString(checkOut);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3335,7 +3839,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleHotelDetails(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleImmersiveProductDetail(utility::string_t productId, utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> catalogId, boost::optional<utility::string_t> imageDocid, boost::optional<utility::string_t> headlineOfferDocid, boost::optional<utility::string_t> mid, boost::optional<bool> includeOffers, boost::optional<bool> includeVariants) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleImmersiveProductDetail(utility::string_t productId, utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> catalogId, boost::optional<utility::string_t> imageDocid, boost::optional<utility::string_t> headlineOfferDocid, boost::optional<utility::string_t> mid, boost::optional<bool> includeOffers, boost::optional<bool> includeVariants, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3413,6 +3917,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleImmersiveProductDetail(uti
     if (includeVariants)
     {
         localVarQueryParams[utility::conversions::to_string_t("include_variants")] = ApiClient::parameterToString(*includeVariants);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3503,7 +4035,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleImmersiveProductDetail(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestByRegion(utility::string_t q, boost::optional<utility::string_t> geo) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestByRegion(utility::string_t q, boost::optional<utility::string_t> geo, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3550,6 +4082,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestByRegion(utility::
     if (geo)
     {
         localVarQueryParams[utility::conversions::to_string_t("geo")] = ApiClient::parameterToString(*geo);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3640,7 +4200,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestByRegion(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestOverTime(utility::string_t q, boost::optional<utility::string_t> geo, boost::optional<utility::string_t> date) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestOverTime(utility::string_t q, boost::optional<utility::string_t> geo, boost::optional<utility::string_t> date, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3691,6 +4251,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestOverTime(utility::
     if (date)
     {
         localVarQueryParams[utility::conversions::to_string_t("date")] = ApiClient::parameterToString(*date);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3781,7 +4369,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleInterestOverTime(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleMultiSellerOffersByBarcode(boost::optional<utility::string_t> barcode, boost::optional<utility::string_t> catalogId, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> domain) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleMultiSellerOffersByBarcode(boost::optional<utility::string_t> barcode, boost::optional<utility::string_t> catalogId, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> domain, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3841,6 +4429,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleMultiSellerOffersByBarcode
     if (domain)
     {
         localVarQueryParams[utility::conversions::to_string_t("domain")] = ApiClient::parameterToString(*domain);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3931,7 +4547,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleMultiSellerOffersByBarcode
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleNewsByTopic(utility::string_t topic, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl, boost::optional<int32_t> maxResults) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleNewsByTopic(utility::string_t topic, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl, boost::optional<int32_t> maxResults, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3986,6 +4602,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleNewsByTopic(utility::strin
     if (maxResults)
     {
         localVarQueryParams[utility::conversions::to_string_t("max_results")] = ApiClient::parameterToString(*maxResults);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4076,7 +4720,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleNewsByTopic(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googlePatentDetails(utility::string_t patentId) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googlePatentDetails(utility::string_t patentId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4119,6 +4763,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googlePatentDetails(utility::str
 
     {
         localVarQueryParams[utility::conversions::to_string_t("patent_id")] = ApiClient::parameterToString(patentId);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4209,7 +4881,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googlePatentDetails(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleRelatedTopicsQueries(utility::string_t q, boost::optional<utility::string_t> geo) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleRelatedTopicsQueries(utility::string_t q, boost::optional<utility::string_t> geo, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4256,6 +4928,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleRelatedTopicsQueries(utili
     if (geo)
     {
         localVarQueryParams[utility::conversions::to_string_t("geo")] = ApiClient::parameterToString(*geo);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4346,7 +5046,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleRelatedTopicsQueries(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleImages(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> imgsz, boost::optional<utility::string_t> imgcolor, boost::optional<utility::string_t> imgtype, boost::optional<utility::string_t> safe, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleImages(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> imgsz, boost::optional<utility::string_t> imgcolor, boost::optional<utility::string_t> imgtype, boost::optional<utility::string_t> safe, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4421,6 +5121,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleImages(utility
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4511,7 +5239,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleImages(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleJobs(utility::string_t q, boost::optional<utility::string_t> location, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> jobType, boost::optional<utility::string_t> datePosted) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleJobs(utility::string_t q, boost::optional<utility::string_t> location, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> jobType, boost::optional<utility::string_t> datePosted, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4570,6 +5298,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleJobs(utility::
     if (datePosted)
     {
         localVarQueryParams[utility::conversions::to_string_t("date_posted")] = ApiClient::parameterToString(*datePosted);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4660,7 +5416,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleJobs(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleMapsPlaces(utility::string_t q, boost::optional<utility::string_t> ll, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> start) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleMapsPlaces(utility::string_t q, boost::optional<utility::string_t> ll, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<int32_t> start, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4719,6 +5475,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleMapsPlaces(uti
     if (start)
     {
         localVarQueryParams[utility::conversions::to_string_t("start")] = ApiClient::parameterToString(*start);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4809,7 +5593,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleMapsPlaces(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleNews(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl, boost::optional<int32_t> maxResults) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleNews(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl, boost::optional<int32_t> maxResults, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4864,6 +5648,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleNews(utility::
     if (maxResults)
     {
         localVarQueryParams[utility::conversions::to_string_t("max_results")] = ApiClient::parameterToString(*maxResults);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4954,7 +5766,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleNews(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleScholar(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<int32_t> asYlo, boost::optional<int32_t> asYhi, boost::optional<utility::string_t> asSdt, boost::optional<int32_t> page, boost::optional<int32_t> num) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleScholar(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<int32_t> asYlo, boost::optional<int32_t> asYhi, boost::optional<utility::string_t> asSdt, boost::optional<int32_t> page, boost::optional<int32_t> num, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5021,6 +5833,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleScholar(utilit
     if (num)
     {
         localVarQueryParams[utility::conversions::to_string_t("num")] = ApiClient::parameterToString(*num);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5111,7 +5951,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleScholar(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleVideos(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleVideos(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> tbs, boost::optional<utility::string_t> safe, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5174,6 +6014,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleVideos(utility
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5264,7 +6132,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchGoogleVideos(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchHotels(utility::string_t q, utility::string_t checkIn, utility::string_t checkOut, boost::optional<int32_t> adults, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> gl) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchHotels(utility::string_t q, utility::string_t checkIn, utility::string_t checkOut, boost::optional<int32_t> adults, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> gl, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5325,6 +6193,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchHotels(utility::stri
     if (gl)
     {
         localVarQueryParams[utility::conversions::to_string_t("gl")] = ApiClient::parameterToString(*gl);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5415,7 +6311,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchHotels(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchPatents(utility::string_t q, boost::optional<int32_t> page, boost::optional<int32_t> num, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> inventor, boost::optional<utility::string_t> assignee, boost::optional<utility::string_t> country, boost::optional<utility::string_t> language, boost::optional<utility::string_t> status, boost::optional<utility::string_t> patentType, boost::optional<utility::string_t> before, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchPatents(utility::string_t q, boost::optional<int32_t> page, boost::optional<int32_t> num, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> inventor, boost::optional<utility::string_t> assignee, boost::optional<utility::string_t> country, boost::optional<utility::string_t> language, boost::optional<utility::string_t> status, boost::optional<utility::string_t> patentType, boost::optional<utility::string_t> before, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5502,6 +6398,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchPatents(utility::str
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5592,7 +6516,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchPatents(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchProducts(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> sortBy) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchProducts(utility::string_t q, boost::optional<utility::string_t> gl, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5651,6 +6575,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchProducts(utility::st
     if (sortBy)
     {
         localVarQueryParams[utility::conversions::to_string_t("sort_by")] = ApiClient::parameterToString(*sortBy);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5741,7 +6693,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchProducts(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchScholarAuthorProfiles(utility::string_t mauthors, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> afterAuthor, boost::optional<utility::string_t> beforeAuthor) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchScholarAuthorProfiles(utility::string_t mauthors, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> afterAuthor, boost::optional<utility::string_t> beforeAuthor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5796,6 +6748,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchScholarAuthorProfile
     if (beforeAuthor)
     {
         localVarQueryParams[utility::conversions::to_string_t("before_author")] = ApiClient::parameterToString(*beforeAuthor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5886,7 +6866,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleSearchScholarAuthorProfile
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendingNews(boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl, boost::optional<int32_t> maxResults) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendingNews(boost::optional<utility::string_t> hl, boost::optional<utility::string_t> gl, boost::optional<int32_t> maxResults, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5938,6 +6918,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendingNews(boost::option
     if (maxResults)
     {
         localVarQueryParams[utility::conversions::to_string_t("max_results")] = ApiClient::parameterToString(*maxResults);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -6028,7 +7036,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendingNews(boost::option
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendingSearches(boost::optional<utility::string_t> geo) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendingSearches(boost::optional<utility::string_t> geo, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -6072,6 +7080,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendingSearches(boost::op
     if (geo)
     {
         localVarQueryParams[utility::conversions::to_string_t("geo")] = ApiClient::parameterToString(*geo);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -6162,7 +7198,7 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendingSearches(boost::op
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendsTopicAutocomplete(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> tz) const
+pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendsTopicAutocomplete(utility::string_t q, boost::optional<utility::string_t> hl, boost::optional<utility::string_t> tz, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -6213,6 +7249,34 @@ pplx::task<std::shared_ptr<AnyType>> GoogleApi::googleTrendsTopicAutocomplete(ut
     if (tz)
     {
         localVarQueryParams[utility::conversions::to_string_t("tz")] = ApiClient::parameterToString(*tz);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

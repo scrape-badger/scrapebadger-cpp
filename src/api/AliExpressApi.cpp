@@ -35,7 +35,7 @@ AliExpressApi::~AliExpressApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetCategoryNavigation() const
+pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetCategoryNavigation(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -76,6 +76,34 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetCategoryNavigat
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -165,7 +193,7 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetCategoryNavigat
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetProductDetail(utility::string_t productId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetProductDetail(utility::string_t productId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -218,6 +246,34 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetProductDetail(u
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -308,7 +364,7 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetProductDetail(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetProductReviews(utility::string_t productId, boost::optional<int32_t> page, boost::optional<int32_t> pageSize, boost::optional<utility::string_t> sort) const
+pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetProductReviews(utility::string_t productId, boost::optional<int32_t> page, boost::optional<int32_t> pageSize, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -361,6 +417,34 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetProductReviews(
     if (sort)
     {
         localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -451,7 +535,7 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetProductReviews(
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -502,6 +586,34 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetSearchSuggestio
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -592,7 +704,7 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetSearchSuggestio
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProductCategories(utility::string_t storeId, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProductCategories(utility::string_t storeId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -637,6 +749,34 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProductCat
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -727,7 +867,7 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProductCat
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProducts(utility::string_t storeId, boost::optional<int32_t> page, boost::optional<int32_t> pageSize, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> query, boost::optional<utility::string_t> sort) const
+pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProducts(utility::string_t storeId, boost::optional<int32_t> page, boost::optional<int32_t> pageSize, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> query, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -796,6 +936,34 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProducts(u
     if (sort)
     {
         localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -886,7 +1054,7 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProducts(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProfile(utility::string_t storeId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProfile(utility::string_t storeId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -939,6 +1107,34 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProfile(ut
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1029,7 +1225,7 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressGetStoreProfile(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressSearchProducts(utility::string_t query, boost::optional<int32_t> page, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> sort, boost::optional<double> minPrice, boost::optional<double> maxPrice) const
+pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressSearchProducts(utility::string_t query, boost::optional<int32_t> page, boost::optional<utility::string_t> country, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> sort, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1100,6 +1296,34 @@ pplx::task<std::shared_ptr<AnyType>> AliExpressApi::aliexpressSearchProducts(uti
     if (maxPrice)
     {
         localVarQueryParams[utility::conversions::to_string_t("max_price")] = ApiClient::parameterToString(*maxPrice);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

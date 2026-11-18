@@ -35,7 +35,7 @@ RealtorApi::~RealtorApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorGetFullPropertyDetail(utility::string_t propertyId, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorGetFullPropertyDetail(utility::string_t propertyId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -80,6 +80,34 @@ pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorGetFullPropertyDetail(ut
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -170,7 +198,7 @@ pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorGetFullPropertyDetail(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -211,6 +239,34 @@ pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorListMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -300,7 +356,7 @@ pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorLocationAutocomplete(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> limit) const
+pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorLocationAutocomplete(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<int32_t> limit, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -351,6 +407,34 @@ pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorLocationAutocomplete(uti
     if (limit)
     {
         localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -701,7 +785,7 @@ pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorRealtorScraperHealthChec
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorSearchPropertyListings(boost::optional<utility::string_t> location, boost::optional<utility::string_t> market, boost::optional<utility::string_t> status, boost::optional<double> priceMin, boost::optional<double> priceMax, boost::optional<int32_t> bedsMin, boost::optional<int32_t> bathsMin, boost::optional<int32_t> sqftMin, boost::optional<int32_t> sqftMax, boost::optional<utility::string_t> propertyType, boost::optional<utility::string_t> sort, boost::optional<int32_t> page, boost::optional<int32_t> limit, boost::optional<double> latMin, boost::optional<double> latMax, boost::optional<double> lngMin, boost::optional<double> lngMax) const
+pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorSearchPropertyListings(boost::optional<utility::string_t> location, boost::optional<utility::string_t> market, boost::optional<utility::string_t> status, boost::optional<double> priceMin, boost::optional<double> priceMax, boost::optional<int32_t> bedsMin, boost::optional<int32_t> bathsMin, boost::optional<int32_t> sqftMin, boost::optional<int32_t> sqftMax, boost::optional<utility::string_t> propertyType, boost::optional<utility::string_t> sort, boost::optional<int32_t> page, boost::optional<int32_t> limit, boost::optional<double> latMin, boost::optional<double> latMax, boost::optional<double> lngMin, boost::optional<double> lngMax, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -809,6 +893,34 @@ pplx::task<std::shared_ptr<AnyType>> RealtorApi::realtorSearchPropertyListings(b
     if (lngMax)
     {
         localVarQueryParams[utility::conversions::to_string_t("lng_max")] = ApiClient::parameterToString(*lngMax);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

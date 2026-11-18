@@ -35,7 +35,7 @@ FacebookApi::~FacebookApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookBrowseAMarketplaceCategory(utility::string_t category, boost::optional<utility::string_t> location, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> sortBy, boost::optional<int32_t> radius, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookBrowseAMarketplaceCategory(utility::string_t category, boost::optional<utility::string_t> location, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<utility::string_t> sortBy, boost::optional<int32_t> radius, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -100,6 +100,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookBrowseAMarketplaceCate
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -190,7 +218,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookBrowseAMarketplaceCate
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAMarketplaceItem(utility::string_t itemId) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAMarketplaceItem(utility::string_t itemId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -232,6 +260,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAMarketplaceItem(ut
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -321,7 +377,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAMarketplaceItem(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAdvertiserPageInfo(utility::string_t pageId, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAdvertiserPageInfo(utility::string_t pageId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -366,6 +422,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAdvertiserPageInfo(
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -456,7 +540,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAdvertiserPageInfo(
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAnAd(utility::string_t adArchiveId, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAnAd(utility::string_t adArchiveId, boost::optional<utility::string_t> country, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -501,6 +585,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAnAd(utility::strin
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -591,7 +703,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetAnAd(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupDetail(utility::string_t groupId) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupDetail(utility::string_t groupId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -633,6 +745,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupDetail(utility
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -722,7 +862,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupDetail(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupPosts(utility::string_t groupId, boost::optional<utility::string_t> after, boost::optional<utility::string_t> sort) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupPosts(utility::string_t groupId, boost::optional<utility::string_t> after, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -771,6 +911,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupPosts(utility:
     if (sort)
     {
         localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -861,7 +1029,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetGroupPosts(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPageDetail(utility::string_t identifier) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPageDetail(utility::string_t identifier, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -903,6 +1071,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPageDetail(utility:
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -992,7 +1188,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPageDetail(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPagePosts(utility::string_t identifier, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPagePosts(utility::string_t identifier, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1037,6 +1233,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPagePosts(utility::
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1127,7 +1351,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPagePosts(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostComments(utility::string_t postId, boost::optional<utility::string_t> url, boost::optional<utility::string_t> after, boost::optional<utility::string_t> sort) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostComments(utility::string_t postId, boost::optional<utility::string_t> url, boost::optional<utility::string_t> after, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1180,6 +1404,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostComments(utilit
     if (sort)
     {
         localVarQueryParams[utility::conversions::to_string_t("sort")] = ApiClient::parameterToString(*sort);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1270,7 +1522,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostComments(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostDetail(utility::string_t postId, boost::optional<utility::string_t> url) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostDetail(utility::string_t postId, boost::optional<utility::string_t> url, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1315,6 +1567,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostDetail(utility:
     if (url)
     {
         localVarQueryParams[utility::conversions::to_string_t("url")] = ApiClient::parameterToString(*url);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1405,7 +1685,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetPostDetail(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetProfileDetail(utility::string_t identifier) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetProfileDetail(utility::string_t identifier, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1447,6 +1727,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetProfileDetail(utili
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1536,7 +1844,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetProfileDetail(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetProfilePosts(utility::string_t identifier, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetProfilePosts(utility::string_t identifier, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1581,6 +1889,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetProfilePosts(utilit
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1671,7 +2007,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookGetProfilePosts(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookListCategories() const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookListCategories(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1712,6 +2048,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookListCategories() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1801,7 +2165,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookListCategories() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookListLocations() const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookListLocations(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1842,6 +2206,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookListLocations() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1931,7 +2323,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookListLocations() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookResolveATownPostcodeToAMarketplaceLocation(boost::optional<utility::string_t> query, boost::optional<double> latitude, boost::optional<double> longitude, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookResolveATownPostcodeToAMarketplaceLocation(boost::optional<utility::string_t> query, boost::optional<double> latitude, boost::optional<double> longitude, boost::optional<utility::string_t> country, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1987,6 +2379,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookResolveATownPostcodeTo
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2077,7 +2497,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookResolveATownPostcodeTo
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchAdvertiserPages(utility::string_t query, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchAdvertiserPages(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2124,6 +2544,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchAdvertiserPages(
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2214,7 +2662,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchAdvertiserPages(
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchEvents(utility::string_t q, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchEvents(utility::string_t q, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2261,6 +2709,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchEvents(utility::
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2351,7 +2827,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchEvents(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchEverything(utility::string_t q, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchEverything(utility::string_t q, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2398,6 +2874,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchEverything(utili
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2488,7 +2992,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchEverything(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchGroups(utility::string_t q, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchGroups(utility::string_t q, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2535,6 +3039,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchGroups(utility::
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2625,7 +3157,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchGroups(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(utility::string_t query, boost::optional<utility::string_t> location, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<int32_t> daysSinceListed, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> itemCondition, boost::optional<utility::string_t> deliveryMethod, boost::optional<int32_t> radius, boost::optional<utility::string_t> after, boost::optional<bool> strictFilters, boost::optional<bool> includeDetails) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(utility::string_t query, boost::optional<utility::string_t> location, boost::optional<int32_t> minPrice, boost::optional<int32_t> maxPrice, boost::optional<int32_t> daysSinceListed, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> itemCondition, boost::optional<utility::string_t> deliveryMethod, boost::optional<int32_t> radius, boost::optional<utility::string_t> after, boost::optional<bool> strictFilters, boost::optional<bool> includeDetails, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2712,6 +3244,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(util
     if (includeDetails)
     {
         localVarQueryParams[utility::conversions::to_string_t("include_details")] = ApiClient::parameterToString(*includeDetails);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2802,7 +3362,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchMarketplace(util
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPages(utility::string_t q, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPages(utility::string_t q, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2849,6 +3409,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPages(utility::s
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2939,7 +3527,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPages(utility::s
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPeople(utility::string_t q, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPeople(utility::string_t q, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2986,6 +3574,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPeople(utility::
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3076,7 +3692,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPeople(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPlaces(utility::string_t q, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPlaces(utility::string_t q, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3123,6 +3739,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPlaces(utility::
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3213,7 +3857,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPlaces(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPosts(utility::string_t q, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPosts(utility::string_t q, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3260,6 +3904,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPosts(utility::s
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3350,7 +4022,7 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchPosts(utility::s
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchTheAdLibrary(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> adType, boost::optional<utility::string_t> activeStatus, boost::optional<utility::string_t> after) const
+pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchTheAdLibrary(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> adType, boost::optional<utility::string_t> activeStatus, boost::optional<utility::string_t> after, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3409,6 +4081,34 @@ pplx::task<std::shared_ptr<AnyType>> FacebookApi::facebookSearchTheAdLibrary(uti
     if (after)
     {
         localVarQueryParams[utility::conversions::to_string_t("after")] = ApiClient::parameterToString(*after);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

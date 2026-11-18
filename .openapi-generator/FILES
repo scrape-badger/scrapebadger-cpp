@@ -71,9 +71,13 @@ include/scrapebadger/api/YelpApi.h
 include/scrapebadger/api/YouTubeApi.h
 include/scrapebadger/api/ZillowApi.h
 include/scrapebadger/model/AccountInfo.h
+include/scrapebadger/model/Account_webhook_deliveries_403_response.h
 include/scrapebadger/model/Age.h
 include/scrapebadger/model/AgentTrialInfo.h
 include/scrapebadger/model/Article.h
+include/scrapebadger/model/AsyncAccepted.h
+include/scrapebadger/model/AsyncAccepted_next_action.h
+include/scrapebadger/model/AsyncCallbackStatus.h
 include/scrapebadger/model/AutoScout24FiltersResponse.h
 include/scrapebadger/model/AutoScout24Listing.h
 include/scrapebadger/model/AutoScout24ListingDetail.h
@@ -235,6 +239,9 @@ include/scrapebadger/model/VintedStatus.h
 include/scrapebadger/model/VintedUserProfile.h
 include/scrapebadger/model/VintedUserSummary.h
 include/scrapebadger/model/WebhookCreate.h
+include/scrapebadger/model/WebhookDeliveries.h
+include/scrapebadger/model/WebhookDelivery.h
+include/scrapebadger/model/WebhookEvent.h
 include/scrapebadger/model/WebhookListItem.h
 include/scrapebadger/model/WebhookListResponse.h
 include/scrapebadger/model/WebhookResponse.h
@@ -317,9 +324,13 @@ src/api/YelpApi.cpp
 src/api/YouTubeApi.cpp
 src/api/ZillowApi.cpp
 src/model/AccountInfo.cpp
+src/model/Account_webhook_deliveries_403_response.cpp
 src/model/Age.cpp
 src/model/AgentTrialInfo.cpp
 src/model/Article.cpp
+src/model/AsyncAccepted.cpp
+src/model/AsyncAccepted_next_action.cpp
+src/model/AsyncCallbackStatus.cpp
 src/model/AutoScout24FiltersResponse.cpp
 src/model/AutoScout24Listing.cpp
 src/model/AutoScout24ListingDetail.cpp
@@ -481,6 +492,9 @@ src/model/VintedStatus.cpp
 src/model/VintedUserProfile.cpp
 src/model/VintedUserSummary.cpp
 src/model/WebhookCreate.cpp
+src/model/WebhookDeliveries.cpp
+src/model/WebhookDelivery.cpp
+src/model/WebhookEvent.cpp
 src/model/WebhookListItem.cpp
 src/model/WebhookListResponse.cpp
 src/model/WebhookResponse.cpp

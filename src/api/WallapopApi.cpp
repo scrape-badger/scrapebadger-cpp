@@ -35,7 +35,7 @@ WallapopApi::~WallapopApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopAutocomplete(utility::string_t query, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopAutocomplete(utility::string_t query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -82,6 +82,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopAutocomplete(utility::
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -172,7 +200,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopAutocomplete(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetListingDetail(utility::string_t itemId, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetListingDetail(utility::string_t itemId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -217,6 +245,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetListingDetail(utili
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -307,7 +363,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetListingDetail(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserListings(utility::string_t userId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> nextPage) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserListings(utility::string_t userId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> nextPage, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -356,6 +412,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserListings(utilit
     if (nextPage)
     {
         localVarQueryParams[utility::conversions::to_string_t("next_page")] = ApiClient::parameterToString(*nextPage);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -446,7 +530,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserListings(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserProfile(utility::string_t userId, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserProfile(utility::string_t userId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -491,6 +575,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserProfile(utility
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -581,7 +693,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserProfile(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserReviews(utility::string_t userId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> nextPage) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserReviews(utility::string_t userId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> nextPage, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -630,6 +742,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserReviews(utility
     if (nextPage)
     {
         localVarQueryParams[utility::conversions::to_string_t("next_page")] = ApiClient::parameterToString(*nextPage);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -720,7 +860,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopGetUserReviews(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListCategories(boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListCategories(boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -764,6 +904,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListCategories(boost::
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -854,7 +1022,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListCategories(boost::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListFilterOptions(utility::string_t filterId, boost::optional<int32_t> categoryId, boost::optional<utility::string_t> query, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListFilterOptions(utility::string_t filterId, boost::optional<int32_t> categoryId, boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -907,6 +1075,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListFilterOptions(util
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -997,7 +1193,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListFilterOptions(util
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1038,6 +1234,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1127,7 +1351,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListSearchFilters(boost::optional<int32_t> categoryId, boost::optional<utility::string_t> query, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListSearchFilters(boost::optional<int32_t> categoryId, boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1179,6 +1403,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListSearchFilters(boos
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1269,7 +1521,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListSearchFilters(boos
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopSearchListings(boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<double> latitude, boost::optional<double> longitude, boost::optional<int32_t> distanceKm, boost::optional<int32_t> categoryId, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> brand, boost::optional<utility::string_t> model, boost::optional<utility::string_t> color, boost::optional<utility::string_t> timeFilter, boost::optional<bool> shippable, boost::optional<bool> hasWarranty, boost::optional<bool> refurbished, boost::optional<int32_t> minYear, boost::optional<int32_t> maxYear, boost::optional<int32_t> minKm, boost::optional<int32_t> maxKm, boost::optional<utility::string_t> gearbox, boost::optional<int32_t> minHorsepower, boost::optional<int32_t> maxHorsepower, boost::optional<utility::string_t> orderBy, boost::optional<utility::string_t> nextPage) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopSearchListings(boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<double> latitude, boost::optional<double> longitude, boost::optional<int32_t> distanceKm, boost::optional<int32_t> categoryId, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> brand, boost::optional<utility::string_t> model, boost::optional<utility::string_t> color, boost::optional<utility::string_t> timeFilter, boost::optional<bool> shippable, boost::optional<bool> hasWarranty, boost::optional<bool> refurbished, boost::optional<int32_t> minYear, boost::optional<int32_t> maxYear, boost::optional<int32_t> minKm, boost::optional<int32_t> maxKm, boost::optional<utility::string_t> gearbox, boost::optional<int32_t> minHorsepower, boost::optional<int32_t> maxHorsepower, boost::optional<utility::string_t> orderBy, boost::optional<utility::string_t> nextPage, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1409,6 +1661,34 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopSearchListings(boost::
     if (nextPage)
     {
         localVarQueryParams[utility::conversions::to_string_t("next_page")] = ApiClient::parameterToString(*nextPage);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

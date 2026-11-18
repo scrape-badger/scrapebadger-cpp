@@ -35,7 +35,7 @@ GitHubApi::~GitHubApi()
 {
 }
 
-pplx::task<std::shared_ptr<GitHubProfileResponse>> GitHubApi::githubGetProfile(utility::string_t username, boost::optional<utility::string_t> tab, boost::optional<int32_t> year, boost::optional<int32_t> page, boost::optional<utility::string_t> nextPageToken) const
+pplx::task<std::shared_ptr<GitHubProfileResponse>> GitHubApi::githubGetProfile(utility::string_t username, boost::optional<utility::string_t> tab, boost::optional<int32_t> year, boost::optional<int32_t> page, boost::optional<utility::string_t> nextPageToken, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -92,6 +92,34 @@ pplx::task<std::shared_ptr<GitHubProfileResponse>> GitHubApi::githubGetProfile(u
     if (nextPageToken)
     {
         localVarQueryParams[utility::conversions::to_string_t("next_page_token")] = ApiClient::parameterToString(*nextPageToken);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -182,7 +210,7 @@ pplx::task<std::shared_ptr<GitHubProfileResponse>> GitHubApi::githubGetProfile(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<GitHubRepositoryResponse>> GitHubApi::githubGetRepository(utility::string_t owner, utility::string_t repo) const
+pplx::task<std::shared_ptr<GitHubRepositoryResponse>> GitHubApi::githubGetRepository(utility::string_t owner, utility::string_t repo, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -225,6 +253,34 @@ pplx::task<std::shared_ptr<GitHubRepositoryResponse>> GitHubApi::githubGetReposi
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;

@@ -35,7 +35,7 @@ TikTokApi::~TikTokApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokBestSellingTiktokShopProducts(boost::optional<utility::string_t> region, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> pages, boost::optional<int32_t> limit) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokBestSellingTiktokShopProducts(boost::optional<utility::string_t> region, boost::optional<utility::string_t> categoryId, boost::optional<int32_t> pages, boost::optional<int32_t> limit, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -91,6 +91,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokBestSellingTiktokShopProdu
     if (limit)
     {
         localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -181,7 +209,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokBestSellingTiktokShopProdu
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGeneralSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGeneralSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -236,6 +264,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGeneralSearch(utility::str
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -326,7 +382,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGeneralSearch(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetCommentReplies(utility::string_t commentId, utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetCommentReplies(utility::string_t commentId, utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -382,6 +438,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetCommentReplies(utility:
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -472,7 +556,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetCommentReplies(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetComments(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetComments(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -525,6 +609,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetComments(utility::strin
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -615,7 +727,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetComments(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowers(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowers(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -668,6 +780,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowers(utility::stri
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -758,7 +898,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowers(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowing(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowing(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -811,6 +951,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowing(utility::stri
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -901,7 +1069,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetFollowing(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagDetail(utility::string_t name, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagDetail(utility::string_t name, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -946,6 +1114,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagDetail(utility::
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1036,7 +1232,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagDetail(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagVideos(utility::string_t name, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagVideos(utility::string_t name, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1089,6 +1285,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagVideos(utility::
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1179,7 +1403,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetHashtagVideos(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideos(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideos(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1232,6 +1456,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideos(utility::st
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1322,7 +1574,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetLikedVideos(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetMusicSoundDetail(utility::string_t musicId, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetMusicSoundDetail(utility::string_t musicId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1367,6 +1619,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetMusicSoundDetail(utilit
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1457,7 +1737,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetMusicSoundDetail(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetMusicVideos(utility::string_t musicId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetMusicVideos(utility::string_t musicId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1510,6 +1790,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetMusicVideos(utility::st
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1600,7 +1908,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetMusicVideos(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetOembedMetadata(utility::string_t url, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetOembedMetadata(utility::string_t url, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1647,6 +1955,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetOembedMetadata(utility:
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1737,7 +2073,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetOembedMetadata(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetRelatedVideos(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetRelatedVideos(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1790,6 +2126,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetRelatedVideos(utility::
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1880,7 +2244,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetRelatedVideos(utility::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetReposts(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetReposts(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1933,6 +2297,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetReposts(utility::string
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2023,7 +2415,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetReposts(utility::string
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetTiktokAdDetail(utility::string_t adId, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetTiktokAdDetail(utility::string_t adId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2068,6 +2460,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetTiktokAdDetail(utility:
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2158,7 +2578,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetTiktokAdDetail(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetTranscript(utility::string_t videoId, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetTranscript(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2203,6 +2623,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetTranscript(utility::str
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2293,7 +2741,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetTranscript(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetUserProfile(utility::string_t username, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetUserProfile(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2338,6 +2786,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetUserProfile(utility::st
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2428,7 +2904,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetUserProfile(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetUserVideos(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetUserVideos(utility::string_t username, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2481,6 +2957,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetUserVideos(utility::str
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2571,7 +3075,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetUserVideos(utility::str
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetVideoDetail(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> username) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetVideoDetail(utility::string_t videoId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> username, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -2620,6 +3124,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokGetVideoDetail(utility::st
     if (username)
     {
         localVarQueryParams[utility::conversions::to_string_t("username")] = ApiClient::parameterToString(*username);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -2970,7 +3502,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokHealthCheckHead() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokListRegions() const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokListRegions(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3011,6 +3543,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokListRegions() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -3100,7 +3660,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokListRegions() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchHashtags(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchHashtags(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3155,6 +3715,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchHashtags(utility::st
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3245,7 +3833,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchHashtags(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTheTiktokAdLibrary(boost::optional<utility::string_t> query, boost::optional<utility::string_t> advertiserId, boost::optional<utility::string_t> region, boost::optional<int32_t> days, boost::optional<utility::string_t> sort, boost::optional<int32_t> offset, boost::optional<utility::string_t> searchId, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTheTiktokAdLibrary(boost::optional<utility::string_t> query, boost::optional<utility::string_t> advertiserId, boost::optional<utility::string_t> region, boost::optional<int32_t> days, boost::optional<utility::string_t> sort, boost::optional<int32_t> offset, boost::optional<utility::string_t> searchId, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3317,6 +3905,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTheTiktokAdLibrary(b
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3407,7 +4023,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTheTiktokAdLibrary(b
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokAdvertisers(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokAdvertisers(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3458,6 +4074,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokAdvertisers(ut
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3548,7 +4192,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokAdvertisers(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokShopProducts(utility::string_t q, boost::optional<utility::string_t> region, boost::optional<utility::string_t> pageToken, boost::optional<int32_t> offset) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokShopProducts(utility::string_t q, boost::optional<utility::string_t> region, boost::optional<utility::string_t> pageToken, boost::optional<int32_t> offset, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3603,6 +4247,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokShopProducts(u
     if (offset)
     {
         localVarQueryParams[utility::conversions::to_string_t("offset")] = ApiClient::parameterToString(*offset);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3693,7 +4365,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchTiktokShopProducts(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchUsers(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchUsers(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3748,6 +4420,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchUsers(utility::strin
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3838,7 +4538,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchUsers(utility::strin
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchVideos(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchVideos(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> cursor, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -3893,6 +4593,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchVideos(utility::stri
     if (cursor)
     {
         localVarQueryParams[utility::conversions::to_string_t("cursor")] = ApiClient::parameterToString(*cursor);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -3983,7 +4711,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokSearchVideos(utility::stri
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategoryProducts(utility::string_t categoryId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<std::vector<utility::string_t>> excludeProductIds) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategoryProducts(utility::string_t categoryId, boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<std::vector<utility::string_t>> excludeProductIds, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4036,6 +4764,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategoryProducts
     if (excludeProductIds)
     {
         localVarQueryParams[utility::conversions::to_string_t("exclude_product_ids")] = ApiClient::parameterToString(*excludeProductIds);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4126,7 +4882,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategoryProducts
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategorySubcategoriesTopProducts(utility::string_t categoryId, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategorySubcategoriesTopProducts(utility::string_t categoryId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4171,6 +4927,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategorySubcateg
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4261,7 +5045,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopCategorySubcateg
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductDetail(utility::string_t productId, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductDetail(utility::string_t productId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4306,6 +5090,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductDetail(ut
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4396,7 +5208,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductDetail(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductReviews(utility::string_t productId, boost::optional<utility::string_t> region, boost::optional<int32_t> page, boost::optional<int32_t> count, boost::optional<utility::string_t> sort, boost::optional<int32_t> rating, boost::optional<bool> withMedia, boost::optional<bool> verified) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductReviews(utility::string_t productId, boost::optional<utility::string_t> region, boost::optional<int32_t> page, boost::optional<int32_t> count, boost::optional<utility::string_t> sort, boost::optional<int32_t> rating, boost::optional<bool> withMedia, boost::optional<bool> verified, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4465,6 +5277,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductReviews(u
     if (verified)
     {
         localVarQueryParams[utility::conversions::to_string_t("verified")] = ApiClient::parameterToString(*verified);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4555,7 +5395,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopProductReviews(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRegionalMallFeed(boost::optional<utility::string_t> region, boost::optional<int32_t> tabId, boost::optional<utility::string_t> pageToken) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRegionalMallFeed(boost::optional<utility::string_t> region, boost::optional<int32_t> tabId, boost::optional<utility::string_t> pageToken, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4607,6 +5447,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRegionalMallFeed
     if (pageToken)
     {
         localVarQueryParams[utility::conversions::to_string_t("page_token")] = ApiClient::parameterToString(*pageToken);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4697,7 +5565,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRegionalMallFeed
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRootCategories(boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRootCategories(boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4741,6 +5609,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRootCategories(b
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4831,7 +5727,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopRootCategories(b
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopStoreProducts(utility::string_t sellerId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> cursor, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopStoreProducts(utility::string_t sellerId, boost::optional<utility::string_t> region, boost::optional<utility::string_t> cursor, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -4884,6 +5780,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopStoreProducts(ut
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -4974,7 +5898,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopStoreProducts(ut
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopThemeRanking(utility::string_t rankId, boost::optional<utility::string_t> region, boost::optional<int32_t> rankType, boost::optional<int32_t> cursor, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopThemeRanking(utility::string_t rankId, boost::optional<utility::string_t> region, boost::optional<int32_t> rankType, boost::optional<int32_t> cursor, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5031,6 +5955,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopThemeRanking(uti
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5121,7 +6073,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTiktokShopThemeRanking(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingHashtags(boost::optional<utility::string_t> region, boost::optional<int32_t> period, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingHashtags(boost::optional<utility::string_t> region, boost::optional<int32_t> period, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5173,6 +6125,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingHashtags(boost::op
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5263,7 +6243,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingHashtags(boost::op
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingSongs(boost::optional<utility::string_t> region, boost::optional<int32_t> period, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingSongs(boost::optional<utility::string_t> region, boost::optional<int32_t> period, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5315,6 +6295,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingSongs(boost::optio
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -5405,7 +6413,7 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingSongs(boost::optio
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingVideos(boost::optional<utility::string_t> region, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingVideos(boost::optional<utility::string_t> region, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -5453,6 +6461,34 @@ pplx::task<std::shared_ptr<AnyType>> TikTokApi::tiktokTrendingVideos(boost::opti
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

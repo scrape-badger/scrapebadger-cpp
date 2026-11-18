@@ -295,7 +295,7 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingBookingScraperHealthChec
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetPropertyDetail(utility::string_t countryCode, utility::string_t slug, boost::optional<int32_t> photos, boost::optional<int32_t> questions, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetPropertyDetail(utility::string_t countryCode, utility::string_t slug, boost::optional<int32_t> photos, boost::optional<int32_t> questions, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -349,6 +349,34 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetPropertyDetail(utilit
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -439,7 +467,7 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetPropertyDetail(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetPropertyReviews(utility::string_t countryCode, utility::string_t slug, boost::optional<int32_t> limit, boost::optional<int32_t> offset, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> reviewLanguage, boost::optional<utility::string_t> guestType, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetPropertyReviews(utility::string_t countryCode, utility::string_t slug, boost::optional<int32_t> limit, boost::optional<int32_t> offset, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> reviewLanguage, boost::optional<utility::string_t> guestType, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -505,6 +533,34 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetPropertyReviews(utili
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -595,7 +651,7 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetPropertyReviews(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetRoomTypesAndLiveRates(utility::string_t countryCode, utility::string_t slug, utility::string_t checkin, utility::string_t checkout, boost::optional<int32_t> adults, boost::optional<utility::string_t> children, boost::optional<int32_t> rooms, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetRoomTypesAndLiveRates(utility::string_t countryCode, utility::string_t slug, utility::string_t checkin, utility::string_t checkout, boost::optional<int32_t> adults, boost::optional<utility::string_t> children, boost::optional<int32_t> rooms, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -663,6 +719,34 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetRoomTypesAndLiveRates
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -753,7 +837,7 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingGetRoomTypesAndLiveRates
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingSearchDestinations(utility::string_t query, boost::optional<int32_t> limit, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingSearchDestinations(utility::string_t query, boost::optional<int32_t> limit, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -804,6 +888,34 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingSearchDestinations(utili
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -894,7 +1006,7 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingSearchDestinations(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingSearchProperties(boost::optional<utility::string_t> location, boost::optional<int32_t> destId, boost::optional<utility::string_t> destType, boost::optional<utility::string_t> checkin, boost::optional<utility::string_t> checkout, boost::optional<int32_t> adults, boost::optional<utility::string_t> children, boost::optional<int32_t> rooms, boost::optional<int32_t> offset, boost::optional<int32_t> limit, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> filters, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language) const
+pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingSearchProperties(boost::optional<utility::string_t> location, boost::optional<int32_t> destId, boost::optional<utility::string_t> destType, boost::optional<utility::string_t> checkin, boost::optional<utility::string_t> checkout, boost::optional<int32_t> adults, boost::optional<utility::string_t> children, boost::optional<int32_t> rooms, boost::optional<int32_t> offset, boost::optional<int32_t> limit, boost::optional<utility::string_t> sort, boost::optional<utility::string_t> filters, boost::optional<utility::string_t> currency, boost::optional<utility::string_t> language, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -990,6 +1102,34 @@ pplx::task<std::shared_ptr<AnyType>> BookingApi::bookingSearchProperties(boost::
     if (language)
     {
         localVarQueryParams[utility::conversions::to_string_t("language")] = ApiClient::parameterToString(*language);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

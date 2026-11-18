@@ -35,7 +35,7 @@ BraveApi::~BraveApi()
 {
 }
 
-pplx::task<std::shared_ptr<BraveAutocompleteResponse>> BraveApi::braveAutocomplete(utility::string_t query, boost::optional<utility::string_t> country) const
+pplx::task<std::shared_ptr<BraveAutocompleteResponse>> BraveApi::braveAutocomplete(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -82,6 +82,34 @@ pplx::task<std::shared_ptr<BraveAutocompleteResponse>> BraveApi::braveAutocomple
     if (country)
     {
         localVarQueryParams[utility::conversions::to_string_t("country")] = ApiClient::parameterToString(*country);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -172,7 +200,7 @@ pplx::task<std::shared_ptr<BraveAutocompleteResponse>> BraveApi::braveAutocomple
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<BraveResponse>> BraveApi::braveImageSearch(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> uiLanguage, boost::optional<utility::string_t> safeSearch, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<BraveResponse>> BraveApi::braveImageSearch(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> uiLanguage, boost::optional<utility::string_t> safeSearch, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -231,6 +259,34 @@ pplx::task<std::shared_ptr<BraveResponse>> BraveApi::braveImageSearch(utility::s
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -321,7 +377,7 @@ pplx::task<std::shared_ptr<BraveResponse>> BraveApi::braveImageSearch(utility::s
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<BraveLocalesResponse>> BraveApi::braveListSupportedLocales() const
+pplx::task<std::shared_ptr<BraveLocalesResponse>> BraveApi::braveListSupportedLocales(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -362,6 +418,34 @@ pplx::task<std::shared_ptr<BraveLocalesResponse>> BraveApi::braveListSupportedLo
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -451,7 +535,7 @@ pplx::task<std::shared_ptr<BraveLocalesResponse>> BraveApi::braveListSupportedLo
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<BraveResponse>> BraveApi::braveNewsSearch(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> uiLanguage, boost::optional<utility::string_t> safeSearch, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<BraveResponse>> BraveApi::braveNewsSearch(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> uiLanguage, boost::optional<utility::string_t> safeSearch, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -510,6 +594,34 @@ pplx::task<std::shared_ptr<BraveResponse>> BraveApi::braveNewsSearch(utility::st
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -600,7 +712,7 @@ pplx::task<std::shared_ptr<BraveResponse>> BraveApi::braveNewsSearch(utility::st
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<BravePagedResponse>> BraveApi::braveVideoSearch(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> uiLanguage, boost::optional<utility::string_t> safeSearch, boost::optional<int32_t> page, boost::optional<int32_t> count) const
+pplx::task<std::shared_ptr<BravePagedResponse>> BraveApi::braveVideoSearch(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> uiLanguage, boost::optional<utility::string_t> safeSearch, boost::optional<int32_t> page, boost::optional<int32_t> count, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -663,6 +775,34 @@ pplx::task<std::shared_ptr<BravePagedResponse>> BraveApi::braveVideoSearch(utili
     if (count)
     {
         localVarQueryParams[utility::conversions::to_string_t("count")] = ApiClient::parameterToString(*count);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -753,7 +893,7 @@ pplx::task<std::shared_ptr<BravePagedResponse>> BraveApi::braveVideoSearch(utili
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<BraveSearchResponse>> BraveApi::braveWebSearch(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> uiLanguage, boost::optional<utility::string_t> safeSearch, boost::optional<int32_t> page, boost::optional<int32_t> count, boost::optional<utility::string_t> freshness, boost::optional<bool> spellcheck) const
+pplx::task<std::shared_ptr<BraveSearchResponse>> BraveApi::braveWebSearch(utility::string_t query, boost::optional<utility::string_t> country, boost::optional<utility::string_t> uiLanguage, boost::optional<utility::string_t> safeSearch, boost::optional<int32_t> page, boost::optional<int32_t> count, boost::optional<utility::string_t> freshness, boost::optional<bool> spellcheck, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -824,6 +964,34 @@ pplx::task<std::shared_ptr<BraveSearchResponse>> BraveApi::braveWebSearch(utilit
     if (spellcheck)
     {
         localVarQueryParams[utility::conversions::to_string_t("spellcheck")] = ApiClient::parameterToString(*spellcheck);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

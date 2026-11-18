@@ -35,7 +35,7 @@ IdealistaApi::~IdealistaApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaAgencyByPhone(utility::string_t phone, boost::optional<utility::string_t> market, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<int32_t> page, boost::optional<int32_t> maxItems, boost::optional<bool> includeListings) const
+pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaAgencyByPhone(utility::string_t phone, boost::optional<utility::string_t> market, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<int32_t> page, boost::optional<int32_t> maxItems, boost::optional<bool> includeListings, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -100,6 +100,34 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaAgencyByPhone(utilit
     if (includeListings)
     {
         localVarQueryParams[utility::conversions::to_string_t("include_listings")] = ApiClient::parameterToString(*includeListings);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -190,7 +218,7 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaAgencyByPhone(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaAgencyProfileListings(utility::string_t shortName, boost::optional<utility::string_t> market, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<int32_t> page, boost::optional<int32_t> maxItems, boost::optional<bool> includeListings) const
+pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaAgencyProfileListings(utility::string_t shortName, boost::optional<utility::string_t> market, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<int32_t> page, boost::optional<int32_t> maxItems, boost::optional<bool> includeListings, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -255,6 +283,34 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaAgencyProfileListing
     if (includeListings)
     {
         localVarQueryParams[utility::conversions::to_string_t("include_listings")] = ApiClient::parameterToString(*includeListings);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -345,7 +401,7 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaAgencyProfileListing
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaGetListingEngagementStats(utility::string_t propertyCode, boost::optional<utility::string_t> market, boost::optional<utility::string_t> locale) const
+pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaGetListingEngagementStats(utility::string_t propertyCode, boost::optional<utility::string_t> market, boost::optional<utility::string_t> locale, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -394,6 +450,34 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaGetListingEngagement
     if (locale)
     {
         localVarQueryParams[utility::conversions::to_string_t("locale")] = ApiClient::parameterToString(*locale);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -484,7 +568,7 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaGetListingEngagement
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaGetPropertyDetail(utility::string_t propertyCode, boost::optional<utility::string_t> market, boost::optional<utility::string_t> locale) const
+pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaGetPropertyDetail(utility::string_t propertyCode, boost::optional<utility::string_t> market, boost::optional<utility::string_t> locale, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -533,6 +617,34 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaGetPropertyDetail(ut
     if (locale)
     {
         localVarQueryParams[utility::conversions::to_string_t("locale")] = ApiClient::parameterToString(*locale);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -883,7 +995,7 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaIdealistaScraperHeal
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaListMarkets() const
+pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -924,6 +1036,34 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaListMarkets() const
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -1013,7 +1153,7 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaListMarkets() const
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaResolveLocations(utility::string_t query, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<utility::string_t> market, boost::optional<utility::string_t> locale) const
+pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaResolveLocations(utility::string_t query, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<utility::string_t> market, boost::optional<utility::string_t> locale, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1072,6 +1212,34 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaResolveLocations(uti
     if (locale)
     {
         localVarQueryParams[utility::conversions::to_string_t("locale")] = ApiClient::parameterToString(*locale);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1162,7 +1330,7 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaResolveLocations(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaSearchAllBeatsResultCap(utility::string_t location, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<utility::string_t> market, boost::optional<int32_t> maxResults, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<double> minSize, boost::optional<double> maxSize, boost::optional<int32_t> minRooms, boost::optional<int32_t> maxRooms, boost::optional<utility::string_t> locale) const
+pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaSearchAllBeatsResultCap(utility::string_t location, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<utility::string_t> market, boost::optional<int32_t> maxResults, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<double> minSize, boost::optional<double> maxSize, boost::optional<int32_t> minRooms, boost::optional<int32_t> maxRooms, boost::optional<utility::string_t> locale, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1249,6 +1417,34 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaSearchAllBeatsResult
     if (locale)
     {
         localVarQueryParams[utility::conversions::to_string_t("locale")] = ApiClient::parameterToString(*locale);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1339,7 +1535,7 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaSearchAllBeatsResult
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaSearchListings(utility::string_t location, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<utility::string_t> market, boost::optional<int32_t> page, boost::optional<int32_t> maxItems, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> sortOrder, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<double> minSize, boost::optional<double> maxSize, boost::optional<int32_t> minRooms, boost::optional<int32_t> maxRooms, boost::optional<utility::string_t> locale) const
+pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaSearchListings(utility::string_t location, boost::optional<utility::string_t> operation, boost::optional<utility::string_t> propertyType, boost::optional<utility::string_t> market, boost::optional<int32_t> page, boost::optional<int32_t> maxItems, boost::optional<utility::string_t> sortBy, boost::optional<utility::string_t> sortOrder, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<double> minSize, boost::optional<double> maxSize, boost::optional<int32_t> minRooms, boost::optional<int32_t> maxRooms, boost::optional<utility::string_t> locale, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1438,6 +1634,34 @@ pplx::task<std::shared_ptr<AnyType>> IdealistaApi::idealistaSearchListings(utili
     if (locale)
     {
         localVarQueryParams[utility::conversions::to_string_t("locale")] = ApiClient::parameterToString(*locale);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

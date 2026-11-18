@@ -165,7 +165,7 @@ pplx::task<std::shared_ptr<AnyType>> AutoScout24Api::autoscout24CheckAutoscout24
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AutoScout24ListingResponse>> AutoScout24Api::autoscout24GetListing(boost::optional<utility::string_t> url, boost::optional<utility::string_t> listingId, boost::optional<utility::string_t> market) const
+pplx::task<std::shared_ptr<AutoScout24ListingResponse>> AutoScout24Api::autoscout24GetListing(boost::optional<utility::string_t> url, boost::optional<utility::string_t> listingId, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -217,6 +217,34 @@ pplx::task<std::shared_ptr<AutoScout24ListingResponse>> AutoScout24Api::autoscou
     if (market)
     {
         localVarQueryParams[utility::conversions::to_string_t("market")] = ApiClient::parameterToString(*market);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -307,7 +335,7 @@ pplx::task<std::shared_ptr<AutoScout24ListingResponse>> AutoScout24Api::autoscou
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AutoScout24MarketsResponse>> AutoScout24Api::autoscout24ListMarkets() const
+pplx::task<std::shared_ptr<AutoScout24MarketsResponse>> AutoScout24Api::autoscout24ListMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -348,6 +376,34 @@ pplx::task<std::shared_ptr<AutoScout24MarketsResponse>> AutoScout24Api::autoscou
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -437,7 +493,7 @@ pplx::task<std::shared_ptr<AutoScout24MarketsResponse>> AutoScout24Api::autoscou
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AutoScout24FiltersResponse>> AutoScout24Api::autoscout24ListSearchFilters(boost::optional<utility::string_t> market, boost::optional<utility::string_t> make) const
+pplx::task<std::shared_ptr<AutoScout24FiltersResponse>> AutoScout24Api::autoscout24ListSearchFilters(boost::optional<utility::string_t> market, boost::optional<utility::string_t> make, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -485,6 +541,34 @@ pplx::task<std::shared_ptr<AutoScout24FiltersResponse>> AutoScout24Api::autoscou
     if (make)
     {
         localVarQueryParams[utility::conversions::to_string_t("make")] = ApiClient::parameterToString(*make);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -575,7 +659,7 @@ pplx::task<std::shared_ptr<AutoScout24FiltersResponse>> AutoScout24Api::autoscou
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AutoScout24SearchResponse>> AutoScout24Api::autoscout24SearchVehicles(boost::optional<utility::string_t> market, boost::optional<utility::string_t> make, boost::optional<utility::string_t> model, boost::optional<int32_t> priceMin, boost::optional<int32_t> priceMax, boost::optional<int32_t> mileageMin, boost::optional<int32_t> mileageMax, boost::optional<int32_t> yearMin, boost::optional<int32_t> yearMax, boost::optional<int32_t> powerMin, boost::optional<int32_t> powerMax, boost::optional<utility::string_t> fuelType, boost::optional<utility::string_t> transmission, boost::optional<utility::string_t> bodyType, boost::optional<utility::string_t> sellerType, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> zip, boost::optional<int32_t> radius, boost::optional<utility::string_t> sortBy, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AutoScout24SearchResponse>> AutoScout24Api::autoscout24SearchVehicles(boost::optional<utility::string_t> market, boost::optional<utility::string_t> make, boost::optional<utility::string_t> model, boost::optional<int32_t> priceMin, boost::optional<int32_t> priceMax, boost::optional<int32_t> mileageMin, boost::optional<int32_t> mileageMax, boost::optional<int32_t> yearMin, boost::optional<int32_t> yearMax, boost::optional<int32_t> powerMin, boost::optional<int32_t> powerMax, boost::optional<utility::string_t> fuelType, boost::optional<utility::string_t> transmission, boost::optional<utility::string_t> bodyType, boost::optional<utility::string_t> sellerType, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> zip, boost::optional<int32_t> radius, boost::optional<utility::string_t> sortBy, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -695,6 +779,34 @@ pplx::task<std::shared_ptr<AutoScout24SearchResponse>> AutoScout24Api::autoscout
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

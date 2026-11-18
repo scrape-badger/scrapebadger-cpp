@@ -35,7 +35,7 @@ RedfinApi::~RedfinApi()
 {
 }
 
-pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetAgentProfileListings(boost::optional<utility::string_t> url, boost::optional<utility::string_t> agentId) const
+pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetAgentProfileListings(boost::optional<utility::string_t> url, boost::optional<utility::string_t> agentId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -83,6 +83,34 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetAgentProfileListings(bo
     if (agentId)
     {
         localVarQueryParams[utility::conversions::to_string_t("agent_id")] = ApiClient::parameterToString(*agentId);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -173,7 +201,7 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetAgentProfileListings(bo
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetPropertyDetail(utility::string_t propertyId) const
+pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetPropertyDetail(utility::string_t propertyId, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -215,6 +243,34 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetPropertyDetail(utility:
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -304,7 +360,7 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetPropertyDetail(utility:
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetPropertyDetailByUrl(utility::string_t url) const
+pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetPropertyDetailByUrl(utility::string_t url, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -347,6 +403,34 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetPropertyDetailByUrl(uti
 
     {
         localVarQueryParams[utility::conversions::to_string_t("url")] = ApiClient::parameterToString(url);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -437,7 +521,7 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinGetPropertyDetailByUrl(uti
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinListCoverageMarkets() const
+pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinListCoverageMarkets(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -478,6 +562,34 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinListCoverageMarkets() cons
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -827,7 +939,7 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinRedfinScraperHealthCheckHe
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinRegionAddressSuggestions(utility::string_t query) const
+pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinRegionAddressSuggestions(utility::string_t query, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -870,6 +982,34 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinRegionAddressSuggestions(u
 
     {
         localVarQueryParams[utility::conversions::to_string_t("query")] = ApiClient::parameterToString(query);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -960,7 +1100,7 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinRegionAddressSuggestions(u
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinSearchProperties(utility::string_t location, boost::optional<int32_t> page, boost::optional<utility::string_t> sort, boost::optional<int32_t> priceMin, boost::optional<int32_t> priceMax, boost::optional<int32_t> bedsMin, boost::optional<double> bathsMin, boost::optional<utility::string_t> homeType, boost::optional<int32_t> sqftMin, boost::optional<int32_t> sqftMax, boost::optional<int32_t> lotMin, boost::optional<int32_t> lotMax, boost::optional<int32_t> yearBuiltMin, boost::optional<int32_t> yearBuiltMax, boost::optional<int32_t> maxDaysOnMarket, boost::optional<double> north, boost::optional<double> south, boost::optional<double> east, boost::optional<double> west) const
+pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinSearchProperties(utility::string_t location, boost::optional<int32_t> page, boost::optional<utility::string_t> sort, boost::optional<int32_t> priceMin, boost::optional<int32_t> priceMax, boost::optional<int32_t> bedsMin, boost::optional<double> bathsMin, boost::optional<utility::string_t> homeType, boost::optional<int32_t> sqftMin, boost::optional<int32_t> sqftMax, boost::optional<int32_t> lotMin, boost::optional<int32_t> lotMax, boost::optional<int32_t> yearBuiltMin, boost::optional<int32_t> yearBuiltMax, boost::optional<int32_t> maxDaysOnMarket, boost::optional<double> north, boost::optional<double> south, boost::optional<double> east, boost::optional<double> west, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1075,6 +1215,34 @@ pplx::task<std::shared_ptr<AnyType>> RedfinApi::redfinSearchProperties(utility::
     if (west)
     {
         localVarQueryParams[utility::conversions::to_string_t("west")] = ApiClient::parameterToString(*west);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

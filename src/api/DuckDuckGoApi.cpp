@@ -295,7 +295,7 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoDuckduckgoScraperH
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoImageSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> safesearch, boost::optional<int32_t> page, boost::optional<utility::string_t> size, boost::optional<utility::string_t> color, boost::optional<utility::string_t> imageType, boost::optional<utility::string_t> layout, boost::optional<utility::string_t> license) const
+pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoImageSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> safesearch, boost::optional<int32_t> page, boost::optional<utility::string_t> size, boost::optional<utility::string_t> color, boost::optional<utility::string_t> imageType, boost::optional<utility::string_t> layout, boost::optional<utility::string_t> license, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -370,6 +370,34 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoImageSearch(utilit
     if (license)
     {
         localVarQueryParams[utility::conversions::to_string_t("license")] = ApiClient::parameterToString(*license);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -460,7 +488,7 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoImageSearch(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoInstantAnswer(utility::string_t query) const
+pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoInstantAnswer(utility::string_t query, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -503,6 +531,34 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoInstantAnswer(util
 
     {
         localVarQueryParams[utility::conversions::to_string_t("query")] = ApiClient::parameterToString(query);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -593,7 +649,7 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoInstantAnswer(util
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoListSupportedRegions() const
+pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoListSupportedRegions(boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -634,6 +690,34 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoListSupportedRegio
 
     std::unordered_set<utility::string_t> localVarConsumeHttpContentTypes;
 
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
+    }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
     utility::string_t localVarRequestHttpContentType;
@@ -723,7 +807,7 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoListSupportedRegio
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoNewsSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> safesearch, boost::optional<utility::string_t> timelimit, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoNewsSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> safesearch, boost::optional<utility::string_t> timelimit, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -782,6 +866,34 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoNewsSearch(utility
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -872,7 +984,7 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoNewsSearch(utility
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> region) const
+pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoSearchSuggestions(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -919,6 +1031,34 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoSearchSuggestions(
     if (region)
     {
         localVarQueryParams[utility::conversions::to_string_t("region")] = ApiClient::parameterToString(*region);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1009,7 +1149,7 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoSearchSuggestions(
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoVideoSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> safesearch, boost::optional<int32_t> page, boost::optional<utility::string_t> duration, boost::optional<utility::string_t> resolution) const
+pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoVideoSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> safesearch, boost::optional<int32_t> page, boost::optional<utility::string_t> duration, boost::optional<utility::string_t> resolution, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1072,6 +1212,34 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoVideoSearch(utilit
     if (resolution)
     {
         localVarQueryParams[utility::conversions::to_string_t("resolution")] = ApiClient::parameterToString(*resolution);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -1162,7 +1330,7 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoVideoSearch(utilit
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoWebSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> safesearch, boost::optional<utility::string_t> timelimit, boost::optional<int32_t> page) const
+pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoWebSearch(utility::string_t query, boost::optional<utility::string_t> region, boost::optional<utility::string_t> safesearch, boost::optional<utility::string_t> timelimit, boost::optional<int32_t> page, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1221,6 +1389,34 @@ pplx::task<std::shared_ptr<AnyType>> DuckDuckGoApi::duckduckgoWebSearch(utility:
     if (page)
     {
         localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
+    }
+    if (prefer)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Prefer")] = ApiClient::parameterToString(*prefer);
+    }
+    if (xCallbackURL)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("X-Callback-URL")] = ApiClient::parameterToString(*xCallbackURL);
+    }
+    if (idempotencyKey)
+    {
+        localVarHeaderParams[utility::conversions::to_string_t("Idempotency-Key")] = ApiClient::parameterToString(*idempotencyKey);
+    }
+    if (async)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async")] = ApiClient::parameterToString(*async);
+    }
+    if (asyncWait)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("async_wait")] = ApiClient::parameterToString(*asyncWait);
+    }
+    if (callbackUrl)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("callback_url")] = ApiClient::parameterToString(*callbackUrl);
+    }
+    if (idempotencyKey2)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("idempotency_key")] = ApiClient::parameterToString(*idempotencyKey2);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
