@@ -161,6 +161,10 @@ include/scrapebadger/model/GitHubRepositoryResponse.h
 include/scrapebadger/model/GitHubSocialAccount.h
 include/scrapebadger/model/GitHubStatus.h
 include/scrapebadger/model/GitHubTextLink.h
+include/scrapebadger/model/GoogleResolveItem.h
+include/scrapebadger/model/GoogleResolveRequest.h
+include/scrapebadger/model/GoogleResolveResponse.h
+include/scrapebadger/model/GoogleResolveRow.h
 include/scrapebadger/model/HTTPValidationError.h
 include/scrapebadger/model/Imageurl.h
 include/scrapebadger/model/Is_Live.h
@@ -414,6 +418,10 @@ src/model/GitHubRepositoryResponse.cpp
 src/model/GitHubSocialAccount.cpp
 src/model/GitHubStatus.cpp
 src/model/GitHubTextLink.cpp
+src/model/GoogleResolveItem.cpp
+src/model/GoogleResolveRequest.cpp
+src/model/GoogleResolveResponse.cpp
+src/model/GoogleResolveRow.cpp
 src/model/HTTPValidationError.cpp
 src/model/Imageurl.cpp
 src/model/Is_Live.cpp
