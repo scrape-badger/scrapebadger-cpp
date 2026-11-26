@@ -183,7 +183,7 @@ public:
     /// List categories
     /// </summary>
     /// <remarks>
-    /// The full category tree; ids are usable as the search category_id.
+    /// The full category tree; top-level ids are the search category_id, nested subcategory ids go in subcategory_ids.
     /// </remarks>
     /// <param name="market">Market: es (Spain), it (Italy), pt (Portugal) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -211,6 +211,7 @@ public:
     /// </remarks>
     /// <param name="filterId"></param>
     /// <param name="categoryId">Category to scope options to (optional, default to 0)</param>
+    /// <param name="subcategoryIds">Comma-separated subcategory ids to scope options to (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="query">Search text to scope options to (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="market">Market: es (Spain), it (Italy), pt (Portugal) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -223,6 +224,7 @@ public:
     pplx::task<std::shared_ptr<AnyType>> wallapopListFilterOptions(
         utility::string_t filterId,
         boost::optional<int32_t> categoryId,
+        boost::optional<utility::string_t> subcategoryIds,
         boost::optional<utility::string_t> query,
         boost::optional<utility::string_t> market,
         boost::optional<utility::string_t> prefer,
@@ -262,6 +264,7 @@ public:
     /// The filters Wallapop offers for a category or query, with option ids.
     /// </remarks>
     /// <param name="categoryId">Category the filters apply to (optional, default to 0)</param>
+    /// <param name="subcategoryIds">Comma-separated subcategory ids the filters apply to (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="query">Search text the filters apply to (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="market">Market: es (Spain), it (Italy), pt (Portugal) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="prefer">&#x60;respond-async[, wait&#x3D;N]&#x60; (RFC 7240): run the call async. If it has not finished after &#x60;wait&#x60; seconds (0-120, default 25) the answer is &#x60;202&#x60; with a &#x60;request_id&#x60;; poll &#x60;GET /v1/requests/{request_id}&#x60;. Its &#x60;wait&#x3D;&#x60; wins over &#x60;async_wait&#x60;; without one, &#x60;async_wait&#x60; sets the wait. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -273,6 +276,7 @@ public:
     /// <param name="idempotencyKey2">Query form of &#x60;Idempotency-Key&#x60;. Not sent to the scraper. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::shared_ptr<AnyType>> wallapopListSearchFilters(
         boost::optional<int32_t> categoryId,
+        boost::optional<utility::string_t> subcategoryIds,
         boost::optional<utility::string_t> query,
         boost::optional<utility::string_t> market,
         boost::optional<utility::string_t> prefer,
@@ -287,7 +291,7 @@ public:
     /// Search listings
     /// </summary>
     /// <remarks>
-    /// Search Wallapop listings (40 per page). Needs a query, a category_id, or both.
+    /// Search Wallapop listings (40 per page). Needs a query, a category_id, subcategory_ids, or a combination.
     /// </remarks>
     /// <param name="query">Search text, e.g. &#39;iphone 14&#39; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="market">Market: es (Spain), it (Italy), pt (Portugal) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -295,6 +299,7 @@ public:
     /// <param name="longitude">Search centre longitude (optional, default to 0.0)</param>
     /// <param name="distanceKm">Search radius (optional, default to 0)</param>
     /// <param name="categoryId">Category id from /categories (optional, default to 0)</param>
+    /// <param name="subcategoryIds">Comma-separated subcategory ids from /categories (any level of the tree), e.g. 9447 (Smartphones) or 9447,10310 (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="minPrice">Minimum price (EUR) (optional, default to 0.0)</param>
     /// <param name="maxPrice">Maximum price (EUR) (optional, default to 0.0)</param>
     /// <param name="condition">Comma-separated: un_opened, in_box, new, as_good_as_new, good, fair, has_given_it_all (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -328,6 +333,7 @@ public:
         boost::optional<double> longitude,
         boost::optional<int32_t> distanceKm,
         boost::optional<int32_t> categoryId,
+        boost::optional<utility::string_t> subcategoryIds,
         boost::optional<double> minPrice,
         boost::optional<double> maxPrice,
         boost::optional<utility::string_t> condition,

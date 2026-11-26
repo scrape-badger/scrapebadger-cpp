@@ -1022,7 +1022,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListCategories(boost::
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListFilterOptions(utility::string_t filterId, boost::optional<int32_t> categoryId, boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListFilterOptions(utility::string_t filterId, boost::optional<int32_t> categoryId, boost::optional<utility::string_t> subcategoryIds, boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1067,6 +1067,10 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListFilterOptions(util
     if (categoryId)
     {
         localVarQueryParams[utility::conversions::to_string_t("category_id")] = ApiClient::parameterToString(*categoryId);
+    }
+    if (subcategoryIds)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("subcategory_ids")] = ApiClient::parameterToString(*subcategoryIds);
     }
     if (query)
     {
@@ -1351,7 +1355,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListMarkets(boost::opt
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListSearchFilters(boost::optional<int32_t> categoryId, boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListSearchFilters(boost::optional<int32_t> categoryId, boost::optional<utility::string_t> subcategoryIds, boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1395,6 +1399,10 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListSearchFilters(boos
     if (categoryId)
     {
         localVarQueryParams[utility::conversions::to_string_t("category_id")] = ApiClient::parameterToString(*categoryId);
+    }
+    if (subcategoryIds)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("subcategory_ids")] = ApiClient::parameterToString(*subcategoryIds);
     }
     if (query)
     {
@@ -1521,7 +1529,7 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopListSearchFilters(boos
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopSearchListings(boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<double> latitude, boost::optional<double> longitude, boost::optional<int32_t> distanceKm, boost::optional<int32_t> categoryId, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> brand, boost::optional<utility::string_t> model, boost::optional<utility::string_t> color, boost::optional<utility::string_t> timeFilter, boost::optional<bool> shippable, boost::optional<bool> hasWarranty, boost::optional<bool> refurbished, boost::optional<int32_t> minYear, boost::optional<int32_t> maxYear, boost::optional<int32_t> minKm, boost::optional<int32_t> maxKm, boost::optional<utility::string_t> gearbox, boost::optional<int32_t> minHorsepower, boost::optional<int32_t> maxHorsepower, boost::optional<utility::string_t> orderBy, boost::optional<utility::string_t> nextPage, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
+pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopSearchListings(boost::optional<utility::string_t> query, boost::optional<utility::string_t> market, boost::optional<double> latitude, boost::optional<double> longitude, boost::optional<int32_t> distanceKm, boost::optional<int32_t> categoryId, boost::optional<utility::string_t> subcategoryIds, boost::optional<double> minPrice, boost::optional<double> maxPrice, boost::optional<utility::string_t> condition, boost::optional<utility::string_t> brand, boost::optional<utility::string_t> model, boost::optional<utility::string_t> color, boost::optional<utility::string_t> timeFilter, boost::optional<bool> shippable, boost::optional<bool> hasWarranty, boost::optional<bool> refurbished, boost::optional<int32_t> minYear, boost::optional<int32_t> maxYear, boost::optional<int32_t> minKm, boost::optional<int32_t> maxKm, boost::optional<utility::string_t> gearbox, boost::optional<int32_t> minHorsepower, boost::optional<int32_t> maxHorsepower, boost::optional<utility::string_t> orderBy, boost::optional<utility::string_t> nextPage, boost::optional<utility::string_t> prefer, boost::optional<utility::string_t> xCallbackURL, boost::optional<utility::string_t> idempotencyKey, boost::optional<bool> async, boost::optional<int32_t> asyncWait, boost::optional<utility::string_t> callbackUrl, boost::optional<utility::string_t> idempotencyKey2) const
 {
 
 
@@ -1585,6 +1593,10 @@ pplx::task<std::shared_ptr<AnyType>> WallapopApi::wallapopSearchListings(boost::
     if (categoryId)
     {
         localVarQueryParams[utility::conversions::to_string_t("category_id")] = ApiClient::parameterToString(*categoryId);
+    }
+    if (subcategoryIds)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("subcategory_ids")] = ApiClient::parameterToString(*subcategoryIds);
     }
     if (minPrice)
     {
