@@ -504,6 +504,7 @@ public:
     /// <param name="safe">Safe search: off or active (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="filter"> (optional, default to 0)</param>
     /// <param name="nfpr">Disable auto-correction (optional, default to 0)</param>
+    /// <param name="requireResolvedLinks">Require direct organic result URLs and resolve Google redirects in returned result links. JSON only. The handler returns HTTP 503 on a budget miss (2 s fast, 2.5 s full). (optional, default to false)</param>
     /// <param name="output"> (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="oq">Original query sent to Google. Defaults to q; an empty string omits it. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="sourceid">Google source identifier. Defaults to chrome; an empty string omits it. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -557,6 +558,7 @@ public:
         boost::optional<utility::string_t> safe,
         boost::optional<int32_t> filter,
         boost::optional<int32_t> nfpr,
+        boost::optional<bool> requireResolvedLinks,
         boost::optional<utility::string_t> output,
         boost::optional<utility::string_t> oq,
         boost::optional<utility::string_t> sourceid,
@@ -689,6 +691,7 @@ public:
     /// <param name="domain">Google domain (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="device">Device target: desktop, mobile, iphone, android, tablet (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="userAgent">Custom User-Agent (overrides device) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="requireResolvedLinks">Require direct organic result URLs and resolve Google redirects in returned result links. JSON only. The handler returns HTTP 503 on a budget miss (2 s fast, 2.5 s full). (optional, default to false)</param>
     /// <param name="output">Response format: json (parsed) or html (raw SERP) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="location">City-level geo-targeting (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="lr">Language restrict (e.g. lang_en) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -745,6 +748,7 @@ public:
         boost::optional<utility::string_t> domain,
         boost::optional<utility::string_t> device,
         boost::optional<utility::string_t> userAgent,
+        boost::optional<bool> requireResolvedLinks,
         boost::optional<utility::string_t> output,
         boost::optional<utility::string_t> location,
         boost::optional<utility::string_t> lr,
